@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+	<html lang="ko">
+	<head>
+		<meta charset="UTF-8">
+		<title>제이쿼리(jQuery) : attr()</title>
+	</head>
+	<body>
+		<img class="img2" src="https://tistory1.daumcdn.net/tistory/2141493/skin/images/sam1.png" alt="이미지" width="100" height="100">
+		<img class="img2" src="https://tistory1.daumcdn.net/tistory/2141493/skin/images/sam1.png" alt="이미지" width="100" height="100">
+		<img class="img2" src="https://tistory1.daumcdn.net/tistory/2141493/skin/images/sam1.png" alt="이미지" width="100" height="100">
+		<img class="img2" src="https://tistory1.daumcdn.net/tistory/2141493/skin/images/sam1.png" alt="이미지" width="100" height="100">
+		<img class="img2" src="https://tistory1.daumcdn.net/tistory/2141493/skin/images/sam1.png" alt="이미지" width="100" height="100">
+		<br><br>
+		
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+		<script type="text/javascript">
+			// $('.img2').attr('width','300');
+
+			// $('.img2').attr('width', function(i){
+			// 	return (i+1) * 100;
+			// });
+
+			$('.img2').attr({
+				width: function(i){
+					return (i + 1) * 50;
+			},
+				height: function(j){
+					return (j + 1) * 50;
+				}
+			});
+		</script>
+	</body>
+</html>  
+
+
+

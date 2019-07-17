@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>PORTFOLIO</title>
+
+    <!-- style -->
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- html5 Support  -->
+    <!--[if lt IE 9]>
+        <script src="assets/js/html5shiv.min.js"></script>
+    <![endif]-->
+
+    <!-- ie Version Checker -->
+    <script src="assets/js/ie-checker-min.js"></script>
+</head>
+
+<body>
+
+    <nav id="nav">
+        <div class="bar">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <h2><a href="/">PORTFOLIO</a></h2>
+        <div class="menu">
+            <li><a href="#">Works</a></li>
+            <li><a href="#" class="about">About</a></li>
+        </div>
+    </nav>
+
+
+    <section id="section1">
+        <div class="slide-wrap">
+            <div class="slide-img">
+               
+                <div class="slide s1">
+                    <div class="txt">
+                        <h2 data-name="webstandard"><span>W</span><span>e</span><span>b</span><span>s</span><span>t</span><span>a</span><span>n</span><span>d</span><span>a</span><span>r</span><span>d</span></h2>
+                    </div>
+                    <div class="img"><img src="http://vyctoire-api.hengpatrick.fr/wp-content/uploads/2018/01/ladybug_cover@2x-1.png" width="800" alt="메인이미지"></div>
+                    <div class="count"><span class="currentIndex">0</span><span class="slideCount">0</span></div>
+                    <div class="side_text">
+                        <a href="#" class="left">Webstandard</a>
+                        <a href="#" class="right">Webstandard</a>
+                    </div>
+                </div>
+                
+                <div class="slide s2">
+                    <div class="txt">
+                        <h2 data-name="webstandard2"><span>W</span><span>e</span><span>a</span><span>t</span><span>h</span><span>e</span><span>r</span>&nbsp;<span>F</span><span>a</span><span>i</span><span>r</span><span>y</span></h2>
+                    </div>
+                    <div class="img"><img src="http://vyctoire-api.hengpatrick.fr/wp-content/uploads/2016/12/symbiosis-cover@2x.png" width="1000" alt="메인이미지"></div>
+                    <div class="count"><span class="currentIndex">0</span><span class="slideCount">0</span></div>
+                    <div class="side_text">
+                        <a href="#" class="left">Webstandard</a>
+                        <a href="#" class="right">Webstandard</a>
+                    </div>
+                </div>
+                
+                <div class="slide s3">
+                    <div class="txt">
+                        <h2 data-name="webstandard3"><span>W</span><span>e</span><span>a</span><span>t</span><span>h</span><span>e</span><span>r</span>&nbsp;<span>F</span><span>a</span><span>i</span><span>r</span><span>y</span></h2>
+                    </div>
+                    <div class="img"><img src="http://vyctoire-api.hengpatrick.fr/wp-content/uploads/2016/12/a-news_cover@2x-1.png" width="1000" alt="메인이미지"></div>
+                    <div class="count"><span class="currentIndex">0</span><span class="slideCount">0</span></div>
+                    <div class="side_text">
+                        <a href="#" class="left">Webstandard</a>
+                        <a href="#" class="right">Webstandard</a>
+                    </div>
+                </div>
+                
+                <div class="slide s4">
+                    <div class="txt">
+                        <h2 data-name="websdard4"><span>W</span><span>e</span><span>a</span><span>t</span><span>h</span><span>e</span><span>r</span>&nbsp;<span>F</span><span>a</span><span>i</span><span>r</span><span>y</span></h2>
+                    </div>
+                    <div class="img"><img src="http://vyctoire-api.hengpatrick.fr/wp-content/uploads/2016/12/paris-cover@2x-1.png" width="1000" alt="메인이미지"></div>
+                    <div class="count"><span class="currentIndex">0</span><span class="slideCount">0</span></div>
+                    <div class="side_text">
+                        <a href="#" class="left">Webstandard</a>
+                        <a href="#" class="right">Webstandard</a>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="slide-nav">
+                <div class="sl"><a href="#" class="prev"><img src="assets/img/a_left.jpg" width="10"></a></div>
+                <div class="sr"><a href="#" class="next"><img src="assets/img/a_right.jpg" width="10"></a></div>
+            </div>
+            <div class="slide-indicator">
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <script src="http://monodd2.com/portfolio/assets/js/jquery-1.9.1.min.js"></script>
+    <script src="http://monodd2.com/portfolio/assets/js/jquery-ui.min.js"></script>
+    <script>
+
+
+
+        $(".s1").click(function(){
+            function url(){
+                location.href = "http://coderap.tistory.com/"
+            }
+            setTimeout(url, 1900000);
+            $("body").addClass("notActive");
+        });
+
+        $(".about").click(function(){
+            function url(){
+                location.href = "http://webshwang.com/ti/about.html"
+            }
+            setTimeout(url, 1900000);
+            $("body").addClass("aboutActive");
+        });
+
+        $(".slide-wrap").each(function() {
+            var $container = $(this),
+                $slideGroup = $container.find('.slide-img'),
+                $slide = $slideGroup.find('> div'),
+                $nav = $container.find('.slide-nav'),
+                $indicator = $container.find('.slide-indicator'),
+
+                slideCount = $slide.length,
+                indicatorHTML = '',
+                currentIndex = 0,
+                duration = 1000,
+                easing = 'easeOutQuint',
+                interval = 5000,
+                timer;
+
+            $slide.each(function(i) {
+                $(this).css({left: 100 * i + '%'});
+                //indicatorHTML += '<a href="#"></a>';
+
+                var name = $(this).find("h2").attr("data-name");
+                indicatorHTML += '<a href="#"><span>'+ name +'</span></a>';
+            });
+
+            $indicator.html(indicatorHTML);
+
+            function gotoSlide(index) {
+                $slideGroup.animate({left: -100 * index + '%'}, duration, easing);
+                currentIndex = index;
+                updateNav();
+            }
+
+            function updateNav() {
+                /*var $navPrev = $nav.find('.prev'),
+                    $navNext = $nav.find('.next');
+                
+                if (currentIndex === 0) {
+                    $navPrev.addClass('disabled')
+                } else {
+                    $navPrev.removeClass('disabled')
+                }
+                
+                if (currentIndex === slideCount - 1) {
+                    $navNext.addClass('disabled')
+                } else {
+                    $navNext.removeClass('disabled')
+                }*/
+                
+                if (currentIndex === 0) { 
+                    $(".bar span").css("background-color","#e8eefe");  
+                }
+                if (currentIndex === 1) { 
+                    $(".bar span").css("background-color","#a1ddd5"); 
+                }
+                if (currentIndex === 2) { 
+                    $(".bar span").css("background-color","#fdf0c1"); 
+                }
+                if (currentIndex === 3) { 
+                    $(".bar span").css("background-color","#fdd6c1"); 
+                }
+                
+                $indicator.find('a').removeClass('active').eq(currentIndex).addClass('active');
+                $slide.removeClass('active').eq(currentIndex).addClass('active');
+                $(".count .currentIndex").text("0"+(currentIndex + 1));
+                $(".count .slideCount").text("0"+slideCount);
+            }
+
+            $nav.on('click', 'a', function(event) {
+                event.preventDefault();
+                var nextIndex = (currentIndex + 1) % slideCount;
+                var prevIndex = (currentIndex -1 ) % slideCount;
+                if(currentIndex == 0) prevIndex = slideCount-1;
+                
+                if ($(this).hasClass('prev')) {
+                    gotoSlide(prevIndex);
+                    $(this).parent().parent().prev().addClass("leftActive");
+                } else {
+                    gotoSlide(nextIndex);
+                    $(this).parent().parent().prev().removeClass("leftActive");
+                }
+            });
+
+            $indicator.on('click', 'a', function(event) {
+                event.preventDefault();
+                if (!$(this).hasClass('active')) {
+                    gotoSlide($(this).index());
+                }
+            });
+
+            function startTimer() {
+                timer = setInterval(function() {
+                    var nextIndex = (currentIndex + 1) % slideCount;
+                    gotoSlide(nextIndex);
+                }, interval);
+            }
+
+            function stopTimer() {
+                clearInterval(timer);
+            }
+
+//            $container.on({
+//                mouseenter: stopTimer,
+//                mouseleave: startTimer
+//            })
+
+            gotoSlide(currentIndex);
+
+            //타이머시작
+            //startTimer()
+        });
+    </script>
+</body>
+
+</html>

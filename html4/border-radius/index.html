@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="author" content="webstoryboy">
+	<meta name="description" content="웹 퍼블리셔를 위한 정보 공유 사이트입니다.">
+	<meta name="keywords" content="웹스토리보이, 웹 퍼블리셔, 웹 표준, 웹 접근성, 화려한 디자인, webstoryboy, publisher, html5, html4, css3, html, markup, design">
+	<title>BORDER-RADIUS</title>
+
+	<!-- web_font -->
+	<link href='http://fonts.googleapis.com/earlyaccess/nanumgothic.css' rel='stylesheet' type='text/css' />
+
+	<!-- css -->
+	<link href="../assets/css/bootstrapTheme.css" rel="stylesheet">
+	<link href="../assets/css/custom.css" rel="stylesheet">
+	<link href="../assets/css/style.css" rel="stylesheet">
+
+	<!-- Prettify -->
+	<link href="../assets/js/google-code-prettify/prettify.css" rel="stylesheet">
+
+	<!-- Icon -->
+	<link rel="shortcut icon" href="../assets/ico/favicon.ico">
+	<link rel="apple-touch-icon" href="../assets/ico/icon_57.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="../assets/ico/icon_114.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="../assets/ico/icon_72.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="../assets/ico/icon_144.png">
+
+	<!-- hmlt5 support -->
+	<!--[if lt IE 9]><script src="../assets/js/html5shiv.js"></script><![endif]-->
+
+	<!-- IE6,7 support -->
+	<!--[if lte IE 7]><link rel="stylesheet" href="comm/css/ie7.css" type="text/css" ><![endif]-->
+	<!--[if IE 8]><link rel="stylesheet" href="comm/css/ie8.css" type="text/css" ><![endif]-->
+
+	<!--[if lte IE 6]>
+	<p style="font-size: 12px; color: #fff; background: #2885b0; padding:5px 0; margin: 0; text-align: center">
+	사용하고 계신 브라우저는 최신 웹 브라우저가 아닙니다. 업그레이드를 하거나 다른 최신 브라우저 사용을 권장합니다.
+	<a href="http://www.microsoft.com/korea/ie" target="_blank" >업그레이드,</a>
+	<a href="http://www.mozilla.or.kr/ko/" target="_blank">파이어폭스,</a> 
+	<a href="http://kr.opera.com/download/" target="_blank">오페라,</a>,
+	<a href="http://support.apple.com/kb/DL1531?viewlocale=ko_KR&locale=ko_KR" target="_blank">사파리,</a>
+	<a href="http://www.google.com/chrome?hl=ko" target="_blank">크롬</a></p>
+	<![endif]-->
+
+</head>
+
+
+
+<body>
+	<!-- nav -->
+	<div id="top-nav" class="navbar navbar-fixed-top">
+		<div class="navbar-inner">
+			<div class="container">
+				<button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                	<span class="icon-bar"></span>
+                	<span class="icon-bar"></span>
+                	<span class="icon-bar"></span>
+                </button>
+				<div class="nav-collapse collapse">
+					<ul class="nav pull-right">
+						<li><a href="#">webstoryboy</a></li>
+						<li><a href="#">reference</a></li>
+						<li><a href="#">tutorial</a></li>
+						<li><a href="#">css</a></li>
+						<li><a href="#">html</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- //nav -->
+
+	<!-- header -->
+	<div id="header">
+		<div class="container">
+			<div class="row">
+				<div class="span12" style="text-align:center;">
+					<div class="header_tit">
+						<h1>Professional web Designer</h1>
+						<h2><a href="http://webs1.dothome.co.kr">webs1.dothome.co.kr</a></h2>
+					</div>
+					<div class="header_icon" id="wow">
+						<ul>
+							<li class="icon_tit1"><a href="#" title=""><span class="blind">웹스토리보이 사이트</span></a></li>
+							<li class="icon_tit2"><a href="#" title=""><span class="blind">웹스토리보이 사이트</span></a></li>
+							<li class="icon_tit3"><a href="#" title=""><span class="blind">웹스토리보이 사이트</span></a></li>
+							<li class="icon_tit4"><a href="#" title=""><span class="blind">웹스토리보이 사이트</span></a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- //header -->
+
+	<!-- contents -->
+	<div class="container" style="margin-top:20px;">
+		<div class="row-fluid">
+			<div class="span12">
+				<h1>BORDER-RADIUS</h1>
+
+                <div class="well">border-radius: {length} {%};</div>
+				
+				
+				<!--.well.clearfix>.block.rad*15>.radius$${radius$$}
+				.well.clearfix>.block.rad*15>.radius$$@16{radius$$@16}
+				.well.clearfix>.block.rad*15>.radius$$@31{radius$$@31}
+				.well.clearfix>.block.rad*15>.radius$$@46{radius$$@46}
+				-->
+				
+				
+				<style>
+                    .block {width: 140px; height: 140px; margin: 40px; font-size: 18px; line-height: 140px; color: #fff; cursor: pointer; text-align: center; float: left;}
+                    .block > div {background: #f48fb1; transition: all 0.3s ease-in-out;}
+                    .block > div:hover {border-radius: 0;}
+                    .radius01 {border-radius: 0px;}
+                    .radius02 {border-radius: 5px;}
+                    .radius03 {border-radius: 10px;}
+                    .radius04 {border-radius: 15px;}
+                    .radius05 {border-radius: 20px;}
+                    .radius06 {border-radius: 25px;}
+                    .radius07 {border-radius: 30px;}
+                    .radius08 {border-radius: 35px;}
+                    .radius09 {border-radius: 40px;}
+                    .radius10 {border-radius: 45px;}
+                    .radius11 {border-radius: 50px;}
+                    .radius12 {border-radius: 55px;}
+                    .radius13 {border-radius: 60px;}
+                    .radius14 {border-radius: 65px;}
+                    .radius15 {
+                        animation-name: radius15;
+                        animation-duration: 1s;
+                        animation-timing-function: ease-in-out;
+                        animation-iteration-count: 100;
+                    }
+                    @keyframes radius15 {
+                        0% {border-radius: 0px;}
+                        50% {border-radius: 70px;}
+                        100% {border-radius: 0px;}
+                    }
+                </style>
+				
+				<div class="well clearfix">
+				    <div class="block rad">
+				        <div class="radius01">radius01</div>
+				    </div>
+				    <div class="block rad">
+				        <div class="radius02">radius02</div>
+				    </div>
+				    <div class="block rad">
+				        <div class="radius03">radius03</div>
+				    </div>
+				    <div class="block rad">
+				        <div class="radius04">radius04</div>
+				    </div>
+				    <div class="block rad">
+				        <div class="radius05">radius05</div>
+				    </div>
+				    <div class="block rad">
+				        <div class="radius06">radius06</div>
+				    </div>
+				    <div class="block rad">
+				        <div class="radius07">radius07</div>
+				    </div>
+				    <div class="block rad">
+				        <div class="radius08">radius08</div>
+				    </div>
+				    <div class="block rad">
+				        <div class="radius09">radius09</div>
+				    </div>
+				    <div class="block rad">
+				        <div class="radius10">radius10</div>
+				    </div>
+				    <div class="block rad">
+				        <div class="radius11">radius11</div>
+				    </div>
+				    <div class="block rad">
+				        <div class="radius12">radius12</div>
+				    </div>
+				    <div class="block rad">
+				        <div class="radius13">radius13</div>
+				    </div>
+				    <div class="block rad">
+				        <div class="radius14">radius14</div>
+				    </div>
+				    <div class="block rad">
+				        <div class="radius15">radius15</div>
+				    </div>
+				</div>
+				<pre class="pre-show prettyprint linenums">
+.radius01 {border-radius: 0px;}
+.radius02 {border-radius: 5px;}
+.radius03 {border-radius: 10px;}
+.radius04 {border-radius: 15px;}
+.radius05 {border-radius: 20px;}
+.radius06 {border-radius: 25px;}
+.radius07 {border-radius: 30px;}
+.radius08 {border-radius: 35px;}
+.radius09 {border-radius: 40px;}
+.radius10 {border-radius: 45px;}
+.radius11 {border-radius: 50px;}
+.radius12 {border-radius: 55px;}
+.radius13 {border-radius: 60px;}
+.radius14 {border-radius: 65px;}
+.radius15 {
+    animation-name: radius15;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: 100;
+}
+@keyframes radius15 {
+    0% {border-radius: 0px;}
+    50% {border-radius: 70px;}
+    100% {border-radius: 0px;}
+}</pre>
+				
+				<style>
+                    .radius16 {border-radius: 0px 0px; }
+                    .radius17 {border-radius: 10px 0px; }
+                    .radius18 {border-radius: 20px 0px; }
+                    .radius19 {border-radius: 30px 0px; }
+                    .radius20 {border-radius: 40px 0px; }
+                    .radius21 {border-radius: 50px 0px; }
+                    .radius22 {border-radius: 60px 0px; }
+                    .radius23 {border-radius: 70px 0px; }
+                    .radius24 {border-radius: 80px 0px; }
+                    .radius25 {border-radius: 90px 0px; }
+                    .radius26 {border-radius: 100px 0px; }
+                    .radius27 {border-radius: 110px 0px; }
+                    .radius28 {border-radius: 120px 0px; }
+                    .radius29 {border-radius: 130px 0px; }
+                    .radius30 {
+                        animation-name: radius30;
+                        animation-duration: 1s;
+                        animation-timing-function: ease-in-out;
+                        animation-iteration-count: 100;
+                    }
+                    @keyframes radius30 {
+                        0% {border-radius: 0px 0px;}
+                        50% {border-radius: 140px 0px;}
+                        100% {border-radius: 0px 0px;}
+                    }
+                </style>
+				<div class="well clearfix">
+				    <div class="block rad">
+				        <div class="radius16">radius16</div>
+				    </div>
+				    <div class="block rad">
+				        <div class="radius17">radius17</div>
+				    </div>
+				    <div class="block rad">
+				        <div class="radius18">radius18</div>
+				    </div>
+				    <div class="block rad">
+				        <div class="radius19">radius19</div>
+				    </div>
+				    <div class="block rad">
+				        <div class="radius20">radius20</div>
+				    </div>
+				    <div class="block rad">
+				        <div class="radius21">radius21</div>
+				    </div>
+				    <div class="block rad">
+				        <div class="radius22">radius22</div>
+				    </div>
+				    <div class="block rad">
+				        <div class="radius23">radius23</div>
+				    </div>
+				    <div class="block rad">
+				        <div class="radius24">radius24</div>
+				    </div>
+				    <div class="block rad">
+				        <div class="radius25">radius25</div>
+				    </div>
+				    <div class="block rad">
+				        <div class="radius26">radius26</div>
+				    </div>
+				    <div class="block rad">
+				        <div class="radius27">radius27</div>
+				    </div>
+				    <div class="block rad">
+				        <div class="radius28">radius28</div>
+				    </div>
+				    <div class="block rad">
+				        <div class="radius29">radius29</div>
+				    </div>
+				    <div class="block rad">
+				        <div class="radius30">radius30</div>
+				    </div>
+				</div>
+				
+<pre class="pre-show prettyprint linenums">
+.radius16 {border-radius: 0px 0px; }
+.radius17 {border-radius: 10px 0px; }
+.radius18 {border-radius: 20px 0px; }
+.radius19 {border-radius: 30px 0px; }
+.radius20 {border-radius: 40px 0px; }
+.radius21 {border-radius: 50px 0px; }
+.radius22 {border-radius: 60px 0px; }
+.radius23 {border-radius: 70px 0px; }
+.radius24 {border-radius: 80px 0px; }
+.radius25 {border-radius: 90px 0px; }
+.radius26 {border-radius: 100px 0px; }
+.radius27 {border-radius: 110px 0px; }
+.radius28 {border-radius: 120px 0px; }
+.radius29 {border-radius: 130px 0px; }
+.radius30 {
+    animation-name: radius30;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: 100;
+}
+@keyframes radius30 {
+    0% {border-radius: 0px 0px;}
+    50% {border-radius: 140px 0px;}
+    100% {border-radius: 0px 0px;}
+}</pre>
+				
+				<style>
+                    .radius31 {border-radius: 10px/55px;}
+                    .radius32 {border-radius: 20px/55px;}
+                    .radius33 {border-radius: 30px/55px;}
+                    .radius34 {border-radius: 40px/55px;}
+                    .radius35 {border-radius: 50px/55px;}
+                    .radius36 {border-radius: 60px/55px;}
+                    .radius37 {border-radius: 70px/55px;}
+                    .radius38 {border-radius: 55px/70px;}
+                    .radius39 {border-radius: 55px/60px;}
+                    .radius40 {border-radius: 55px/50px;}
+                    .radius41 {border-radius: 55px/40px;}
+                    .radius42 {border-radius: 55px/30px;}
+                    .radius43 {border-radius: 55px/20px;}
+                    .radius44 {border-radius: 55px/10px;}
+                    .radius45 {
+                        animation-name: radius45;
+                        animation-duration: 2s;
+                        animation-timing-function: ease-in-out;
+                        animation-iteration-count: 100;
+                    }
+                    @keyframes radius45 {
+                        0% {border-radius: 0px 0px;}
+                        25% {border-radius: 100px/25px;}
+                        50% {border-radius: 0px 0px;}
+                        75% {border-radius: 25px/100px;}
+                        100% {border-radius: 0px 0px;}
+                    }
+                </style>
+				
+				<div class="well clearfix">
+				    <div class="block rad">
+				        <div class="radius31">radius31</div>
+				    </div>
+				    <div class="block rad">
+				        <div class="radius32">radius32</div>
+				    </div>
+				    <div class="block rad">
+				        <div class="radius33">radius33</div>
+				    </div>
+				    <div class="block rad">
+				        <div class="radius34">radius34</div>
+				    </div>
+				    <div class="block rad">
+				        <div class="radius35">radius35</div>
+				    </div>
+				    <div class="block rad">
+				        <div class="radius36">radius36</div>
+				    </div>
+				    <div class="block rad">
+				        <div class="radius37">radius37</div>
+				    </div>
+				    <div class="block rad">
+				        <div class="radius38">radius38</div>
+				    </div>
+				    <div class="block rad">
+				        <div class="radius39">radius39</div>
+				    </div>
+				    <div class="block rad">
+				        <div class="radius40">radius40</div>
+				    </div>
+				    <div class="block rad">
+				        <div class="radius41">radius41</div>
+				    </div>
+				    <div class="block rad">
+				        <div class="radius42">radius42</div>
+				    </div>
+				    <div class="block rad">
+				        <div class="radius43">radius43</div>
+				    </div>
+				    <div class="block rad">
+				        <div class="radius44">radius44</div>
+				    </div>
+				    <div class="block rad">
+				        <div class="radius45">radius45</div>
+				    </div>
+				</div>
+				
+				
+				<style>
+                    .radius46 {border-radius: 0px 0px 0px 0px;}
+                    .radius47 {border-radius: 0px 0px 0px 10px;}
+                    .radius48 {border-radius: 0px 0px 0px 20px;}
+                    .radius49 {border-radius: 0px 0px 0px 30px;}
+                    .radius50 {border-radius: 0px 0px 0px 40px;}
+                    .radius51 {border-radius: 0px 0px 0px 50px;}
+                    .radius52 {border-radius: 0px 0px 0px 60px;}
+                    .radius53 {border-radius: 0px 0px 0px 70px;}
+                    .radius54 {border-radius: 0px 0px 0px 80px;}
+                    .radius55 {border-radius: 0px 0px 0px 90px;}
+                    .radius56 {border-radius: 0px 0px 0px 100px;}
+                    .radius57 {border-radius: 0px 0px 0px 110px;}
+                    .radius58 {border-radius: 0px 0px 0px 120px;}
+                    .radius59 {border-radius: 0px 0px 0px 130px;}
+                    .radius60 {
+                        animation-name: radius60;
+                        animation-duration: 4s;
+                        animation-timing-function: ease-in-out;
+                        animation-iteration-count: 100;
+                    }
+                    @keyframes radius60 {
+                        0% {border-radius: 0px 0px 0px 0px;}
+                        10% {border-radius: 0px 0px 0px 130px;}
+                        20% {border-radius: 0px 0px 0px 0px;}
+                        30% {border-radius: 0px 0px 130px 0px ;}
+                        40% {border-radius: 0px 0px 0px 0px;}
+                        50% {border-radius: 0px 130px 0px 0px ;}
+                        60% {border-radius: 0px 0px 0px 0px;}
+                        70% {border-radius: 130px 0px 0px 0px ;}
+                        80% {border-radius: 0px 0px 0px 0px;}
+                        90% {border-radius: 0px 0px 0px 0px;}
+                        100% {border-radius: 0px 0px 0px 0px;}
+                    }
+                    
+                </style>
+				<div class="well clearfix">
+				    <div class="block rad">
+				        <div class="radius46">radius46</div>
+				    </div>
+				    <div class="block rad">
+				        <div class="radius47">radius47</div>
+				    </div>
+				    <div class="block rad">
+				        <div class="radius48">radius48</div>
+				    </div>
+				    <div class="block rad">
+				        <div class="radius49">radius49</div>
+				    </div>
+				    <div class="block rad">
+				        <div class="radius50">radius50</div>
+				    </div>
+				    <div class="block rad">
+				        <div class="radius51">radius51</div>
+				    </div>
+				    <div class="block rad">
+				        <div class="radius52">radius52</div>
+				    </div>
+				    <div class="block rad">
+				        <div class="radius53">radius53</div>
+				    </div>
+				    <div class="block rad">
+				        <div class="radius54">radius54</div>
+				    </div>
+				    <div class="block rad">
+				        <div class="radius55">radius55</div>
+				    </div>
+				    <div class="block rad">
+				        <div class="radius56">radius56</div>
+				    </div>
+				    <div class="block rad">
+				        <div class="radius57">radius57</div>
+				    </div>
+				    <div class="block rad">
+				        <div class="radius58">radius58</div>
+				    </div>
+				    <div class="block rad">
+				        <div class="radius59">radius59</div>
+				    </div>
+				    <div class="block rad">
+				        <div class="radius60">radius60</div>
+				    </div>
+				</div>
+				
+				
+				
+				<p data-height="700" data-theme-id="26135" data-slug-hash="zGGXKW" data-default-tab="result" data-user="pmk" data-embed-version="2" data-pen-title="CSS Border-Radius Generator" class="codepen">See the Pen <a href="https://codepen.io/pmk/pen/zGGXKW/">CSS Border-Radius Generator</a> by Peter Klein (<a href="https://codepen.io/pmk">@pmk</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+				
+				
+				<p data-height="500" data-theme-id="26135" data-slug-hash="qdPqJe" data-default-tab="result" data-user="Rplus" data-embed-version="2" data-pen-title="Hexagon transformer" class="codepen">See the Pen <a href="https://codepen.io/Rplus/pen/qdPqJe/">Hexagon transformer</a> by Rplus (<a href="https://codepen.io/Rplus">@Rplus</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+
+			</div>
+			<!--//span12-->
+		</div>
+		<!--//row-fluid-->
+	</div>
+	<!-- //contents -->
+
+	<!-- //footer -->
+	<div id="footer">
+		<div class="container">
+			<div class="row">
+				<div class="span12">
+					<h5>Webstoryboy</h5>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- //footer -->
+
+	<!-- script -->
+	<script src="../assets/js/jquery-1.9.1.min.js"></script>
+	<script src="../assets/js/bootstrap-collapse.js"></script>
+	<script src="../assets/js/bootstrap-transition.js"></script>
+	<script src="../assets/js/google-code-prettify/prettify.js"></script>
+	<script src="../assets/js/application.js"></script>
+</body>
+
+</html>

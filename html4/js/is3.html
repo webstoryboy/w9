@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8">
+		<title>제이쿼리(jQuery)</title>
+		<style>
+		#ex {padding: 20px; padding-top:0;}
+		a {text-decoration: none;}
+		.list3 li a {color: #666;}
+		.list3 li a:hover {text-decoration:none;}
+		.list3 li a.on {padding: 4px 4px 2px 10px; font-size: 90%; color: #c7254e; white-space: nowrap; background-color: #f9f2f4; border-radius: 4px; border:1px dashed #a51a3d; display:inline-block}
+		.list3 li a.off {padding: 4px 4px 2px 10px; font-size: 90%; color: #3d90b7; white-space: nowrap; background-color: #e7f6fd; border-radius: 4px; border:1px dashed #3d90b7; display:inline-block}
+		</style>
+	</head>
+    <body>
+		<h3>필터링(Filtering) : select를 이용한 선택방법입니다.</h3>
+		<div class="list3">
+			<ul>
+				<li><a href="#">.eq() : 인덱스 번호에 해당하는 <strong>요소</strong>를 찾습니다.</a><em class="txt"></em></li>
+				<li><a href="#">.filter() : 선택된 요소 집합에서 선택자를 추가하거나 함수를 사용해서 원하는 결과를 추출해냅니다.</a><em class="txt"></em></li>
+				<li><a href="#">.first() : 선택된 요소 집합에서 첫번째 자식 요소를 찾습니다.</a></li>
+				<li><a href="#">.has() : 선택된 요소의 자식 요소에서 주어진 선택자를 찾습니다.</a></li>
+				<li class="is"><a href="#">.is() : 문서 객체의 특징을 판별합니다.</a></li>
+				<li><a href="#">.last() : 선택된 <strong>노드</strong> 집합에서 마지막 자식 요소를 찾습니다.</a></li>
+				<li><a href="#">.map() : 대상이 되는 요소 집합의 배열을 새롭게 변경합니다.</a></li>
+				<li><a href="#">.not() : 조건에 맞지 않은 것들만 찾아서 선택합니다.</a></li>
+				<li><a href="#">.slice() : 선택된 집합을 조건의 범위로 재선택해줍니다.</a></li>
+			</ul>
+		</div>
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){    
+				$( ".list3 li" ).click(function() {
+					var target = $(this);
+					if ( target.is( ":first-child" )) {
+						target.find("a").text( "이것은 is(':first-child') 셀렉트를 이용하였습니다." ).addClass("on");
+					} else if ( target.is( ".is" )) {
+						target.find("a").text( "이것은 is('.is') 셀렉트를 이용하였습니다." ).addClass("on");
+					} else if ( target.is( ":contains('배열')" )) {
+						target.find("a").text( "이것은 is(':contains('배열')' 셀렉트를 이용하였습니다.").addClass("on");
+					} else if ( target.is( ":nth-child(2)" )) {
+						target.find("a").text( "이것은 is(':nth-child(2)' 셀렉트를 이용하였습니다.").addClass("on");
+					} else if ( target.is( ":last-child" )) {
+						target.find("a").text( "이것은 is(':last-child' 셀렉트를 이용하였습니다.").addClass("on");
+					} else {
+						target.find("a").text( "이것은 is('select') 셀렉트를 이용하지 않았습니다.").addClass("off");
+					}
+				});
+			}); 
+		</script> 
+	</body>
+</html>    

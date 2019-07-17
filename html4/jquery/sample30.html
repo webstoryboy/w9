@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		* {margin: 0;}
+		.list {display: flex; align-items: center; justify-content: center; }
+		.list > div {width: 400px; height: 300px; margin: 20px; overflow: hidden; position: relative;}
+		.list > div img {width: 100%;}
+		.list > div img:nth-child(1) {position: absolute;}
+		.list > div img:nth-child(2) {opacity: 0;}
+
+		.list2 {display: flex; align-items: center; justify-content: center; }
+		.list2 > div {width: 400px; height: 300px; margin: 20px; position: relative;}
+		.list2 > div img {width: 100%;}
+		.list2 > div a {display: block; width: 400px; height: 300px; perspective: 600px;}
+		.list2 > div a .front {
+			transform: rotateX(0deg) rotateY(0deg);
+			transform-style: preserve-3d;
+			transition: all 0.5s ease-in-out;
+			backface-visibility: hidden;
+		}
+		.list2 > div a .back {
+			position: absolute; top: 0; z-index: -1;
+			transform: rotateX(0deg) rotateY(-180deg);
+			transform-style: preserve-3d;
+			transition: all 0.5s ease-in-out;
+			backface-visibility: hidden;
+		}
+		.list2 > div a:hover .front {
+			transform: rotateX(0deg) rotateY(180deg);
+		}
+		.list2 > div a:hover .back {
+			z-index: 1;
+			transform: rotateX(0deg) rotateY(0deg);
+		}
+
+
+	</style>
+</head>
+<body>
+
+	<div class="list">
+		<div class="img1">
+			<img src="assets/img/img08.jpg" alt="">
+			<img src="assets/img/img07.jpg" alt="">
+		</div>
+		<div class="img2">
+			<img src="assets/img/img06.jpg" alt="">
+			<img src="assets/img/img05.jpg" alt="">
+		</div>
+		<div class="img3">
+			<img src="assets/img/img04.jpg" alt="">
+			<img src="assets/img/img03.jpg" alt="">
+		</div>
+	</div>
+
+	<div class="list2">
+		<div>
+			<a href="#">
+				<div class="front"><img src="assets/img/img04.jpg" alt=""></div>
+				<div class="back"><img src="assets/img/img03.jpg" alt=""></div>
+			</a>
+		</div>
+		<div>
+			<a href="#">
+				<div class="front"><img src="assets/img/img01.jpg" alt=""></div>
+				<div class="back"><img src="assets/img/img02.jpg" alt=""></div>
+			</a>
+		</div>
+		<div>
+			<a href="#">
+				<div class="front"><img src="assets/img/img07.jpg" alt=""></div>
+				<div class="back"><img src="assets/img/img08.jpg" alt=""></div>
+			</a>
+		</div>
+	</div>
+
+	
+
+
+
+	<script src="assets/js/jquery-1.12.4.min.js"></script>
+	<script>
+		$(".list > div").on({
+			mouseover:function(){
+				$(this).find("img:nth-child(1)").stop().animate({opacity:0},300);
+				$(this).find("img:nth-child(2)").stop().animate({opacity:1},300);
+			},
+			mouseout:function(){
+				$(this).find("img:nth-child(1)").stop().animate({opacity:1},300);
+				$(this).find("img:nth-child(2)").stop().animate({opacity:0},300);
+			}
+		});
+	</script>
+</body>
+</html>
+
+
+
+
+

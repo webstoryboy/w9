@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    li.on {font-size: 90%; color: #c7254e; background-color: #f9f2f4; border-radius: 4px; border: 1px dashed #a51a3d;}
+    ul.on {font-size: 90%; color: #3d90b7; background-color: #e7f6fd; border-radius: 4px; border: 1px dashed #3d90b7;}
+  </style>
+</head>
+<body>
+  <h3>필터링(Filtering)</h3>
+  <div class="list">
+    <ul>
+      <li class="one1">.eq() 메서드는 선택한 요소의 인덱스 번호를 갖는 요소를 반환합니다.</li>
+      <li class="one2">.filter() 메서드는 선택된 요소에서 한 번 더 필터링하여 요소를 선택합니다.</li>
+      <li class="one3">.first() 메서드는 선택한 요소의 첫 번째 요소를 반환합니다.</li>
+      <li class="one4">.has() 메서드는 선택된 요소의 자식 요소에서 주어진 선택자를 찾습니다.</li>
+      <li class="one5">.is() 메서드는 선택한 요소의 상태가 지정한 속성과 일치하면 <strong>true</strong>를 반환합니다.</li>
+      <li class="one6">.last() 메서드는 선택한 요소의 마지막 요소를 반환합니다.</li>
+      <li class="one7">.map() 메서드는 배열의 데이터를 변환시켜 새로운 배열 객체를 만듭니다.</li>
+      <li class="one8">.not() 메서드는 선택한 요소 중 지정한 요소만 제외하고 선택합니다.</li>
+      <li class="one9">.slice() 메서드는 선택한 요소에 지정한 <strong>인덱스</strong>를 선택합니다.</li>
+    </ul>
+  </div>
+
+  <div class="btn">
+    <ul>
+      <li><input type="radio" name="radio" id="ex1" value="1"><label for="ex1">1</label></li>
+      <li><input type="radio" name="radio" id="ex2" value="2"><label for="ex2">2</label></li>
+      <li><input type="radio" name="radio" id="ex3" value="3"><label for="ex3">3</label></li>
+      <li><input type="radio" name="radio" id="ex4" value="4"><label for="ex4">4</label></li>
+      <li><input type="radio" name="radio" id="ex5" value="5"><label for="ex5">5</label></li>
+      <li><input type="radio" name="radio" id="ex6" value="6"><label for="ex6">6</label></li>
+      <li><input type="radio" name="radio" id="ex7" value="7"><label for="ex7">7</label></li>
+      <li><input type="radio" name="radio" id="ex8" value="8"><label for="ex8">8</label></li>
+    </ul>
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <script>
+    var btn = $(".btn > ul > li > input");
+
+    btn.click(function(){
+      var num = $(this).attr("value");
+      $("*").removeClass("on");
+      //alert(target);
+
+      if(num == 1){$(".list li").eq(3).addClass("on"); }
+      if(num == 2){$(".list li").filter(".one6").addClass("on");}
+      if(num == 3){$(".list li").has("strong").addClass("on");}
+      if(num == 4){$(".list li").first().addClass("on");}
+      if(num == 5){$(".list li").last().addClass("on");}
+      if(num == 6){$(".list li").not(".one3").addClass("on");}
+      if(num == 7){$(".list li").slice(4,7).addClass("on");}
+    });
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8">
+		<title>제이쿼리(jQuery)</title>
+		<style>
+			* {margin:0; padding:0;}
+			#nav {overflow:hidden; position:fixed; left:0; top:0; width: 100%; background-color: rgba(255,255,255,0.6);}
+			#nav h1 {float:left; color: #fff; font-size:40px; padding:12px 5px 5px 20px; font-weight:900;  }
+			#nav ul {float:right;}
+			#nav ul li {display: inline;}
+			#nav ul li a {padding: 23px 10px 20px 10px; text-decoration: none; color: #fff; display:inline-block;}
+
+			#contents {text-align: center; font-size: 50px; color:#fff; font-family: 'Roboto', sans-serif; font-weight:100;}
+			#contents > div {height: 100vh; line-height: 100vh;}
+			#section1 {background-color: #42a5f5;}
+			#section2 {background-color: #4db6ac;}
+			#section3 {background-color: #4dd0e1;}
+			#section4 {background-color: #4fc3f7;}
+			#section5 {background-color: #c0ca33;}
+			#section6 {background-color: #7cb342;}
+		</style>
+
+		<link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,700,900" rel="stylesheet">
+	</head>
+<body>
+
+
+
+
+	<nav id="nav">
+		<h1>WEB'S</h1>
+		<ul>
+			<li><a href="#section1">menu1</a></li>
+			<li><a href="#section2">menu2</a></li>
+			<li><a href="#section3">menu3</a></li>
+			<li><a href="#section4">menu4</a></li>
+			<li><a href="#section5">menu5</a></li>
+			<li><a href="#section6">menu6</a></li>
+		</ul>
+	</nav>
+
+	<div id="contents">
+		<div id="section1">We love What You do.</div>
+		<div id="section2">Make hay while the sun shines</div>
+		<div id="section3">All in my dream</div>
+		<div id="section4">Be Strict With Myself</div>
+		<div id="section5">Can't Stop to Dream</div>
+		<div id="section6">No Pains No Gain</div>
+	</div>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+	<script>
+		var nav = $("#nav ul li");
+		var contents = $("#contents > div");
+
+		nav.click(function(e){
+			e.preventDefault();
+			var target = $(this);                   
+			var index = target.index();     
+			var section = contents.eq(index);   
+			var offset = section.offset().top;  
+			$("html, body").animate({ scrollTop:offset},400);
+		});
+	</script> 
+</body>
+</html>       

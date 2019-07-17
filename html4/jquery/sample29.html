@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		* {margin: 0;}
+		.list {}
+		.list ul {display: flex; align-items: center; justify-content: center; }
+		.list li {list-style: none; margin:10px;}
+		.list li img {max-width: 200px}
+		.btn li {display: inline-block;}
+	</style>
+</head>
+<body>
+	<div class="btn">
+		<a href="#c">hide</a>
+	</div>
+
+	<div class="list">
+		<ul>
+			<li><img src="assets/img/img08.jpg" alt=""></li>
+			<li><img src="assets/img/img07.jpg" alt=""></li>
+			<li><img src="assets/img/img06.jpg" alt=""></li>
+			<li><img src="assets/img/img05.jpg" alt=""></li>
+			<li><img src="assets/img/img04.jpg" alt=""></li>
+			<li><img src="assets/img/img03.jpg" alt=""></li>
+		</ul>
+	</div>
+
+	
+
+
+
+	<script src="assets/js/jquery-1.12.4.min.js"></script>
+	<script>
+		$(".btn").click(function(){
+			$(".list li").first().hide(1000 ,function Next(){
+				$(this).next("li").hide(1000, Next);
+			});
+		});
+		
+	</script>
+</body>
+</html>
+
+
+
+
+

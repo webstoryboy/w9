@@ -1,0 +1,1203 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="webstoryboy">
+  <meta name="description" content="웹 퍼블리셔를 위한 정보 공유 사이트입니다.">
+  <meta name="keywords" content="웹스토리보이, 웹 퍼블리셔, 웹 표준, 웹 접근성, 화려한 디자인, webstoryboy, publisher, html5, html4, css3, html, markup, design">
+  <title>Webstoryboy7</title>
+
+  <!-- web_font -->
+  <link href='http://fonts.googleapis.com/earlyaccess/nanumgothic.css' rel='stylesheet' type='text/css' />
+
+  <!-- css -->
+  <link href="../assets/css/bootstrapTheme.css" rel="stylesheet">
+  <link href="../assets/css/custom.css" rel="stylesheet">
+  <link href="../assets/css/style.css" rel="stylesheet">
+
+  <!-- Prettify -->
+  <link href="../assets/js/google-code-prettify/prettify.css" rel="stylesheet">
+
+  <!-- Icon -->
+  <link rel="shortcut icon" href="../assets/ico/favicon.ico">
+  <link rel="apple-touch-icon" href="../assets/ico/icon_57.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="../assets/ico/icon_114.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="../assets/ico/icon_72.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="../assets/ico/icon_144.png">
+
+  <!-- hmlt5 support -->
+  <!--[if lt IE 9]><script src="../assets/js/html5shiv.js"></script><![endif]-->
+
+  <!-- IE6,7 support -->
+  <!--[if lte IE 7]><link rel="stylesheet" href="comm/css/ie7.css" type="text/css" ><![endif]-->
+  <!--[if IE 8]><link rel="stylesheet" href="comm/css/ie8.css" type="text/css" ><![endif]-->
+
+  <!--[if lte IE 6]>
+	<p style="font-size: 12px; color: #fff; background: #2885b0; padding:5px 0; margin: 0; text-align: center">
+	사용하고 계신 브라우저는 최신 웹 브라우저가 아닙니다. 업그레이드를 하거나 다른 최신 브라우저 사용을 권장합니다.
+	<a href="http://www.microsoft.com/korea/ie" target="_blank" >업그레이드,</a>
+	<a href="http://www.mozilla.or.kr/ko/" target="_blank">파이어폭스,</a> 
+	<a href="http://kr.opera.com/download/" target="_blank">오페라,</a>,
+	<a href="http://support.apple.com/kb/DL1531?viewlocale=ko_KR&locale=ko_KR" target="_blank">사파리,</a>
+	<a href="http://www.google.com/chrome?hl=ko" target="_blank">크롬</a></p>
+	<![endif]-->
+
+  <style>
+    .face {
+      display: block;
+      margin: 20px auto;
+      width: 400px;
+    }
+
+    .face img {
+      width: 400px;
+      border-radius: 50%;
+    }
+
+    .face1 img {
+      width: 22%;
+      border-radius: 10%;
+      margin: 1%;
+    }
+
+    .member {
+      margin: 50px 0;
+    }
+
+    .member li {
+      width: 150px;
+      list-style: none;
+      display: inline-block;
+      margin: 6px;
+    }
+
+    .member li img {
+      border-radius: 50%;
+    }
+  </style>
+</head>
+
+
+
+<body>
+  <!-- nav -->
+  <div id="top-nav" class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+      <div class="container">
+        <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                	<span class="icon-bar"></span>
+                	<span class="icon-bar"></span>
+                	<span class="icon-bar"></span>
+                </button>
+        <div class="nav-collapse collapse">
+          <ul class="nav pull-right">
+            <li><a href="#">webstoryboy</a></li>
+            <li><a href="#">reference</a></li>
+            <li><a href="#">tutorial</a></li>
+            <li><a href="#">css</a></li>
+            <li><a href="#">html</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- //nav -->
+
+  <!-- header -->
+  <div id="header">
+    <div class="container">
+      <div class="row">
+        <div class="span12" style="text-align:center;">
+          <div class="header_tit">
+            <h1>Professional web Designer</h1>
+            <h2><a href="http://webs1.dothome.co.kr">webs1.dothome.co.kr</a></h2>
+          </div>
+          <div class="header_icon" id="wow">
+            <ul>
+              <li class="icon_tit1"><a href="#" title=""><span class="blind">웹스토리보이 사이트</span></a></li>
+              <li class="icon_tit2"><a href="#" title=""><span class="blind">웹스토리보이 사이트</span></a></li>
+              <li class="icon_tit3"><a href="#" title=""><span class="blind">웹스토리보이 사이트</span></a></li>
+              <li class="icon_tit4"><a href="#" title=""><span class="blind">웹스토리보이 사이트</span></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- //header -->
+
+  <!-- contents -->
+  <div class="container" style="margin-top:20px;">
+    <div class="row-fluid">
+      <div class="span12">
+        <h1>UI/UX 스마트기기 웹디자인</h1>
+				
+				
+				<h3>운영 로드맵</h3>
+        <ul>
+          <li>(0803020906_13v1) UI/UX 디자인 <a href="http://ebook.ncs.go.kr:8080/svs/gt/view/17194" target="_blank">View</a></li>
+          <li>(0803020904_13v1) 앱 개발 계획 <a href="http://ebook.ncs.go.kr:8080/svs/gt/view/17192" target="_blank">View</a></li>
+          <li>(0802010403_13v1) 프로토타입 제작 <a href="http://ebook.ncs.go.kr:8080/svs/gt/view/16009" target="_blank">view</a></li>
+          <li>(0802010404_13v1) 디자인 구성요소 제작 <a href="http://ebook.ncs.go.kr:8080/svs/gt/view/1263" target="_blank">view</a></li>
+          <li>(0803020905_13v1) 설계 <a href="http://ebook.ncs.go.kr:8080/svs/gt/view/17193" target="_blank">view</a></li>
+          <li>(0802010405_13v1) 구현 <a href="http://ebook.ncs.go.kr:8080/svs/gt/view/16010" target="_blank">view</a> </li>
+          <li>(0802010406_13v1) 수정보완 <a href="http://ebook.ncs.go.kr:8080/svs/gt/view/16011" target="_blank">view</a></li>
+          <li>(0802010407_13v1) 프로젝트 완료 <a href="http://ebook.ncs.go.kr:8080/svs/gt/view/16644" target="_blank">view</a></li>
+
+
+
+          
+        </ul>
+
+				
+				<ul>
+          <li>UI/UX 디자인 포폴과제<a href="img/pol.pdf" target="_blank">PDF View</a></li>
+        </ul>
+
+        <table class="table table-bordered table-striped">
+          <thead>
+            <tr>
+              <th>훈련일</th>
+              <th>2017. 10. 25(수)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>훈련과정명</td>
+              <td>UX/UI 스마트기기 웹 디자인</td>
+            </tr>
+            <tr>
+              <td>교과목명</td>
+              <td>UX/UI 스마트기기 웹 디자인 기본</td>
+            </tr>
+            <tr>
+              <td>능력단위명</td>
+              <td>UX/UI 디자인</td>
+            </tr>
+            <tr>
+              <td>능력단위요소</td>
+              <td>디자인 리서치 하기</td>
+            </tr>
+            <tr>
+              <td>이름</td>
+              <td>웹스</td>
+            </tr>
+          </tbody>
+        </table>
+        
+        <h3>UX(User Ecperience)</h3>
+				<p>UX는 사용자가 특정한 시스템, 제품, 서비스, 콘텐츠를 사용한 경험치를 뜻하는 것으로, 기능, 만족도, 상호 교감을 통해 상품, 콘텐츠에 대하여 인지할 수 있는 경험을 가리키는 말이다. 기업에서는 이 부분을 기획하고 유지하는 과정을 UX라고 보고 있다. 스마트 환경에서는 사용자의 조작의 편리성 및 UI 구성, 멀티태스킹, 앱의 활용 등으로 UX의 의미가 다양하게 정의되고 있다.</p>
+				<p>UX의 부각으로 재품 개발이 생산자 관점에서 이루어지던 것에서 사용자 관점으로 바뀌어 변화함으로써 사용자 중심의 제품, 서비스가 시장에서 중요한 차별화 전략으로 나타난다. 이는 사용자, 사용자가 사용하는 대상, 그리고 이 주체와 객체 간의 모든 상호 작용을 의미한다.</p>
+				<p><img src="http://uxdesigner21.com/wp-content/uploads/2015/03/Infographic-Updated.png" /> 출처 : http://uxdesigner21.com</p>
+				
+				
+				<br><br><br>
+				<table class="table table-bordered table-striped">
+          <thead>
+            <tr>
+              <th>훈련일</th>
+              <th>2017. 10. 26(목)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>훈련과정명</td>
+              <td>UX/UI 스마트기기 웹 디자인</td>
+            </tr>
+            <tr>
+              <td>교과목명</td>
+              <td>UX/UI 스마트기기 웹 디자인 기본</td>
+            </tr>
+            <tr>
+              <td>능력단위명</td>
+              <td>UX/UI 디자인</td>
+            </tr>
+            <tr>
+              <td>능력단위요소</td>
+              <td>디자인 리서치 하기</td>
+            </tr>
+            <tr>
+              <td>이름</td>
+              <td>웹스</td>
+            </tr>
+          </tbody>
+        </table>
+				
+				<h3>벡터 vs 비트맵</h3>
+				
+				<h3>그리드 시스템</h3>
+				
+				<br><br>
+				<table class="table table-bordered table-striped">
+          <thead>
+            <tr>
+              <th>훈련일</th>
+              <th>2017. 10. 27(금)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>훈련과정명</td>
+              <td>UX/UI 스마트기기 웹 디자인</td>
+            </tr>
+            <tr>
+              <td>교과목명</td>
+              <td>UX/UI 스마트기기 웹 디자인 기본</td>
+            </tr>
+            <tr>
+              <td>능력단위명</td>
+              <td>UX/UI 디자인</td>
+            </tr>
+            <tr>
+              <td>능력단위요소</td>
+              <td>디자인 리서치 하기</td>
+            </tr>
+            <tr>
+              <td>이름</td>
+              <td>웹스</td>
+            </tr>
+          </tbody>
+        </table>
+				
+				<h3>타이포그래픽</h3>
+				
+				
+				<br><br>
+				<table class="table table-bordered table-striped">
+          <thead>
+            <tr>
+              <th>훈련일</th>
+              <th>2017. 10. 30(월)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>훈련과정명</td>
+              <td>UX/UI 스마트기기 웹 디자인</td>
+            </tr>
+            <tr>
+              <td>교과목명</td>
+              <td>UX/UI 스마트기기 웹 디자인 기본</td>
+            </tr>
+            <tr>
+              <td>능력단위명</td>
+              <td>UX/UI 디자인</td>
+            </tr>
+            <tr>
+              <td>능력단위요소</td>
+              <td>디자인 리서치 하기</td>
+            </tr>
+            <tr>
+              <td>이름</td>
+              <td>웹스</td>
+            </tr>
+          </tbody>
+        </table>
+				
+				<br><br>
+				<table class="table table-bordered table-striped">
+          <thead>
+            <tr>
+              <th>훈련일</th>
+              <th>2017. 10. 31(화)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>훈련과정명</td>
+              <td>UX/UI 스마트기기 웹 디자인</td>
+            </tr>
+            <tr>
+              <td>교과목명</td>
+              <td>UX/UI 스마트기기 웹 디자인 기본</td>
+            </tr>
+            <tr>
+              <td>능력단위명</td>
+              <td>UX/UI 디자인</td>
+            </tr>
+            <tr>
+              <td>능력단위요소</td>
+              <td>디자인 리서치 하기</td>
+            </tr>
+            <tr>
+              <td>이름</td>
+              <td>웹스</td>
+            </tr>
+          </tbody>
+        </table>
+				
+				<h3>RGB VS CMYK</h3>
+				
+				<h3>GIF VS JPG VS PNG</h3>
+				
+				<br><br>
+				<table class="table table-bordered table-striped">
+          <thead>
+            <tr>
+              <th>훈련일</th>
+              <th>2017. 11. 1(월)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>훈련과정명</td>
+              <td>UX/UI 스마트기기 웹 디자인</td>
+            </tr>
+            <tr>
+              <td>교과목명</td>
+              <td>UX/UI 스마트기기 웹 디자인 기본</td>
+            </tr>
+            <tr>
+              <td>능력단위명</td>
+              <td>UX/UI 디자인</td>
+            </tr>
+            <tr>
+              <td>능력단위요소</td>
+              <td>디자인 리서치 하기</td>
+            </tr>
+            <tr>
+              <td>이름</td>
+              <td>웹스</td>
+            </tr>
+          </tbody>
+        </table>
+				
+				<h3>클리핑 마스크 VS 레이어 마스크</h3>
+				
+				<br><br>
+				<table class="table table-bordered table-striped">
+          <thead>
+            <tr>
+              <th>훈련일</th>
+              <th>2017. 11. 2(목)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>훈련과정명</td>
+              <td>UX/UI 스마트기기 웹 디자인</td>
+            </tr>
+            <tr>
+              <td>교과목명</td>
+              <td>UX/UI 스마트기기 웹 디자인 기본</td>
+            </tr>
+            <tr>
+              <td>능력단위명</td>
+              <td>UX/UI 디자인</td>
+            </tr>
+            <tr>
+              <td>능력단위요소</td>
+              <td>디자인 리서치 하기</td>
+            </tr>
+            <tr>
+              <td>이름</td>
+              <td>웹스</td>
+            </tr>
+          </tbody>
+        </table>
+				
+				<h3>앱 디자인 프로세스</h3>
+				
+				<table class="table table-bordered table-striped">
+          <thead>
+            <tr>
+              <th>훈련일</th>
+              <th>2017. 11. 9(목)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>훈련과정명</td>
+              <td>UX/UI 스마트기기 웹 디자인</td>
+            </tr>
+            <tr>
+              <td>교과목명</td>
+              <td>UX/UI 스마트기기 웹 디자인 기본</td>
+            </tr>
+            <tr>
+              <td>능력단위명</td>
+              <td>UX/UI 디자인</td>
+            </tr>
+            <tr>
+              <td>능력단위요소</td>
+              <td>디자인 리서치 하기</td>
+            </tr>
+            <tr>
+              <td>이름</td>
+              <td>웹스</td>
+            </tr>
+          </tbody>
+        </table>
+				
+				<h3>와이어 프레임</h3>
+				
+				
+				<table class="table table-bordered table-striped">
+          <thead>
+            <tr>
+              <th>훈련일</th>
+              <th>2017. 11. 13(월)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>훈련과정명</td>
+              <td>UX/UI 스마트기기 웹 디자인</td>
+            </tr>
+            <tr>
+              <td>교과목명</td>
+              <td>UX/UI 스마트기기 웹 디자인 기본</td>
+            </tr>
+            <tr>
+              <td>능력단위명</td>
+              <td>UX/UI 디자인</td>
+            </tr>
+            <tr>
+              <td>능력단위요소</td>
+              <td>디자인 제작하기</td>
+            </tr>
+            <tr>
+              <td>이름</td>
+              <td>웹스</td>
+            </tr>
+          </tbody>
+        </table>
+				
+				
+				
+				<table class="table table-bordered table-striped">
+          <thead>
+            <tr>
+              <th>훈련일</th>
+              <th>2017. 11. 15(수)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>훈련과정명</td>
+              <td>UX/UI 스마트기기 웹 디자인</td>
+            </tr>
+            <tr>
+              <td>교과목명</td>
+              <td>UX/UI 스마트기기 웹 디자인 기본</td>
+            </tr>
+            <tr>
+              <td>능력단위명</td>
+              <td>UX/UI 디자인</td>
+            </tr>
+            <tr>
+              <td>능력단위요소</td>
+              <td>디자인 제작하기</td>
+            </tr>
+            <tr>
+              <td>이름</td>
+              <td>웹스</td>
+            </tr>
+          </tbody>
+        </table>
+
+
+        <br><br>
+        <table class="table table-bordered table-striped">
+          <thead>
+            <tr>
+              <th>훈련일</th>
+              <th>2017. 11. 22(수)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>훈련과정명</td>
+              <td>UX/UI 스마트기기 웹 디자인</td>
+            </tr>
+            <tr>
+              <td>교과목명</td>
+              <td>UX/UI 스마트기기 웹 디자인 기본</td>
+            </tr>
+            <tr>
+              <td>능력단위명</td>
+              <td>UX/UI 디자인</td>
+            </tr>
+            <tr>
+              <td>능력단위요소</td>
+              <td>디자인 리서치 하기</td>
+            </tr>
+            <tr>
+              <td>이름</td>
+              <td>웹스</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>웹 표준</h3>
+
+        <h3>웹 접근성</h3>
+
+
+        <br><br>
+        <table class="table table-bordered table-striped">
+          <thead>
+            <tr>
+              <th>훈련일</th>
+              <th>2017. 11. 23(목)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>훈련과정명</td>
+              <td>UX/UI 스마트기기 웹 디자인</td>
+            </tr>
+            <tr>
+              <td>교과목명</td>
+              <td>UX/UI 스마트기기 웹 디자인 기본</td>
+            </tr>
+            <tr>
+              <td>능력단위명</td>
+              <td>UX/UI 디자인</td>
+            </tr>
+            <tr>
+              <td>능력단위요소</td>
+              <td>디자인 리서치 하기</td>
+            </tr>
+            <tr>
+              <td>이름</td>
+              <td>웹스</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>상대주소와 절대주소</h3>
+
+
+        <table class="table table-bordered table-striped">
+          <thead>
+            <tr>
+              <th>훈련일</th>
+              <th>2017. 11. 24(금)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>훈련과정명</td>
+              <td>UX/UI 스마트기기 웹 디자인</td>
+            </tr>
+            <tr>
+              <td>교과목명</td>
+              <td>UX/UI 스마트기기 웹 디자인 기본</td>
+            </tr>
+            <tr>
+              <td>능력단위명</td>
+              <td>UX/UI 디자인</td>
+            </tr>
+            <tr>
+              <td>능력단위요소</td>
+              <td>디자인 리서치 하기</td>
+            </tr>
+            <tr>
+              <td>이름</td>
+              <td>웹스</td>
+            </tr>
+          </tbody>
+        </table>
+
+
+        <table class="table table-bordered table-striped">
+          <thead>
+            <tr>
+              <th>훈련일</th>
+              <th>2017. 11. 24(금)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>훈련과정명</td>
+              <td>UX/UI 스마트기기 웹 디자인</td>
+            </tr>
+            <tr>
+              <td>교과목명</td>
+              <td>UX/UI 스마트기기 웹 디자인 기본</td>
+            </tr>
+            <tr>
+              <td>능력단위명</td>
+              <td>UX/UI 디자인</td>
+            </tr>
+            <tr>
+              <td>능력단위요소</td>
+              <td>디자인 리서치 하기</td>
+            </tr>
+            <tr>
+              <td>이름</td>
+              <td>웹스</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <table class="table table-bordered table-striped">
+          <thead>
+            <tr>
+              <th>훈련일</th>
+              <th>2017. 12. 04(월)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>훈련과정명</td>
+              <td>UX/UI 스마트기기 웹 디자인</td>
+            </tr>
+            <tr>
+              <td>교과목명</td>
+              <td>UX/UI 스마트기기 웹 디자인 기본</td>
+            </tr>
+            <tr>
+              <td>능력단위명</td>
+              <td>앱 개발 계획</td>
+            </tr>
+            <tr>
+              <td>능력단위요소</td>
+              <td>개발 환경 선정하기</td>
+            </tr>
+            <tr>
+              <td>이름</td>
+              <td>웹스</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>개발 환경 개요</h3>
+
+        <table class="table table-bordered table-striped">
+          <thead>
+            <tr>
+              <th>훈련일</th>
+              <th>2017. 12. 05(화)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>훈련과정명</td>
+              <td>UX/UI 스마트기기 웹 디자인</td>
+            </tr>
+            <tr>
+              <td>교과목명</td>
+              <td>UX/UI 스마트기기 웹 디자인 기본</td>
+            </tr>
+            <tr>
+              <td>능력단위명</td>
+              <td>앱 개발 계획</td>
+            </tr>
+            <tr>
+              <td>능력단위요소</td>
+              <td>개발 환경 선정하기</td>
+            </tr>
+            <tr>
+              <td>이름</td>
+              <td>웹스</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>안드로이드 앱 개발과 iOS 앱 개발 환경 개요</h3>
+
+        <table class="table table-bordered table-striped">
+          <thead>
+            <tr>
+              <th>훈련일</th>
+              <th>2017. 12. 05(화)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>훈련과정명</td>
+              <td>UX/UI 스마트기기 웹 디자인</td>
+            </tr>
+            <tr>
+              <td>교과목명</td>
+              <td>UX/UI 스마트기기 웹 디자인 기본</td>
+            </tr>
+            <tr>
+              <td>능력단위명</td>
+              <td>앱 개발 계획</td>
+            </tr>
+            <tr>
+              <td>능력단위요소</td>
+              <td>앱 개발 계획 수립하기</td>
+            </tr>
+            <tr>
+              <td>이름</td>
+              <td>웹스</td>
+            </tr>
+          </tbody>
+        </table>
+				
+				<h3>웹 폰트 적용방법</h3>
+
+        <table class="table table-bordered table-striped">
+          <thead>
+            <tr>
+              <th>훈련일</th>
+              <th>2017. 12. 07(목)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>훈련과정명</td>
+              <td>UX/UI 스마트기기 웹 디자인</td>
+            </tr>
+            <tr>
+              <td>교과목명</td>
+              <td>UX/UI 스마트기기 웹 디자인 기본</td>
+            </tr>
+            <tr>
+              <td>능력단위명</td>
+              <td>앱 개발 계획</td>
+            </tr>
+            <tr>
+              <td>능력단위요소</td>
+              <td>앱 개발 계획 수립하기</td>
+            </tr>
+            <tr>
+              <td>이름</td>
+              <td>웹스</td>
+            </tr>
+          </tbody>
+        </table>
+
+
+        <h3>웹 폰트 적용방법</h3>
+
+        <table class="table table-bordered table-striped">
+          <thead>
+            <tr>
+              <th>훈련일</th>
+              <th>2017. 12. 15(금)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>훈련과정명</td>
+              <td>UX/UI 스마트기기 웹 디자인</td>
+            </tr>
+            <tr>
+              <td>교과목명</td>
+              <td>UX/UI 스마트기기 웹 디자인 기본</td>
+            </tr>
+            <tr>
+              <td>능력단위명</td>
+              <td>프로토타입 제작</td>
+            </tr>
+            <tr>
+              <td>능력단위요소</td>
+              <td>기초데이터 수집하기</td>
+            </tr>
+            <tr>
+              <td>이름</td>
+              <td>웹스</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>아이디어 발상법</h3>
+
+
+        <table class="table table-bordered table-striped">
+          <thead>
+            <tr>
+              <th>훈련일</th>
+              <th>2017. 12. 22(금)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>훈련과정명</td>
+              <td>UX/UI 스마트기기 웹 디자인</td>
+            </tr>
+            <tr>
+              <td>교과목명</td>
+              <td>UX/UI 스마트기기 웹 디자인 기본</td>
+            </tr>
+            <tr>
+              <td>능력단위명</td>
+              <td>프로토타입 제작</td>
+            </tr>
+            <tr>
+              <td>능력단위요소</td>
+              <td>기초데이터 수집하기</td>
+            </tr>
+            <tr>
+              <td>이름</td>
+              <td>웹스</td>
+            </tr>
+          </tbody>
+        </table>
+				
+        <h3>데이터의 종류</h3>
+        <h3>데이터 검색에 유용한 사이트 목록</h3>
+
+
+        <table class="table table-bordered table-striped">
+          <thead>
+            <tr>
+              <th>훈련일</th>
+              <th>2017. 12. 26(화)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>훈련과정명</td>
+              <td>UX/UI 스마트기기 웹 디자인</td>
+            </tr>
+            <tr>
+              <td>교과목명</td>
+              <td>UX/UI 스마트기기 웹 디자인 기본</td>
+            </tr>
+            <tr>
+              <td>능력단위명</td>
+              <td>프로토타입 제작</td>
+            </tr>
+            <tr>
+              <td>능력단위요소</td>
+              <td>기초데이터 수집하기</td>
+            </tr>
+            <tr>
+              <td>이름</td>
+              <td>웹스</td>
+            </tr>
+          </tbody>
+        </table>
+        
+        <h3>데이터의 유형</h3>
+
+        <table class="table table-bordered table-striped">
+          <thead>
+            <tr>
+              <th>훈련일</th>
+              <th>2017. 12. 27(수)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>훈련과정명</td>
+              <td>UX/UI 스마트기기 웹 디자인</td>
+            </tr>
+            <tr>
+              <td>교과목명</td>
+              <td>UX/UI 스마트기기 웹 디자인 기본</td>
+            </tr>
+            <tr>
+              <td>능력단위명</td>
+              <td>프로토타입 제작</td>
+            </tr>
+            <tr>
+              <td>능력단위요소</td>
+              <td>기초데이터 수집하기</td>
+            </tr>
+            <tr>
+              <td>이름</td>
+              <td>웹스</td>
+            </tr>
+          </tbody>
+        </table>
+        
+        <h3>저작권</h3>
+
+        <table class="table table-bordered table-striped">
+          <thead>
+            <tr>
+              <th>훈련일</th>
+              <th>2018. 01. 03(화)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>훈련과정명</td>
+              <td>UX/UI 스마트기기 웹 디자인</td>
+            </tr>
+            <tr>
+              <td>교과목명</td>
+              <td>UX/UI 스마트기기 웹 디자인 기본</td>
+            </tr>
+            <tr>
+              <td>능력단위명</td>
+              <td>디자인 구성요소 제작</td>
+            </tr>
+            <tr>
+              <td>능력단위요소</td>
+              <td>스토리보드 제작하기</td>
+            </tr>
+            <tr>
+              <td>이름</td>
+              <td>웹스</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>정보의 설계</h3>
+
+
+        <table class="table table-bordered table-striped">
+          <thead>
+            <tr>
+              <th>훈련일</th>
+              <th>2018. 01. 04(수)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>훈련과정명</td>
+              <td>UX/UI 스마트기기 웹 디자인</td>
+            </tr>
+            <tr>
+              <td>교과목명</td>
+              <td>UX/UI 스마트기기 웹 디자인 기본</td>
+            </tr>
+            <tr>
+              <td>능력단위명</td>
+              <td>디자인 구성요소 제작</td>
+            </tr>
+            <tr>
+              <td>능력단위요소</td>
+              <td>스토리보드 제작하기</td>
+            </tr>
+            <tr>
+              <td>이름</td>
+              <td>웹스</td>
+            </tr>
+          </tbody>
+        </table>
+        
+        <h3>와이어 프레임</h3>
+
+        <table class="table table-bordered table-striped">
+          <thead>
+            <tr>
+              <th>훈련일</th>
+              <th>2018. 01. 05(금)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>훈련과정명</td>
+              <td>UX/UI 스마트기기 웹 디자인</td>
+            </tr>
+            <tr>
+              <td>교과목명</td>
+              <td>UX/UI 스마트기기 웹 디자인 기본</td>
+            </tr>
+            <tr>
+              <td>능력단위명</td>
+              <td>디자인 구성요소 제작</td>
+            </tr>
+            <tr>
+              <td>능력단위요소</td>
+              <td>스토리보드 제작하기</td>
+            </tr>
+            <tr>
+              <td>이름</td>
+              <td>웹스</td>
+            </tr>
+          </tbody>
+        </table>
+        
+        <h3>스토리보드의 구성</h3>
+
+
+        <table class="table table-bordered table-striped">
+          <thead>
+            <tr>
+              <th>훈련일</th>
+              <th>2018. 01. 05(금)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>훈련과정명</td>
+              <td>UX/UI 스마트기기 웹 디자인</td>
+            </tr>
+            <tr>
+              <td>교과목명</td>
+              <td>UX/UI 스마트기기 웹 디자인 기본</td>
+            </tr>
+            <tr>
+              <td>능력단위명</td>
+              <td>디자인 구성요소 제작</td>
+            </tr>
+            <tr>
+              <td>능력단위요소</td>
+              <td>스토리보드 제작하기</td>
+            </tr>
+            <tr>
+              <td>이름</td>
+              <td>웹스</td>
+            </tr>
+          </tbody>
+        </table>
+        
+        <h3>스토리보드의 화면 설계</h3>
+
+        
+        <table class="table table-bordered table-striped">
+          <thead>
+            <tr>
+              <th>훈련일</th>
+              <th>2018. 01. 05(금)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>훈련과정명</td>
+              <td>UX/UI 스마트기기 웹 디자인</td>
+            </tr>
+            <tr>
+              <td>교과목명</td>
+              <td>UX/UI 스마트기기 웹 디자인 기본</td>
+            </tr>
+            <tr>
+              <td>능력단위명</td>
+              <td>디자인 구성요소 제작</td>
+            </tr>
+            <tr>
+              <td>능력단위요소</td>
+              <td>스토리보드 제작하기</td>
+            </tr>
+            <tr>
+              <td>이름</td>
+              <td>웹스</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>웹 디자인 심미적 요소와 구성요소</h3>
+
+
+        <table class="table table-bordered table-striped">
+          <thead>
+            <tr>
+              <th>훈련일</th>
+              <th>2018. 01. 05(금)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>훈련과정명</td>
+              <td>UX/UI 스마트기기 웹 디자인</td>
+            </tr>
+            <tr>
+              <td>교과목명</td>
+              <td>UX/UI 스마트기기 웹 디자인 기본</td>
+            </tr>
+            <tr>
+              <td>능력단위명</td>
+              <td>디자인 구성요소 제작</td>
+            </tr>
+            <tr>
+              <td>능력단위요소</td>
+              <td>스토리보드 제작하기</td>
+            </tr>
+            <tr>
+              <td>이름</td>
+              <td>웹스</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>비주얼 콘셉트(Visual Concept) </h3>
+
+        <table class="table table-bordered table-striped">
+          <thead>
+            <tr>
+              <th>훈련일</th>
+              <th>2018. 01. 12(금)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>훈련과정명</td>
+              <td>UX/UI 스마트기기 웹 디자인</td>
+            </tr>
+            <tr>
+              <td>교과목명</td>
+              <td>UX/UI 스마트기기 웹 디자인 기본</td>
+            </tr>
+            <tr>
+              <td>능력단위명</td>
+              <td>디자인 구성요소 제작</td>
+            </tr>
+            <tr>
+              <td>능력단위요소</td>
+              <td>스토리보드 제작하기</td>
+            </tr>
+            <tr>
+              <td>이름</td>
+              <td>웹스</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>콘텐츠 시각화의 목적</h3>
+        <h3>콘텐츠 시각화 단계</h3>
+
+
+
+        <table class="table table-bordered table-striped">
+          <thead>
+            <tr>
+              <th>훈련일</th>
+              <th>2018. 01. 16(화)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>훈련과정명</td>
+              <td>UX/UI 스마트기기 웹 디자인</td>
+            </tr>
+            <tr>
+              <td>교과목명</td>
+              <td>UX/UI 스마트기기 웹 디자인 기본</td>
+            </tr>
+            <tr>
+              <td>능력단위명</td>
+              <td>설계</td>
+            </tr>
+            <tr>
+              <td>능력단위요소</td>
+              <td>리소스 설계하기</td>
+            </tr>
+            <tr>
+              <td>이름</td>
+              <td>웹스</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>모바일 데이터베이스의 특징</h3>
+
+      </div>
+      <!--//span12-->
+    </div>
+    <!--//row-fluid-->
+  </div>
+  <!-- //contents -->
+
+  <!-- //footer -->
+  <div id="footer">
+    <div class="container">
+      <div class="row">
+        <div class="span12">
+          <h5>Webstoryboy</h5>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- //footer -->
+
+  <!-- script -->
+  <script src="../assets/js/jquery-1.9.1.min.js"></script>
+  <script src="../assets/js/bootstrap-collapse.js"></script>
+  <script src="../assets/js/bootstrap-transition.js"></script>
+  <script src="../assets/js/google-code-prettify/prettify.js"></script>
+  <script src="../assets/js/application.js"></script>
+</body>
+
+</html>

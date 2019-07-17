@@ -1,0 +1,961 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="A Documentation by JavaScript.">
+	<meta name="author" content="JavaScript documentation">
+
+	<title>Work</title>
+
+	<!-- Bootstrap core CSS -->
+	<link href="assets/css/bootstrap.css" rel="stylesheet">
+
+	<!-- Documentation extras -->
+	<link href="assets/css/docs.min.css" rel="stylesheet">
+	<link href="assets/css/prism.css" rel="stylesheet">
+
+	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.assets/js/1.4.2/respond.min.js"></script>
+	<![endif]-->
+
+	<!-- Favicons -->
+	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/ico/apple-touch-icon-144-precomposed.png">
+	<link rel="shortcut icon" href="ico/favicon.ico">
+
+	<!-- web font -->
+	<link href='https://cdn.rawgit.com/openhiun/hangul/14c0f6faa2941116bb53001d6a7dcd5e82300c3f/nanumbarungothic.css' rel='stylesheet' type='text/css'>
+
+</head>
+
+<body>
+	<a class="sr-only" href="#content">Skip to main content</a>
+
+	<header class="navbar navbar-inverse navbar-static-top bs-docs-nav" role="banner">
+		<div class="container">
+			<div class="navbar-header">
+				<button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a href="index.html" class="navbar-brand">webstoryboy &lt;/doc&gt;</a>
+			</div>
+			<nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+				<ul class="nav navbar-nav">
+					<li><a href="jquery.html">jQuery</a></li>
+					<li><a href="javascript.html">JavaScript</a></li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+
+	<div class="bs-header javascript" id="content">
+		<div class="container">
+			<h1>Work Reference v1.0 &lt;/doc&gt;</h1>
+			<p>webstoryboy.co.kr</p>
+		</div>
+	</div>
+
+	<div class="container bs-docs-container">
+		<div class="row">
+			<div class="col-md-9" role="main">
+
+				<!-- Introduction -->
+				<div class="bs-docs-section">
+					<h1 id="introduction1" class="page-header">자바스크립트</h1>
+					<p class="lead">자바스크립트(JavaScript)는 웹 브라우저에서 동작되는 스크립트 언어를 말합니다.</p>
+					<p>HTML은 정적인 레이아웃을 표현한다면, 자바스크립트는 동적인 기능을 표현합니다.</p>
+					
+					<h3 id="introduction1_1" class="page-header">자바스크립트 언어의 특징</h3>
+					<ol class="lead pb pa">
+						<li>자바스크립트는 인터프린터 언어입니다. 자바스크립트 코드는 작성된 순서대로 구문을 분석합니다. 만약 코드에 문제가 생기면 에러가 발생한 다음 줄 부터는 구분을 분석하지 않습니다.</li>
+						<li>자바스크립트는 클라이언트 스트립트 언어입니다. 자바스크립트는 서버에서 실행되지 않고, 사용자 컴퓨터에서 실행되는 클라이언트 언어입니다. 서버에서 운영되는 PHP, JSP, ASP언어와 비교됩니다.</li>
+						<li>자바스크립트는 객체 기반 언어입니다. 자바스크립트는 객체를 기반으로 한 언어이며, 다양한 기능들과 종류들이 있습니다.</li>
+						<li>자바스크립트는 오픈소스 언어입니다. 자바스크립트는 소스를 숨길 수 없는 오픈 소스입니다.</li>
+						<li>자바스크립트는 다양한 라이브러리가 지원되는 언어입니다. 자바스크립트를 이용한 언어에는 제이쿼리가 있습니다. 이를 통해 다양한 기능을 쉽게 구현 할 수 있으며, 뛰어난 효과를 만들어 낼 수 있습니다. 이러한 자바스크립트 라이브러리 언어들을 통해 제이쿼리 뿐만 아니라 센차터치, 제이쿼리 모바일, node.js 등 많은 언어를 사용할 수 있습니다.</li>
+					</ol>
+				</div>
+				<!-- //Introduction -->
+
+				<!-- Introduction -->
+				<div class="bs-docs-section">
+					<h1 id="introduction2" class="page-header">자바스크립트 사용방법</h1>
+					<p>외부 파일로 로드하는 방법 / script 태그 사이에 기술하는 방법 / 태그에 직접 기술하는 방법</p>
+					<h5>Sample <a href="sample01.html">View</a></h5>
+<pre><code class="language-markup">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+	&lt;meta charset="UTF-8"&gt;
+	&lt;title&gt;자바스크립트&lt;/title&gt;
+	&lt;!-- 1. 외부 파일로 로드하는 방법 --&gt;
+	&lt;script type="text/javascript" src="javascript.js"&gt;&lt;/script&gt;
+
+	&lt;!-- 2. script 태그 사이에 기술하는 방법 --&gt;
+	&lt;script&gt;
+		document.write("hello, webs");
+	&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+	
+	&lt;!-- 3. 태그에 직접 기술하는 방법 --&gt;
+	&lt;h1 onclick="alert('hello, webs')"&gt;Javascript&lt;/h1&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+				</div>
+				<!-- //Introduction -->
+				
+
+				<!-- Introduction -->
+				<div class="bs-docs-section">
+					<h1 id="introduction3" class="page-header">자바스크립트 기초</h1>
+					<p class="lead">자바스크립트 기초적인 문법입니다.</p>
+					
+					<h3 id="introduction3-1" class="page-header">자바스크립트 주석</h3>
+					<p>일반적으로 특정 코드에 대한 설명을 입력하거나 특정한 부분의 코드가 실행되지 않도록 사용하는 용도입니다. 주석 표시는 프로그램에 영향을 미치지 않습니다.</p>
+
+					<div class="bs-callout bs-callout-warning">
+						/* .... */ : 여러 줄에 주석을 적용하는 경우<br>
+						// : 한 줄에 주석을 적용하는 경우
+					</div>
+
+					<h3 id="introduction3-1" class="page-header">키워드와 식별자</h3>
+					<div class="bs-callout bs-callout-info">
+						키워드(예약어) : 자바스크립트에서 정해진 단어<br>
+						식별자 : 사용자가 임의로 사용하는 단어 
+					</div>
+
+					<p><code>break</code> <code>case</code> <code>catch</code> <code>continue</code> <code>debugger</code> <code>default</code> <code>delete</code> <code>do</code> <code>else</code> <code>finally</code> <code>for</code> <code>function</code> <code>if</code> <code>in</code> <code>instanceof</code> <code>new</code> <code>return</code> <code>switch</code> <code>this</code> <code>throw</code> <code>try</code> <code>typeof</code> <code>var</code> <code>void</code> <code>while</code> <code>while</code> <code>with</code> <code>class</code> <code>enum</code> <code>export</code> <code>extends</code> <code>import</code> <code>super</code> <code>implements</code> <code>interface</code> <code>let</code> <code>package</code> <code>private</code> <code>protexted</code> <code>public</code> <code>static</code> <code>yield</code></p>
+
+					<p>사용자는 임의의 식별자를 만들 수 있으며, 다음의 사항을 지켜주어야 합니다.</p>
+					<ul>
+						<li>숫자로 시작하면 안됨(첫글자)</li>
+						<li>공백을 주면 안됨(_,-)</li>
+						<li>특수기호를 사용할 수 없음</li>
+						<li>키워드를 사용할 수 없음</li>
+					</ul>
+					<p>두 가지 이상의 단어를 조합할 때는 다음과 같은 사용합니다.</p>
+					<ul>
+						<li>언더스코어 노테이션 : text_top과 같이 중간에 '_'를 사용합니다.</li>
+						<li>카멜 노테이션 : textTop와 같이 두번재 단어의 첫 글자를 대문자로 사용합니다.</li>
+						<li>파스칼 : TextTop과 같이 모든 단어의 첫 분장을 대문자로 사용합니다.</li>
+					</ul>
+
+					<h3 id="introduction3-3" class="page-header">문자열</h3>
+					<p class="lead">문자열을 구분하기 위해서는 작은 따옴표 또는 큰 따옴표를 사용합니다.</p>
+					
+					<h5>Sample <a href="sample02.html">View</a></h5>
+<pre><code class="language-markup">&lt;!DOCTYPE html&gt;
+&lt;head&gt;
+	&lt;meta charset="UTF-8"&gt;
+	&lt;title&gt;자바스크립트&lt;/title&gt;
+	&lt;script&gt;
+		var str1 = "hello";  //큰따옴표
+		var str2 = 'hello';	//작은따옴표
+		var str3 = "hello 'Javascript'" //큰따옴표 안에 작은 따옴표 사용
+		var str4 = 'hello "Javascript"'	//작은따옴표 안에 큰 따옴표 사용
+
+		var str5 = 'hello \n"Javascript"'	//줄바꿈
+
+		document.write(str1);
+		document.write("&lt;br&gt;");
+		document.write(str2);
+		document.write("&lt;br&gt;");
+		document.write(str3);
+		document.write("&lt;br&gt;");
+		document.write(str4);
+		document.write("&lt;br&gt;");
+		alert(str5);
+
+	&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+	
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+
+				</div>
+				<!-- //Introduction -->
+
+				
+
+
+				<!-- Introduction -->
+				<div class="bs-docs-section">
+					<h1 id="introduction4" class="page-header">변수</h1>
+					<p class="lead">변수는 <strong>하나의 데이터</strong>를 저장하는 저장소입니다.</p>
+					<div class="bs-callout bs-callout-info">
+						var 변수명 = 값;
+					</div>
+					<h5>Sample <a href="sample03.html">View</a></h5>
+<pre><code class="language-markup">&lt;!DOCTYPE html&gt;
+
+</code></pre>
+					
+					<h3 id="introduction4-1" class="page-header">변수의 종류</h3>
+					<p class="lead">변수는 사용 가능 범위에 따라 4가지로 구분됩니다.</p>
+					<div class="bs-callout bs-callout-info">
+						지역변수 : 특정 범위 안에서만 사용하는 변수<br>
+						전역변수 : 모든 영역 안에서 사용하는 변수<br>
+						매개변수 : 함수 외부에서 함수 내부로 데이터를 전달하기 위한 변수<br>
+						멤버변수 : 클래스 내부에 만들어지며 주로 객체에서 사용하는 변수
+					</div>
+
+					<h5>지역변수 / 전역변수 <a href="sample04.html">View</a></h5>
+<pre><code class="language-markup">&lt;!DOCTYPE html&gt;
+	
+</code></pre>
+					<h5>매개변수 <a href="sample05.html">View</a></h5>
+<pre><code class="language-markup">&lt;!DOCTYPE html&gt;
+	
+</code></pre>
+					
+					<h3 id="introduction4-2" class="page-header">변수의 유형(자료형)</h3>
+					<div class="table-responsive">
+						<table class="table table-striped table-bordered table-hover">
+							<thead>
+								<tr>
+									<th>자료형</th>
+									<th>설명</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>숫자(Number)</td>
+									<td>정수와 실수가 있지만, 자바스크립트에서는 정수와 실수를 구분하지 않고 사용할 수 있습니다.</td>
+								</tr>
+								<tr>
+									<td>문자열(String)</td>
+									<td>"문자", "string" 처럼 따옴표를 사용한 문자의 집합을 문자열이라고 합니다.</td>
+								</tr>
+								<tr>
+									<td>논리(Boolean)</td>
+									<td>참과 거짓을 나타내는 자료형이며, 오직 <code>true</code>, <code>false</code>로만 표현을 합니다.</td>
+								</tr>
+								<tr>
+									<td>특수값(null)</td>
+									<td>null은 아무런 값이 없는 경우를 의미하며, 주로 변수를 초기활 할 때 사용합니다.</td>
+								</tr>
+								<tr>
+									<td>특수값(undefined)</td>
+									<td>변수 선언 시 자료형의 지정이 이루어지지 않았거나, 어떤 자료형인지 알 수가 없을 경우에 표시됩니다.</td>
+								</tr>
+								<tr>
+									<td>배열(array)</td>
+									<td>배열 형태의 자료형도 사용할 수 있습니다.</td>
+								</tr>
+								<tr>
+									<td>객체(Object)</td>
+									<td>객체 형태의 자료형도 사용할 수 있습니다.</td>
+								</tr>
+								<tr>
+									<td>함수(Function)</td>
+									<td>함수는 자바스크립트를 구성하는 기본 단위이며, 자료형으로 변수에 넣을 수 있습니다.</td>
+								</tr>
+
+							</tbody>
+							
+						</table>
+					</div>
+
+				</div>
+				<!-- //Introduction -->
+
+				<!-- Introduction -->
+				<div class="bs-docs-section">
+					<h1 id="introduction5" class="page-header">배열</h1>
+					<p class="lead">배열은 <strong>여러개의 데이터</strong>를 순차적으로 저장하는 저장소입니다.</p>
+
+					<div class="bs-callout bs-callout-info">
+						var 변수명 = [값1, 값2, 값3, 값4......];
+					</div>
+
+					<h5>배열 선언 <a href="sample06.html">View</a></h5>
+<pre><code class="language-markup">&lt;!DOCTYPE html&gt;
+</code></pre>
+				</div>
+				<!-- //Introduction -->
+
+				<!-- Introduction -->
+				<div class="bs-docs-section">
+					<h1 id="introduction6" class="page-header">연산자</h1>
+					<p class="lead">연산자는 산술 연산, 논리 연산, 증감 연산, 비교 연산 등을 수행하도록 도와주며, 이를 통해 가공된 결과를 만들 수 있습니다.</p>
+
+					<h3 id="introduction6-1" class="page-header">산술 연산자</h3>
+					<p class="lead">산술연산자는 사칙 연산을 수행합니다.</p>
+					<div class="table-responsive">
+						<table class="table table-striped table-bordered table-hover">
+							<thead>
+								<tr>
+									<th>연산자</th>
+									<th>예시</th>
+									<th>설명</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td><code>+</code></td>
+									<td>x + y</td>
+									<td>더하기</td>
+								</tr>
+								<tr>
+									<td><code>-</code></td>
+									<td>x - y</td>
+									<td>뺄셈</td>
+								</tr>
+								<tr>
+									<td><code>*</code></td>
+									<td>x * y</td>
+									<td>곱하기</td>
+								</tr>
+								<tr>
+									<td><code>/</code></td>
+									<td>x / y</td>
+									<td>나누기</td>
+								</tr>
+								<tr>
+									<td><code>%</code></td>
+									<td>x % y</td>
+									<td>나머지</td>
+								</tr>
+							</tbody>	
+						</table>
+					</div>
+
+					<h3 id="introduction6-2" class="page-header">복합 연산자</h3>
+					<p class="lead">복합연산자는 사칙연산을 간결하게 표현할 때 사용합니다.</p>
+					<div class="table-responsive">
+						<table class="table table-striped table-bordered table-hover">
+							<thead>
+								<tr>
+									<th>연산자</th>
+									<th>예시</th>
+									<th>설명</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td><code>+=</code></td>
+									<td>x = x + 10</td>
+									<td>x+=10</td>
+								</tr>
+								<tr>
+									<td><code>-=</code></td>
+									<td>x = x - 10</td>
+									<td>x-=10</td>
+								</tr>
+								<tr>
+									<td><code>*=</code></td>
+									<td>x = x * 10</td>
+									<td>x*=10</td>
+								</tr>
+								<tr>
+									<td><code>/=</code></td>
+									<td>x = x / 10</td>
+									<td>x/=10</td>
+								</tr>
+								<tr>
+									<td><code>%=</code></td>
+									<td>x = x % 10</td>
+									<td>x%=10</td>
+								</tr>
+							</tbody>	
+						</table>
+					</div>
+
+
+					<h3 id="introduction6-3" class="page-header">증감 연산자</h3>
+					<p class="lead">증가 연산자는 1만큼 증가시키고, 감소 연산자는 1만큼 감소시킵니다.</p>
+					<div class="table-responsive">
+						<table class="table table-striped table-bordered table-hover">
+							<thead>
+								<tr>
+									<th>연산자</th>
+									<th>예시</th>
+									<th>설명</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td><code>++</code></td>
+									<td>x = x + 1</td>
+									<td>x++ 또는 ++x</td>
+								</tr>
+								<tr>
+									<td><code>--</code></td>
+									<td>x = x - 1</td>
+									<td>x-- 또는 --x</td>
+								</tr>
+							</tbody>	
+						</table>
+					</div>
+
+					<h3 id="introduction6-4" class="page-header">비교 연산자</h3>
+					<p class="lead">두개의 값을 비교하여 결과를 참 또는 거짓을 나타냅니다.</p>
+					<div class="table-responsive">
+						<table class="table table-striped table-bordered table-hover">
+							<thead>
+								<tr>
+									<th>연산자</th>
+									<th>예시</th>
+									<th>설명</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td><code>==</code></td>
+									<td>x == y</td>
+									<td>좌변과 우변이 값이 같을 경우 true</td>
+								</tr>
+								<tr>
+									<td><code>===</code></td>
+									<td>x === y</td>
+									<td>좌변과 우변이 값거나 자료형도 같은 경우 true</td>
+								</tr>
+								<tr>
+									<td><code>!=</code></td>
+									<td>x != y</td>
+									<td>좌변과 우변이 값이 같지 않는 경우 ture</td>
+								</tr>
+								<tr>
+									<td><code>!==</code></td>
+									<td>x !== y</td>
+									<td>좌변과 우변이 값이 같을 경우, 또는 데이터형이 다른 경우 ture</td>
+								</tr>
+								<tr>
+									<td><code>&gt;</code></td>
+									<td>x &gt; y</td>
+									<td>좌변이 우변보다 클 경우 ture</td>
+								</tr>
+								<tr>
+									<td><code>&lt;</code></td>
+									<td>x &lt; y</td>
+									<td>좌변이 우변보다 작을 경우 ture</td>
+								</tr>
+								<tr>
+									<td><code>&gt;=</code></td>
+									<td>x &gt;= y</td>
+									<td>좌변이 우변보다 크거나 같을 경우 ture</td>
+								</tr>
+								<tr>
+									<td><code>&lt;=</code></td>
+									<td>x &lt;= y</td>
+									<td>좌변이 우변보다 작거나 같을 경우 ture</td>
+								</tr>
+							</tbody>	
+						</table>
+					</div>
+
+					<h5>Sample <a href="sample07.html">View</a></h5>
+<pre><code class="language-markup">&lt;!DOCTYPE html&gt;
+</code></pre>
+
+					<h3 id="introduction6-5" class="page-header">논리 연산자</h3>
+					<div class="table-responsive">
+						<table class="table table-striped table-bordered table-hover">
+							<thead>
+								<tr>
+									<th>연산자</th>
+									<th>예시</th>
+									<th>설명</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td><code>&&</code></td>
+									<td>x && y</td>
+									<td>(AND)둘다 true인 경우 true</td>
+								</tr>
+								<tr>
+									<td><code>||</code></td>
+									<td>x || y</td>
+									<td>(OR)둘 중의 하나 이상이 true인 경우 true</td>
+								</tr>
+								<tr>
+									<td><code>!</code></td>
+									<td>x !X y</td>
+									<td>(NOT)결과 값이 false인 경우 true</td>
+								</tr>
+							</tbody>	
+						</table>
+					</div>
+
+
+					<h3 id="introduction6-6" class="page-header">연산자 우선순위</h3>
+					<p class="lead">모든 연산자에는 우선순위가 있습니다.</p>
+					<div class="table-responsive">
+						<table class="table table-bordered table-striped">
+							<colgroup>
+								<col class="col-xs-1">
+								<col class="col-xs-7">
+							</colgroup>
+							<thead>
+								<tr>
+									<th>우선순위</th>
+									<th>연산자</th>
+									<th>설명</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<th scope="row">1</th>
+									<td><code>()</code> <code>[]</code></td>
+									<td>괄호/대괄호</td>
+								</tr>
+								<tr>
+									<th scope="row">2</th>
+									<td><code>!</code> <code>~</code> <code>++</code> <code>--</code></td>
+									<td>부정/증감연산자</td>
+								</tr>
+								<tr>
+									<th scope="row">3</th>
+									<td><code>*</code> <code>/</code> <code>%</code></td>
+									<td>곱셈/나눔셈 연산자</td>
+								</tr>
+								<tr>
+									<th scope="row">4</th>
+									<td><code>+</code> <code>-</code></td>
+									<td>덧셈/뺄셈 연산자</td>
+								</tr>
+								<tr>
+									<th scope="row">5</th>
+									<td><code>&lt;&lt;</code> <code>&gt;&gt;</code> <code>&gt;&gt;&gt;</code></td>
+									<td>비트 단위의 시프트 연산자</td>
+								</tr>
+								<tr>
+									<th scope="row">6</th>
+									<td><code>&gt;</code> <code>&gt;</code> <code>&gt;=</code> <code>&gt;=</code></td>
+									<td>관계 연산자</td>
+								</tr>
+								<tr>
+									<th scope="row">7</th>
+									<td><code>==</code> <code>!=</code> <code>===</code> <code>!==</code></td>
+									<td>관계 연산자</td>
+								</tr>
+								<tr>
+									<th scope="row">8</th>
+									<td><code>&</code></td>
+									<td>비트 단위 논니 곱 연산자</td>
+								</tr>
+								<tr>
+									<th scope="row">9</th>
+									<td><code>|</code></td>
+									<td>비트 단위 논니 부정 연산자</td>
+								</tr>
+								<tr>
+									<th scope="row">10</th>
+									<td><code>^</code></td>
+									<td>비트 단위 논니 합 연산자</td>
+								</tr>
+								<tr>
+									<th scope="row">11</th>
+									<td><code>&&</code></td>
+									<td>논리 곱 연산자</td>
+								</tr>
+								<tr>
+									<th scope="row">12</th>
+									<td><code>||</code></td>
+									<td>논리 합 연산자</td>
+								</tr>
+								<tr>
+									<th scope="row">13</th>
+									<td><code>?:</code></td>
+									<td>조건부 연산자</td>
+								</tr>
+								<tr>
+									<th scope="row">14</th>
+									<td><code>=</code> <code>+=</code> <code>-=</code> <code>*=</code> <code>/=</code> <code>%=</code> <code><<=</code> <code>>>=</code> <code>>>>=</code> <code>&=</code> <code>^=</code> <code>|=</code></td>
+									<td>대입/할당 연산자</td>
+								</tr>
+								<tr>
+									<th scope="row">15</th>
+									<td><code>,</code></td>
+									<td>쉼표</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<!-- //Introduction -->
+
+				<!-- Introduction -->
+				<div class="bs-docs-section">
+					<h1 id="introduction7" class="page-header">조건문(제어문)</h1>
+					<p class="lead">조건문은 말 그대로 조건에 맞으면 실행하고, 맞지 않으면 다른 코드를 실행하도록 조건을 거는 제어문입니다.</p>
+					
+					<h3 id="introduction7-1" class="page-header">if문</h3>
+					<p class="lead">if문 단독으로 사용하는 형태입니다.</p>
+					<div class="bs-callout bs-callout-info">
+						if(조건){<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //실행코드<br>
+						}<br>
+					</div>
+					<h5>Sample <a href="sample08.html">View</a></h5>
+<pre><code class="language-markup">&lt;!DOCTYPE html&gt;
+</code></pre>
+
+					<h3 id="introduction7-2" class="page-header">if문~else</h3>
+					<p class="lead">두개의 값을 비교하여 코드를 별개로 실행합니다.</p>
+					<div class="bs-callout bs-callout-info">
+						if(조건){<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //참일 때 실행코드<br>
+						} else {<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //거짓 일때 실행코드<br>
+						}
+					</div>
+					<h5>Sample <a href="sample09.html">View</a></h5>
+<pre><code class="language-markup">&lt;!DOCTYPE html&gt;
+</code></pre>
+
+					<h3 id="introduction7-3" class="page-header">다중 if문</h3>
+					<p class="lead">여러가지 조건에 따라 조건문을 설정합니다.</p>
+					<div class="bs-callout bs-callout-info">
+						if(조건){<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //참일 때 실행코드<br>
+						} else if {<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //앞 조건이 거짓일 때 실행코드<br>
+						} else if {<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //앞 조건이 거짓일 때 실행코드<br>
+						} else if {<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //앞 조건이 거짓일 때 실행코드<br>
+						} else if {<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //앞 조건이 거짓일 때 실행코드<br>
+						} else {<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //앞 모든 조건이 거짓일 때 실행코드<br>
+						}
+					</div>
+					<h5>Sample <a href="sample10.html">View</a></h5>
+<pre><code class="language-markup">&lt;!DOCTYPE html&gt;
+</code></pre>
+
+					<h3 id="introduction7-4" class="page-header">switch문</h3>
+					<p class="lead">해당 조건에 맞는 값을 case로 구분해서 수행하는 제어문입니다.</p>
+					<div class="bs-callout bs-callout-info">
+						switch(조건을 체크할 변수){<br>
+						case 값1 :<br>
+							&nbsp;&nbsp; //조건을 체크할 변수가 값1을 가지고 있으면 실행<br>
+							break;<br><br>
+
+							case 값2 :<br>
+							&nbsp;&nbsp; //조건을 체크할 변수가 값2을 가지고 있으면 실행<br>
+							break;<br><br>
+
+							case 값3 :<br>
+							&nbsp;&nbsp; //조건을 체크할 변수가 값3을 가지고 있으면 실행<br>
+							break;<br><br>
+
+							default :<br>
+							&nbsp;&nbsp; //해당되는 값을 가지고 있지 않을 경우 실행<br>
+							break;<br>
+						}
+					</div>
+					<h5>Sample <a href="sample12.html">View</a></h5>
+<pre><code class="language-markup">&lt;!DOCTYPE html&gt;
+</code></pre>
+					<h5>Sample <a href="sample13.html">View</a></h5>
+<pre><code class="language-markup">&lt;!DOCTYPE html&gt;
+</code></pre>
+
+
+					<h3 id="introduction7-5" class="page-header">조건부 연산자</h3>
+					<p class="lead">조건부 연산자는 조건을 처리하는 다른 형태의 제어문입니다.</p>
+					<div class="bs-callout bs-callout-info">
+						(조건) ? (참일 때 실행 코드) : (거짓일 때 실행할 코드);
+					</div>
+
+					<h5>Sample <a href="sample14.html">View</a></h5>
+<pre><code class="language-markup">&lt;!DOCTYPE html&gt;
+
+</code></pre>
+				</div>
+				<!-- //Introduction -->
+
+				<!-- Introduction -->
+				<div class="bs-docs-section">
+					<h1 id="introduction8" class="page-header">반복문</h1>
+					<p class="lead">반복되는 부분을 실행할 때 사용하는 제어문입니다.</p>
+					
+					<h3 id="introduction8-1" class="page-header">while</h3>
+					<div class="bs-callout bs-callout-info">
+						var 변수 = 초기 값<br>
+						while(조건식){<br>
+						&nbsp;&nbsp;&nbsp;&nbsp; 실행문;<br>
+						&nbsp;&nbsp;&nbsp;&nbsp; 증감식;<br>
+						}
+					</div>
+					
+					<h5>Sample <a href="sample15.html">View</a></h5>
+<pre><code class="language-markup">&lt;!DOCTYPE html&gt;
+
+</code></pre>  
+					<h5>100보다 작은 숫자에서 4의 배수 6의 배수 출력하기 <a href="sample16.html">View</a></h5>
+<pre><code class="language-markup">&lt;!DOCTYPE html&gt;
+
+</code></pre>
+					<h5>100보다 작은 숫자에서 짝수는 파란색, 홀수는 빨간색 출력하기7 <a href="sample17.html">View</a></h5>
+<pre><code class="language-markup">&lt;!DOCTYPE html&gt;
+
+</code></pre>
+
+					
+					<h3 id="introduction8-2" class="page-header">do while</h3>
+					<p class="lead">while문의 경우에는 조건식의 만족 여부를 먼저 검사한 후, 중괄호에 있는 실행문의 실행여부를 결정합니다. 하지만 do while문은 반드시 한 번은 실행하고 조건식을 검사합니다.</p>
+					<div class="bs-callout bs-callout-info">
+						var 변수 = 초기 값<br>
+						do {<br>
+						&nbsp;&nbsp;&nbsp;&nbsp; 실행문;<br>
+						&nbsp;&nbsp;&nbsp;&nbsp; 증감문;<br>
+						}while(조건식)
+					</div>
+					<h5>Sample <a href="sample18.html">View</a></h5>
+<pre><code class="language-markup">&lt;!DOCTYPE html&gt;
+
+</code></pre>  
+
+					<h3 id="introduction8-3" class="page-header">for문</h3>
+					<div class="lead">for문은 특정 구문을 여러번 반복하고 싶을 때 사용하는 반복문입니다.</div>
+					<div class="bs-callout bs-callout-info">
+					for(초기값; 조건식; 증감식){<br>
+					&nbsp;&nbsp;&nbsp;&nbsp; 반복코드<br>
+					}
+					</div>
+					<p>0~100까지 반복을 한다면, 다음과 같이 표현합니다.</p>
+					<div class="bs-callout bs-callout-info">
+					for(var i=0; i&lt;=100; i++){<br>
+					&nbsp;&nbsp;&nbsp;&nbsp; //반복코드<br>
+					}<br>
+					초기값 설정 : var i=0; 초기 시작값을 0으로 설정하고, 초기값은 오직 한 번만 실행되면 이 후로는 실행되지 않습니다.<br>
+					조건식 설정 : i&lt;100 : 조건에 맞으면 계속 실행됩니다.<br>
+					증감식 설정 : i++ : 조건에 맞으면 1씩 증가합니다.
+					</div>
+					<h5>Sample <a href="sample18.html">View</a></h5>
+<pre><code class="language-markup">&lt;!DOCTYPE html&gt;
+
+</code></pre>  
+
+					<h5>100보다 작은 숫자에서 5의 배수는 파란색, 7의 배수는 빨간색, 5와7의 배수는 검은색으로 출력하기 <a href="sample20.html">View</a></h5>
+<pre><code class="language-markup">&lt;!DOCTYPE html&gt;
+
+</code></pre>  
+
+					<h5>* 표시로 출력하기<a href="sample21.html">View</a></h5>
+<pre><code class="language-markup">&lt;!DOCTYPE html&gt;
+
+</code></pre>  
+  					
+  					<h5>for문을 이용한 배열의 합 구하기<a href="sample22.html">View</a></h5>
+<pre><code class="language-markup">&lt;!DOCTYPE html&gt;
+
+</code></pre> 
+
+
+					<h3 id="introduction8-4" class="page-header">다중 for 문</h3>
+					<p class="lead">for뭄 안에 for문이 있는 형태입니다.</p>
+					<div class="bs-callout bs-callout-info">
+					for(var i=0; i&lt;100; i++){<br>
+					&nbsp;&nbsp;&nbsp;&nbsp; for(var j=0; j&lt;100; j++){<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //반복코드<br>	
+					&nbsp;&nbsp;&nbsp;&nbsp; }<br>
+					}
+					</div>
+
+					<h5>구구단 만들기 <a href="sample23.html">View</a></h5>
+<pre><code class="language-markup">&lt;!DOCTYPE html&gt;
+
+</code></pre>
+					<h5>다중 for문을 이용해서 테이블 만들기 <a href="sample24.html">View</a></h5>
+<pre><code class="language-markup">&lt;!DOCTYPE html&gt;
+
+</code></pre>
+
+					<h3 id="introduction8-5" class="page-header">break문과 continue문</h3>
+					<div class="lead">break문과 continue문은 반복문을 제어하는 명렁어입니다.</div>
+					<div class="bs-callout bs-callout-info">
+						break문 : 코드 실해문을 빠져나갈대 사용하며, 일반적으로 반복문을 종료할 때 사용합니다.<br>
+						continue문 : 코드 실행 중에 continue을 만나면, 뒷 부분은 실행하지 않고 다음 반복으로 넘어갑니다.
+					</div>
+
+					<h5>Sample <a href="sample25.html">View</a></h5>
+<pre><code class="language-markup">&lt;!DOCTYPE html&gt;
+
+</code></pre>
+				</div>
+				<!-- //Introduction -->
+
+				<!-- Introduction -->
+				<div class="bs-docs-section">
+					<h1 id="introduction9" class="page-header">함수</h1>
+					<p class="lead">함수는 하나의 실행문을 저장하여 사용할 수 있습니다.</p>
+					<p>함수는 하나의 실행문을 저장하고 변수는 하나의 데이터를 저장하여 사용합니다. 함수는 스크립트 실행문을 보관하는 역할을 하기 때문에 반복 사용되는 코드를 구조화하거나 재활용을 목적으로 사용합니다.</p>
+
+					<h5>Sample <a href="sample26.html">View</a></h5>
+<pre><code class="language-markup">&lt;!DOCTYPE html&gt;
+</code></pre>
+					<h3 id="introduction9-1" class="page-header">함수의 사용 형태</h3>
+					<p class="lead">함수는 사용 형태에 따라 익명함수, 선언적 함수, 매개 변수이 있는 함수, 리턴값이 있는 함수로 구분됩니다.</p>
+					<div class="bs-callout bs-callout-info">
+						function 함수이름(){<br>
+						&nbsp;&nbsp;&nbsp;&nbsp; //실행코드<br>
+						}<br>
+						함수이름(); //함수 호출
+					</div>
+					<h5>Sample <a href="sample27.html">View</a></h5>
+<pre><code class="language-markup">&lt;!DOCTYPE html&gt;
+</code></pre>
+					
+					<h4>선언적 함수</h4>
+					<p>일반적인 함수의 형태이며, 함수 이름을 설정하고 함수를 호출해야 합니다.</p>
+
+					<h4>익명 함수</h4>
+					<p>변수 안에 함수가 들어간 형태로 함수의 이름이 존재하지 않어 익명 함수라고 부릅니다.</p>
+
+					<h4>매개변수 함수</h4>
+					<p>함수 외부에서 함수 내부로 데이터를 전달하기 위한 매개변수가 있는 함수</p>
+
+					<h4>리턴값 함수</h4>
+					<p>함수의 수행 결과의 값을 다른 곳으로 호출해야 할 경우 리턴값을 사용합니다.</p>
+
+
+				</div>
+				<!-- //Introduction -->
+
+				<!-- Introduction -->
+				<div class="bs-docs-section">
+					<h1 id="introduction10" class="page-header">객체</h1>
+					<p class="lead">객체는 데이터와 연산 작업을 감고 있는 기본적인 기능입니다.</p>
+					<p>객체가 가지고 있는 기본 상태 값을 속서이라 하고 객체가 할 수 있는 행동들을 메서드라고 합니다. 객체는 크게 내장객체, 브라우저객체, 문서객체로 나누어 집니다.</p>
+					<div class="bs-callout bs-callout-info">
+						속성 : 객체가 가지고 있는 기본적인 상태값(ex:color, height, width;)<br>
+						메서드 : 객체가 할 수 있는 동작 및 해동(ex:width값을 변경, color색을 변경)
+					</div>
+				</div>
+				<!-- //Introduction -->
+
+				<!-- Introduction -->
+				<div class="bs-docs-section">
+					<h1 id="introduction11" class="page-header">문서 객체</h1>
+					<p class="lead">문서 객체 모델(DOM)은 자바스크립트를 통해 브라우저에서 동작하는 형태를 접근하는 방식이며, 문서와 관련된 객체의 집합입니다.</p>
+				</div>
+				<!-- //Introduction -->
+
+				<!-- Introduction -->
+				<div class="bs-docs-section">
+					<h1 id="introduction12" class="page-header">브라우저 객체</h1>
+					<p class="lead">브라우저 객체 모델(BOM)은 웹 브라우저와 관련된 객체의 집합을 의미합니다.</p>
+					<p>브라우저 객체는 window, navigator, screen, history, location 객체로 구성되어 잇습니다.</p>
+
+					<h5>브라우저 위치 <a href="sample29.html">View</a></h5>
+<pre><code class="language-markup">&lt;!DOCTYPE html&gt;
+
+</code></pre>
+					<h5>콘텐츠 영역 크기 <a href="sample30.html">View</a></h5>
+<pre><code class="language-markup">&lt;!DOCTYPE html&gt;
+	
+</code></pre>
+					<h5>타이머 설정 <a href="sample31.html">View</a></h5>
+<pre><code class="language-markup">&lt;!DOCTYPE html&gt;
+	
+</code></pre>
+				</div>
+				<!-- //Introduction -->
+				
+			</div>
+			<!-- //col-md-9 -->
+			
+			<div class="col-md-3">
+				<div class="bs-sidebar hidden-print" role="complementary">
+					<ul class="nav bs-sidenav">
+						<li><a href="#introduction1">자바스크립트</a></li>
+						<li><a href="#introduction2">자바스크립트 사용방법</a></li>
+						<li><a href="#introduction3">자바스크립트 기초</a>
+							<ul class="nav">
+								<li><a href="#introduction3-1">자바스크립트 주석</a></li>
+							</ul>
+						</li>
+						<li><a href="#introduction4">변수</a>
+							<ul class="nav">
+								<li><a href="#introduction4-1">변수의 종류</a></li>
+								<li><a href="#introduction4-2">변수의 유형</a></li>
+							</ul>
+						</li>
+						<li><a href="#introduction5">배열</a></li>
+						<li><a href="#introduction6">연산자</a>
+							<ul class="nav">
+								<li><a href="introduction6-1">산술 연산자</a></li>
+								<li><a href="introduction6-2">복합 연산자</a></li>
+								<li><a href="introduction6-3">증감 연산자</a></li>
+								<li><a href="introduction6-4">비교 연산자</a></li>
+								<li><a href="introduction6-5">논리 연산자</a></li>
+								<li><a href="introduction6-6">연산자 우선순위</a></li>
+							</ul>
+						</li>
+						<li><a href="#introduction7">조건문</a>
+							<ul class="nav">
+								<li><a href="introduction7-1">if문</a></li>
+								<li><a href="introduction7-2">if~else문</a></li>
+								<li><a href="introduction7-3">다중 if문</a></li>
+								<li><a href="introduction7-4">switch문</a></li>
+								<li><a href="introduction7-5">조건부 연산자</a></li>
+							</ul>
+						</li>
+						<li><a href="#introduction8">반복문</a>
+							<ul class="nav">
+								<li><a href="introduction8-1">while</a></li>
+								<li><a href="introduction8-2">do while</a></li>
+								<li><a href="introduction8-3">for문</a></li>
+								<li><a href="introduction8-4">다중 for 문</a></li>
+								<li><a href="introduction8-5">break문과 continue문</a></li>
+							</ul>
+						</li>
+						<li><a href="#introduction9">함수</a>	</li>
+						<li><a href="#introduction10">객체</a></li>
+						<li><a href="#introduction11">문서 객체</a></li>
+						<li><a href="#introduction12">브라우저 객체</a></li>
+						<li><a href="#introduction13">내장 객체</a></li>
+						<li><a href="#introduction14">이벤트</a></li>
+					</ul>
+				</div>
+			</div>
+			<!-- //col-md-3 -->
+		</div>
+		<!-- //row -->
+
+	</div>
+	<!-- //container -->
+
+
+	<!-- Footer -->
+	<footer class="bs-footer" role="contentinfo">
+		<div class="container">
+			<ul class="footer-links muted">
+				<li>Currently v1.0</li>
+				<li>&middot;</li>
+				<li><a href="http://webstoryboy.co.kr">webstoryboy</a></li>
+				<li>&middot;</li>
+				<li><a href="http://cafe.naver.com/crossbrowsing" target="_blank">publisher cafe</a></li>
+				<li>&middot;</li>
+				<li><a href="http://cafe.daum.net/flairdesignlink" target="_blank">designer cafe</a></li>
+			</ul>
+		</div>
+	</footer>
+	<!-- //Footer -->
+
+
+	<!-- Bootstrap core JavaScript -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script src="assets/js/bootstrap.min.js"></script>
+	<script src="assets/js/docs.min.js"></script>
+	<script src="assets/js/prism.js"></script>
+</body>
+
+</html>

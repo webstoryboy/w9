@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>demension</title>
+	<style>
+		* {padding: 0; margin:0;}
+		li {list-style: none;}
+		a {text-decoration: none; color: #666;}
+		#box {border: 5px solid #673ab7; margin: 50px; padding: 50px; background-color: #d1c4e9;}
+	</style>
+</head>
+<body>
+	
+	<div id="box">
+		박스의 width = <span class="width">0</span>px<br>
+		박스의 height = <span class="height">0</span>px<br>
+		박스의 innerWidth = <span class="innerWidth">0</span>px<br>
+		박스의 innerHeight = <span class="innerHeight">0</span>px<br>
+		박스의 outerWidth = <span class="outerWidth">0</span>px<br>
+		박스의 outerheight = <span class="outerheight">0</span>px<br>
+
+	</div>
+
+	<script src="assets/js/jquery-1.12.4.min.js"></script>
+	<script>
+		$(window).resize(function(){
+			$(".width").text($("#box").width());
+			$(".height").text($("#box").height());
+			$(".innerWidth").text($("#box").innerWidth());
+			$(".innerHeight").text($("#box").innerHeight());
+			$(".outerWidth").text($("#box").outerWidth());
+			$(".outerheight").text($("#box").outerheight());
+		});
+
+		$(window).trigger("resize");
+	
+		
+
+
+
+	</script>
+	
+</body>
+</html>
+
+
+
+
+

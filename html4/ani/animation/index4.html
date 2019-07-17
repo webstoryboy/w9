@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="webstoryboy">
+    <meta name="description" content="웹 퍼블리셔를 위한 정보 공유 사이트입니다.">
+    <meta name="keywords" content="웹스토리보이, 웹 퍼블리셔, 웹 표준, 웹 접근성, 화려한 디자인, webstoryboy, publisher, html5, html4, css3, html, markup, design">
+    <title>Animation</title>
+
+    <!-- web_font -->
+    <link href='http://fonts.googleapis.com/earlyaccess/nanumgothic.css' rel='stylesheet' type='text/css' />
+
+    <!-- css -->
+    <link href="../assets/css/bootstrapTheme.css" rel="stylesheet">
+    <link href="../assets/css/custom.css" rel="stylesheet">
+    <link href="../assets/css/style.css" rel="stylesheet">
+
+    <!-- Prettify -->
+    <link href="../assets/js/google-code-prettify/prettify.css" rel="stylesheet">
+
+    <!-- Icon -->
+    <link rel="shortcut icon" href="../assets/ico/favicon.ico">
+    <link rel="apple-touch-icon" href="../assets/ico/icon_57.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="../assets/ico/icon_114.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="../assets/ico/icon_72.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="../assets/ico/icon_144.png">
+
+    <!-- hmlt5 support -->
+    <!--[if lt IE 9]><script src="../assets/js/html5shiv.js"></script><![endif]-->
+
+    <!-- IE6,7 support -->
+    <!--[if lte IE 7]><link rel="stylesheet" href="comm/css/ie7.css" type="text/css" ><![endif]-->
+    <!--[if IE 8]><link rel="stylesheet" href="comm/css/ie8.css" type="text/css" ><![endif]-->
+
+    <!--[if lte IE 6]>
+	<p style="font-size: 12px; color: #fff; background: #2885b0; padding:5px 0; margin: 0; text-align: center">
+	사용하고 계신 브라우저는 최신 웹 브라우저가 아닙니다. 업그레이드를 하거나 다른 최신 브라우저 사용을 권장합니다.
+	<a href="http://www.microsoft.com/korea/ie" target="_blank" >업그레이드,</a>
+	<a href="http://www.mozilla.or.kr/ko/" target="_blank">파이어폭스,</a> 
+	<a href="http://kr.opera.com/download/" target="_blank">오페라,</a>,
+	<a href="http://support.apple.com/kb/DL1531?viewlocale=ko_KR&locale=ko_KR" target="_blank">사파리,</a>
+	<a href="http://www.google.com/chrome?hl=ko" target="_blank">크롬</a></p>
+	<![endif]-->
+</head>
+
+
+
+<body>
+    <!-- nav -->
+    <div id="top-nav" class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                	<span class="icon-bar"></span>
+                	<span class="icon-bar"></span>
+                	<span class="icon-bar"></span>
+                </button>
+                <div class="nav-collapse collapse">
+                    <ul class="nav pull-right">
+                        <li><a href="#">webstoryboy</a></li>
+                        <li><a href="#">reference</a></li>
+                        <li><a href="#">tutorial</a></li>
+                        <li><a href="#">css</a></li>
+                        <li><a href="#">html</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- //nav -->
+
+    <!-- header -->
+    <div id="header">
+        <div class="container">
+            <div class="row">
+                <div class="span12" style="text-align:center;">
+                    <div class="header_tit">
+                        <h1>Professional web publishers</h1>
+                        <h2><a href="http://webstoryboy.co.kr">webstoryboy7.dothome.co.kr</a></h2>
+                    </div>
+                    <div class="header_icon" id="wow">
+                        <ul>
+                            <li class="icon_tit1"><a href="#" title=""><span class="blind">웹스토리보이 사이트</span></a></li>
+                            <li class="icon_tit2"><a href="#" title=""><span class="blind">웹스토리보이 사이트</span></a></li>
+                            <li class="icon_tit3"><a href="#" title=""><span class="blind">웹스토리보이 사이트</span></a></li>
+                            <li class="icon_tit4"><a href="#" title=""><span class="blind">웹스토리보이 사이트</span></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- //header -->
+<style>
+    .box {position: relative; perspective: 500px;}
+    .box > div{
+        width: 60px; height: 60px; line-height: 60px; text-align: center; margin: 10px; 
+        background: #40c4ff;  border-radius: 50%; overflow: hidden; position: relative;
+        font-size: 12px;  color: #fff; 
+        position: relative; /*left: calc(100% - 100px);*/ left: 0%;
+    }
+    .btna > a { background: #333;border-radius: 5px;
+        font-size: 15px; line-height: 15px; margin-bottom: 5px;
+        color: #fff; padding: 5px 10px 6px 10px; display: inline-block; cursor: pointer;}
+</style>
+    <!-- contents -->
+    <div class="container" style="margin-top:20px;">
+        <div class="row-fluid">
+            <div class="span12">
+                <h1>GSAP Animation</h1>
+                
+                <div class="well">TweenMax.to(target, duration, {vars});</div>
+
+
+
+
+                <h3 class="btna">position  
+                    <a href="#c" class="btn1">Start</a>
+                </h3>
+                <div class="well box">
+                   <div class="box1">box1</div>
+                   <div class="box2">box2</div>
+                   <div class="box3">box3</div>
+                </div>
+<pre class="pre-show prettyprint linenums">
+$(".btn1 a").click(function(){
+    TweenMax.to(".box1", 1, {left:"90%"});
+    TweenMax.to(".box2", 2, {left:"90%"});
+    TweenMax.to(".box3", 3, {left:"90%"});
+});
+</pre>
+
+
+                <h3 class="btna">background  
+                    <a href="#c" class="btn2">Start</a>
+                </h3>
+                <div class="well box">
+                   <div class="box4">box4</div>
+                </div>
+<pre class="pre-show prettyprint linenums">
+$(".btn1 a").click(function(){
+    TweenMax.to(".box4", 1, {left:"90%", backgroundColor:"#5c6bc0"});
+});
+</pre>
+                
+                <h3 class="btna">opacity  
+                    <a href="#c" class="btn20">Start</a>
+                </h3>
+                <div class="well box">
+                   <div class="box20">box4</div>
+                </div>
+<pre class="pre-show prettyprint linenums">
+$(".btn20").click(function(){
+    TweenMax.to(".box20", 1, {left:"90%", opacity:"0.1"});
+});
+</pre>
+
+                <h3 class="btna">scale  
+                    <a href="#c" class="btn21">Start</a>
+                </h3>
+                <div class="well box">
+                   <div class="box21">box4</div>
+                </div>
+<pre class="pre-show prettyprint linenums">
+$(".btn21").click(function(){
+    TweenMax.to(".box21", 1, {left:"90%", scale:"2"});
+});
+</pre>
+                
+                <h3 class="btna">radius  
+                    <a href="#c" class="btn22">Start</a>
+                </h3>
+                <div class="well box">
+                   <div class="box22">box4</div>
+                </div>
+<pre class="pre-show prettyprint linenums">
+$(".btn21").click(function(){
+    TweenMax.to(".box21", 1, {left:"90%", scale:"2"});
+});
+</pre>
+                    
+
+                <h3 class="btna">delay  
+                    <a href="#c" class="btn23">Start</a>
+                </h3>
+                <div class="well box">
+                    <div class="box23">box23</div>
+                    <div class="box24">box24</div>
+                    <div class="box25">box25</div>
+                </div>
+<pre class="pre-show prettyprint linenums">
+$(".btn23").click(function(){
+    TweenMax.to(".box23", 1, {left:"90%", delay:1});
+    TweenMax.to(".box24", 1, {left:"90%", delay:2});
+    TweenMax.to(".box25", 1, {left:"90%", delay:3});
+});
+
+</pre>
+                
+                <h3 class="btna">onComplete  
+                    <a href="#c" class="btn26">Start</a>
+                </h3>
+                <div class="well box">
+                    <div class="box26">box26</div>
+                </div>
+<pre class="pre-show prettyprint linenums">
+$(".btn26").click(function(){
+    TweenMax.to(".box26", 1, {left:"90%", onComplete:myFunction});
+});
+
+function myFunction(){
+    alert("완료했습니다.");
+}
+</pre>
+
+
+
+
+
+                <h3 class="btna">easing
+                    <a href="#c" class="btn3">Start</a>
+                </h3>
+                <div class="well box">
+                   <div class="box7">box7</div>
+                   <div class="box8">box8</div>
+                   <div class="box9">box9</div>
+                   <div class="box10">box10</div>
+                   <div class="box11">box11</div>
+                   <div class="box12">box12</div>
+                   <div class="box13">box13</div>
+                   <div class="box14">box14</div>
+                   <div class="box15">box15</div>
+                   <div class="box16">box17</div>
+                   <div class="box17">box17</div>
+                </div>
+                <a href="https://greensock.com/ease-visualizer">참고 사이트 site</a>
+<pre class="pre-show prettyprint linenums">
+$(".btn1 a").click(function(){
+    TweenMax.to(".box7", 1, {left:"90%", ease: Power1.easeOut});
+    TweenMax.to(".box8", 1, {left:"90%", ease: Power2.easeOut});
+    TweenMax.to(".box9", 1, {left:"90%", ease: Power3.easeOut});
+    TweenMax.to(".box10", 1, {left:"90%", ease: Power4.easeOut});
+    TweenMax.to(".box11", 1, {left:"90%", ease: Elastic.easeOut});
+    TweenMax.to(".box12", 1, {left:"90%", ease: Bounce.easeOut});
+    TweenMax.to(".box13", 1, {left:"90%", ease: RoughEase.easeOut});
+    TweenMax.to(".box14", 1, {left:"90%", ease: SlowMo.easeOut});
+    TweenMax.to(".box15", 1, {left:"90%", ease: Circ.easeOut});
+    TweenMax.to(".box16", 1, {left:"90%", ease: Expo.easeOut});
+    TweenMax.to(".box17", 1, {left:"90%", ease: Sine.easeOut});
+});
+</pre>
+                
+                <h3 class="btna">o
+                    <a href="#c" class="btn30">Start</a>
+                </h3>
+                <div class="well box">
+                    <div class="box30">box26</div>
+                </div>
+<pre class="pre-show prettyprint linenums">
+
+</pre>
+
+                <h3 class="btna">o
+                    <a href="#c" class="btn31">Start</a>
+                </h3>
+                <div class="well box">
+                    <div class="box31">box26</div>
+                </div>
+<pre class="pre-show prettyprint linenums">
+
+</pre>
+
+                <h3 class="btna">32
+                    <a href="#c" class="btn32">Start</a>
+                </h3>
+                <div class="well box">
+                    <div class="box32">box32</div>
+                </div>
+<pre class="pre-show prettyprint linenums">
+
+</pre>
+
+                <h3 class="btna">33
+                    <a href="#c" class="btn33">Start</a>
+                </h3>
+                <div class="well box">
+                    <div class="box33">box33</div>
+                </div>
+<pre class="pre-show prettyprint linenums">
+
+</pre>
+
+
+                <h3 class="btna">34
+                    <a href="#c" class="btn34">Start</a>
+                </h3>
+                <div class="well box">
+                    <div class="box34">box34</div>
+                </div>
+<pre class="pre-show prettyprint linenums">
+
+</pre>
+
+
+                <h3 class="btna">35
+                    <a href="#c" class="btn35">Start</a>
+                </h3>
+                <div class="well box">
+                    <div class="box35">box35</div>
+                </div>
+<pre class="pre-show prettyprint linenums">
+
+</pre>
+
+
+                <h3 class="btna">36
+                    <a href="#c" class="btn36">Start</a>
+                </h3>
+                <div class="well box">
+                    <div class="box36" style="opacity:0;">box36</div>
+                </div>
+<pre class="pre-show prettyprint linenums">
+
+</pre>
+
+
+
+
+                
+                <h3 class="btna">37
+                    <a href="#c" class="btn37">Start</a>
+                </h3>
+                <div class="well box">
+                    <div class="box37">box37</div>
+                </div>
+<pre class="pre-show prettyprint linenums">
+
+</pre>
+
+
+                <h3 class="btna">38
+                    <a href="#c" class="btn38-1">Start</a>
+                    <a href="#c" class="btn38-2">pause</a>
+                    <a href="#c" class="btn38-3">resume</a>
+                    <a href="#c" class="btn38-4">reverse</a>
+                    <a href="#c" class="btn38-5">Seek</a>
+                    <a href="#c" class="btn38-6">scale</a>
+                    <a href="#c" class="btn38-7">scale(2)</a>
+                    <a href="#c" class="btn38-8">kill</a>
+                    <a href="#c" class="btn38-9">restart</a>
+                </h3>
+                <div class="well box">
+                    <div class="box38">box38</div>
+                </div>
+<pre class="pre-show prettyprint linenums">
+
+</pre>
+
+
+                <h3 class="btna">39
+                    <a href="#c" class="btn39">Start</a>
+                </h3>
+                <div class="well box">
+                    <div class="box39">box39</div>
+                </div>
+<pre class="pre-show prettyprint linenums">
+
+</pre>
+
+
+                <h3 class="btna">40
+                    <a href="#c" class="btn40">Start</a>
+                </h3>
+                <div class="well box">
+                    <div class="box40">box40</div>
+                </div>
+<pre class="pre-show prettyprint linenums">
+
+</pre>
+
+
+                <h3 class="btna">41
+                    <a href="#c" class="btn41">Start</a>
+                </h3>
+                <div class="well box">
+                    <div class="box41-1">box41</div>
+                    <div class="box41-2">box41</div>
+                    <div class="box41-3">box41</div>
+                    <div class="box41-4">box41</div>
+                    <div class="box41-5">box41</div>
+                </div>
+<pre class="pre-show prettyprint linenums">
+
+</pre>
+
+                
+                <h3 class="btna">42
+                    <a href="#c" class="btn42">Start</a>
+                </h3>
+                <div class="well">
+                    <span class="box42-1" style="position: absolute; left: 0;">Logo</span>
+                    <span class="box42-2" style="position: absolute; left: 100px;">timelinelite</span>
+                    <span class="box42-3" style="position: absolute; left: 200px; perspective: 500px;">
+                        <span>
+                        <img style="width:40px;" src="https://tistory4.daumcdn.net/tistory/2141493/skin/images/simg01.png" width="40" >
+                        </span> 
+                        <span><img style="width:40px;" src="https://tistory4.daumcdn.net/tistory/2141493/skin/images/simg02.png" width="40" ></span> 
+                        <span><img style="width:40px;" src="https://tistory4.daumcdn.net/tistory/2141493/skin/images/simg03.png" width="40" ></span>
+                        <span><img style="width:40px;" src="https://tistory4.daumcdn.net/tistory/2141493/skin/images/simg04.png" width="40" ></span>
+                    </span>
+
+                </div>
+<pre class="pre-show prettyprint linenums">
+
+</pre>
+                
+
+                <h3 class="btna">43
+                    <a href="#c" class="btn43">Start</a>
+                </h3>
+                <div class="well">
+                    <div class="box" style="height: 400px">
+           
+                        <!-- <svg viewBox="0 0 500 500">
+                            <path class="star" d="M121.6,157.2l-47-28.3l-50,22.7L37,98L0,57.5l54.7-4.7L81.8,5l21.4,50.6L157,66.7l-41.5,36L121.6,157.2z
+         M74.7,127.7l45.7,27.6l-5.9-53.1l40.4-35l-52.3-10.8l-0.1-0.2L81.7,7.3L55.3,53.7L2.1,58.3l36,39.4l-12.1,52L74.7,127.7z"/>
+                        </svg>  --> 
+                        <svg id="icon-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 296.7 303.8">
+  <path class="star" fill="none" stroke="#000" stroke-width="2" stroke-miterlimit="10" d="M294.8 229.7l-104.5-9.1-66.8 81-23.6-102.2-97.6-38.5 89.9-54.1L98.5 2.1l79.3 68.8 101.6-26.3-41 96.6z"/>
+</svg>           
+
+                    </div>
+                </div>
+
+            </div>
+            <!--//span12-->
+        </div>
+        <!--//row-fluid-->
+    </div>
+    <!-- //contents -->
+
+    <!-- //footer -->
+    <div id="footer">
+        <div class="container">
+            <div class="row">
+                <div class="span12">
+                    <h5>Webstoryboy</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- //footer -->
+
+    <!-- script -->
+    <script src="../assets/js/jquery-1.9.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js"></script>
+    <script src="../assets/js/bootstrap-collapse.js"></script>
+    <script src="../assets/js/bootstrap-transition.js"></script>
+    <script src="../assets/js/google-code-prettify/prettify.js"></script>
+    <script src="../assets/js/application.js"></script>
+    <script src="../assets/js/bootstrap-tab.js"></script>
+    <script src="js/jquery.transit.min.js"></script>
+    <script src="js/mo.min.js"></script>
+    <script src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/DrawSVGPlugin.js?r=6'></script>
+
+  
+    <script>
+
+
+
+        $(".btn1").click(function(){
+            // TweenMax.to(".box1", 1, {left:"90%"});
+            // TweenMax.to(".box2", 2, {left:"90%"});
+            // TweenMax.to(".box3", 3, {left:"+=100px"});
+            //TweenMax.to([".box1",".box2",".box3"], 3, {left:"+=100px"});
+            TweenMax.to($(".box3"), 3, {left:"+=100px"});
+        });
+
+        $(".btn2").click(function(){
+            TweenMax.to(".box4", 1, {left:"90%", backgroundColor:"#5c6bc0"});
+        });
+
+        $(".btn20").click(function(){
+            TweenMax.to(".box20", 1, {left:"90%", opacity:"0.1"});
+        });
+
+        $(".btn21").click(function(){
+            TweenMax.to(".box21", 1, {left:"90%", scale:"2"});
+        });
+
+        $(".btn22").click(function(){
+            TweenMax.to(".box22", 1, {left:"90%", borderRadius:"0%"});
+        });
+
+        $(".btn23").click(function(){
+            TweenMax.to(".box23", 1, {left:"90%", delay:1});
+            TweenMax.to(".box24", 1, {left:"90%", delay:2});
+            TweenMax.to(".box25", 1, {left:"90%", delay:3});
+        });
+
+        $(".btn26").click(function(){
+            TweenMax.to(".box26", 1, {left:"90%", onComplete:myFunction});
+        });
+
+        function myFunction(){
+            alert("완료했습니다.");
+        }
+
+        $(".btn3").click(function(){
+            TweenMax.to(".box7", 1, {left:"90%", ease: Power1.easeOut});
+            TweenMax.to(".box8", 1, {left:"90%", ease: Power2.easeOut});
+            TweenMax.to(".box9", 1, {left:"90%", ease: Power3.easeOut});
+            TweenMax.to(".box10", 1, {left:"90%", ease: Power4.easeOut});
+            TweenMax.to(".box11", 1, {left:"90%", ease: Elastic.easeOut});
+            TweenMax.to(".box12", 1, {left:"90%", ease: Bounce.easeOut});
+            TweenMax.to(".box13", 1, {left:"90%", ease: RoughEase.easeOut});
+            TweenMax.to(".box14", 1, {left:"90%", ease: SlowMo.easeOut});
+            TweenMax.to(".box15", 1, {left:"90%", ease: Circ.easeOut});
+            TweenMax.to(".box16", 1, {left:"90%", ease: Expo.easeOut});
+            TweenMax.to(".box17", 1, {left:"90%", ease: Sine.easeOut});
+        });
+
+
+        $(".btn30").click(function(){
+            //TweenLite.to(".box30", 2, {rotation:30, scaleX:0.8});
+            //TweenLite.to(".box32", 2, {rotation:"1.25rad", skewX:"30deg"});
+            TweenMax.to(".box30", 1, {css:{left:"90%", scaleX:0.5, rotation:30}, ease:Power3.easeOut});
+        });
+
+        $(".btn31").click(function(){
+            //TweenLite.to(".box31", 1, {left:"90%", backgroundColor:"#FF0000", ease:Power2.easeOut});
+            TweenLite.to(".box31", 1, {css:{left:"90%", backgroundColor:"#FF0000"}, ease:Power2.easeOut});
+        });
+
+        $(".btn32").click(function(){
+            //CSSPlugin.defaultTransformPerspective = 500;
+            //TweenLite.set("box", {transformPerspective:500});
+            //TweenLite.to(element, 2, {rotationX:45, scaleX:0.8, z:-300});
+            TweenLite.to(".box32", 1, {left:"90%", rotationX:400});
+        });
+
+        $(".btn33").click(function(){
+            //.myClass {transform: scale(1.5, 1.5) rotateY(45deg) translate3d(10px, 0px, -200px)}
+            //TweenLite.to(".box33", 2, {scale:1.5, rotationY:45, x:10, y:0, z:-200});
+            //.myClass {transform: perspective(500px) rotate(120deg) translateX(50px)}
+            TweenLite.set(".box33", {transformPerspective:500, rotation:120, x:450});
+        });
+
+        $(".btn34").click(function(){
+            //TweenLite.to(".box34", 2, {rotation:360, transformOrigin:"left top"});
+            TweenLite.to(".box34", 1, {rotation:270, scale:1.5, transformOrigin:"50px 20px"});
+        });
+
+
+        $(".btn35").click(function(){
+            //TweenLite.to(".box35", 2, {rotation:"-170_short"});
+            TweenLite.to(".box35", 2, {rotation:"-170_short", rotationX:"-=30_cw", rotationY:"1.5rad_ccw"});
+        });
+
+        $(".btn36").click(function(){
+            //TweenLite.to(".box36", 2, {autoAlpha:0});
+            TweenLite.to(".box36", 2, {autoAlpha:1, delay:2});
+        });
+
+        $(".btn37").click(function(){
+            //TweenLite.to(".box37", 1, {className:"class2"});
+            TweenLite.to(".box37", 1, {className:"+=class2"});
+        });
+
+
+        var tween = TweenLite.to(".box38", 10, {left:"90%"});
+        $(".btn38-1").click(function(){tween.play() });
+        $(".btn38-2").click(function(){tween.pause();});
+        $(".btn38-3").click(function(){tween.resume();});
+        $(".btn38-4").click(function(){tween.reverse();});
+        $(".btn38-5").click(function(){tween.seek(0.5);});
+        $(".btn38-6").click(function(){tween.timeScale(9.5);});
+        $(".btn38-7").click(function(){tween.timeScale(2);});
+        $(".btn38-8").click(function(){tween.kill();});
+        $(".btn38-9").click(function(){tween.restart();});
+
+
+        
+        $(".btn39").click(function(){
+            var tl = new TimelineLite();
+            tl.to(".box39", 1, {left:"90%"});
+            tl.to(".box39", 1, {height:"300px", ease:Elastic.easeOut});
+            tl.to(".box39", 1, {opacity:0.5}, "+=0.75");
+            tl.to(".box39", 1, {backgroundColor:"#FF0000"}, "-=0.5");
+            tl.staggerTo([".box39", ".box38", ".box37"], 1, {rotation:60}, 0.2);
+            tl.play();
+        });
+
+        $(".btn40").click(function(){
+            //TweenMax.to(".box40", 1, {left:"90%",repeat:3});
+            //TweenMax.to(".box40", 1, {left:"90%",repeat:3, repeatDelay:0.5});
+            //TweenMax.to(".box40", 1, {left:"90%", repeat:1, yoyo:true});
+            TweenMax.to(".box40", 1, {left:"90%", repeat:-1, yoyo:true});
+            
+        });
+
+
+        $(".btn41").click(function(){
+            TweenMax.staggerTo([".box41-1",".box41-2",".box41-3",".box41-4",".box41-5"], 1, {left:"90%"}, 0.25);
+        });
+
+        var logo = $(".box42-1"),
+            timelineLite = $(".box42-2"),
+            tagline = $(".box42-3 span"),
+            restartBtn = $(".btn42");
+             
+     
+        restartBtn.click(function() {
+            tl.restart();
+        });
+      
+
+
+  $( ".btn43" ).click(function() {
+    TweenMax.from(".star", 2, {drawSVG: 0});
+  });
+
+
+
+
+    </script>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Tab</title>
+	<style>
+		* {padding: 0; margin: 0;}
+		a {text-decoration: none; color:#666;}
+		.cssTab {text-align: center; margin-top: 200px;}
+		.cssTab li {position: relative; display: inline;}
+		.cssTab li a {display: inline-block; padding: 12px 20px 10px; border: 1px solid #666; border-radius: 4px;}
+		.cssTab li em {opacity: 0; visibility: hidden; position: absolute; left: 50%; top: -120px; width: 200px; height: 60px;background: #000; color:#fff; margin-left: -110px; border-radius: 5px; padding:10px; transition: all 0.35s ease-in-out; }
+		.cssTab li em:after {content: ''; position: absolute; bottom:-8px; left:50%; margin-left: -10px; border-top: 10px solid #000; border-left: 10px solid transparent; border-right: 10px solid transparent;}
+		.cssTab li:hover em {opacity: 1; visibility: visible; top: -110px}
+
+
+		.jsTab {text-align: center; margin-top: 200px;}
+		.jsTab li {position: relative; display: inline;}
+		.jsTab li a {display: inline-block; padding: 12px 20px 10px; border: 1px solid #666; border-radius: 4px;}
+		.jsTab li em {opacity: 0; position: absolute; left: 50%; top: -120px; width: 200px; height: 60px;background: #000; color:#fff; margin-left: -110px; border-radius: 5px; padding:10px; /*transition: all 0.35s ease-in-out;*/ }
+		.jsTab li em:after {content: ''; position: absolute; bottom:-8px; left:50%; margin-left: -10px; border-top: 10px solid #000; border-left: 10px solid transparent; border-right: 10px solid transparent;}
+		
+	</style>
+</head>
+<body>
+	<div class="cssTab">
+		<ul>
+			<li><a href="#">CSS Tab1</a><em>선택한 요소 범위 내에서 마우스를 움직였을 때 이벤트가 발생합니다.</em></li>
+			<li><a href="#">CSS Tab1</a><em>선택한 요소 범위 내에서 마우스를 움직였을 때 이벤트가 발생합니다.</em></li>
+			<li><a href="#">CSS Tab1</a><em>선택한 요소 범위 내에서 마우스를 움직였을 때 이벤트가 발생합니다.</em></li>
+		</ul>
+	</div>
+
+
+	<div class="jsTab">
+		<ul>
+			<li><a href="#">JS Tab1</a><em>선택한 요소 범위 내에서 마우스를 움직였을 때 이벤트가 발생합니다.</em></li>
+			<li><a href="#">JS Tab2</a><em>선택한 요소 범위 내에서 마우스를 움직였을 때 이벤트가 발생합니다.</em></li>
+			<li><a href="#">JS Tab3</a><em>선택한 요소 범위 내에서 마우스를 움직였을 때 이벤트가 발생합니다.</em></li>
+		</ul>
+	</div>
+
+	<div class="jsTab jsTab2">
+		<ul>
+			<li><a href="#">JS Tab4</a></li>
+			<li><a href="#">JS Tab5</a></li>
+			<li><a href="#">JS Tab6</a></li>
+		</ul>
+	</div>
+
+	<div class="jsTab jsTab3">
+		<ul>
+			<li><a href="#" data-title="택한 요소 범위 내에서 마우스를 움직였을 때 이벤트가 발생합니다.">JS Tab7</a></li>
+			<li><a href="#" data-title="택한 요소 범위 내에서 마우스를 움직였을 때 이벤트가 발생합니다.">JS Tab8</a></li>
+			<li><a href="#" data-title="택한 요소 범위 내에서 마우스를 움직였을 때 이벤트가 발생합니다.">JS Tab9</a></li>
+		</ul>
+	</div>
+
+	<script src="assets/js/jquery-1.12.4.min.js"></script>
+	<script>
+		// opacity: 1; visibility: visible; top: -110px
+
+		//css를 이용하는 경우(구익스X : transition)
+		// $(".jsTab li a").hover(function(){
+		// 	$(this).next("em").css({"opacity":"1", "visibility":"visible", "top":"-110px"});
+		// }, function(){
+		// 	$(this).next("em").css({"opacity":"0", "visibility":"hidden", "top":"-120px"});
+		// });
+
+		//animate를 이용하는 경우
+		// $(".jsTab li a").hover(function(){
+		// 	$(this).next("em").css("visibility","visible").animate({"opacity":"1", "top":"-110px"},300);
+		// },function(){
+		// 	$(this).next("em").css("visibility","hidden").animate({"opacity":"0", "top":"-120px"},300);
+		// });
+
+		//append를 이용하는 경우
+		// $(".jsTab2 li").append("<em>선택한 요소 범위 내에서 마우스를 움직였을 때 이벤트가 발생합니다.</em>");
+		
+		// $(".jsTab2 li").hover(function(){
+		// 	$(this).find("em").css("visibility","visible").animate({"opacity":"1", "top":"-110px"},300);
+		// },function(){
+		// 	$(this).find("em").css("visibility","hidden").animate({"opacity":"0", "top":"-120px"},300);
+		// });
+
+		//attr를 이용하는 경우
+		$(".jsTab3 li").append("<em></em>")
+		var data = $(".jsTab3 li a").attr("data-title");
+
+		$(".jsTab3 li a").hover(function(){
+			$(this).next("em").css("visibility","visible").animate({"opacity":"1", "top":"-110px"},300).text(data);
+		},function(){
+			$(this).next("em").css("visibility","hidden").animate({"opacity":"0", "top":"-120px"},300);
+		});
+
+	</script>
+</body>
+</html>
+
+
+
+
+
+
+

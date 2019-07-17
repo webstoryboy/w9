@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="webstoryboy">
+    <meta name="description" content="웹 퍼블리셔를 위한 정보 공유 사이트입니다.">
+    <meta name="keywords" content="웹스토리보이, 웹 퍼블리셔, 웹 표준, 웹 접근성, 화려한 디자인, webstoryboy, publisher, html5, html4, css3, html, markup, design">
+    <title>Animation</title>
+
+    <!-- web_font -->
+    <link href='http://fonts.googleapis.com/earlyaccess/nanumgothic.css' rel='stylesheet' type='text/css' />
+
+    <!-- css -->
+    <link href="../assets/css/bootstrapTheme.css" rel="stylesheet">
+    <link href="../assets/css/custom.css" rel="stylesheet">
+    <link href="../assets/css/style.css" rel="stylesheet">
+
+    <!-- Prettify -->
+    <link href="../assets/js/google-code-prettify/prettify.css" rel="stylesheet">
+
+    <!-- Icon -->
+    <link rel="shortcut icon" href="../assets/ico/favicon.ico">
+    <link rel="apple-touch-icon" href="../assets/ico/icon_57.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="../assets/ico/icon_114.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="../assets/ico/icon_72.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="../assets/ico/icon_144.png">
+
+    <!-- hmlt5 support -->
+    <!--[if lt IE 9]><script src="../assets/js/html5shiv.js"></script><![endif]-->
+
+    <!-- IE6,7 support -->
+    <!--[if lte IE 7]><link rel="stylesheet" href="comm/css/ie7.css" type="text/css" ><![endif]-->
+    <!--[if IE 8]><link rel="stylesheet" href="comm/css/ie8.css" type="text/css" ><![endif]-->
+
+    <!--[if lte IE 6]>
+	<p style="font-size: 12px; color: #fff; background: #2885b0; padding:5px 0; margin: 0; text-align: center">
+	사용하고 계신 브라우저는 최신 웹 브라우저가 아닙니다. 업그레이드를 하거나 다른 최신 브라우저 사용을 권장합니다.
+	<a href="http://www.microsoft.com/korea/ie" target="_blank" >업그레이드,</a>
+	<a href="http://www.mozilla.or.kr/ko/" target="_blank">파이어폭스,</a> 
+	<a href="http://kr.opera.com/download/" target="_blank">오페라,</a>,
+	<a href="http://support.apple.com/kb/DL1531?viewlocale=ko_KR&locale=ko_KR" target="_blank">사파리,</a>
+	<a href="http://www.google.com/chrome?hl=ko" target="_blank">크롬</a></p>
+	<![endif]-->
+</head>
+
+
+
+<body>
+    <!-- nav -->
+    <div id="top-nav" class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                	<span class="icon-bar"></span>
+                	<span class="icon-bar"></span>
+                	<span class="icon-bar"></span>
+                </button>
+                <div class="nav-collapse collapse">
+                    <ul class="nav pull-right">
+                        <li><a href="#">webstoryboy</a></li>
+                        <li><a href="#">reference</a></li>
+                        <li><a href="#">tutorial</a></li>
+                        <li><a href="#">css</a></li>
+                        <li><a href="#">html</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- //nav -->
+
+    <!-- header -->
+    <div id="header">
+        <div class="container">
+            <div class="row">
+                <div class="span12" style="text-align:center;">
+                    <div class="header_tit">
+                        <h1>Professional web publishers</h1>
+                        <h2><a href="http://webstoryboy.co.kr">webstoryboy7.dothome.co.kr</a></h2>
+                    </div>
+                    <div class="header_icon" id="wow">
+                        <ul>
+                            <li class="icon_tit1"><a href="#" title=""><span class="blind">웹스토리보이 사이트</span></a></li>
+                            <li class="icon_tit2"><a href="#" title=""><span class="blind">웹스토리보이 사이트</span></a></li>
+                            <li class="icon_tit3"><a href="#" title=""><span class="blind">웹스토리보이 사이트</span></a></li>
+                            <li class="icon_tit4"><a href="#" title=""><span class="blind">웹스토리보이 사이트</span></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- //header -->
+
+    <!-- contents -->
+    <div class="container" style="margin-top:20px;">
+        <div class="row-fluid">
+            <div class="span12">
+                <h1>CSS Animation</h1>
+                
+                <div class="well">
+                    animation : {name}{duration}{timing-funtion}{delay}{iteration-count}{direction}{fill-mode}{play-state}
+                </div>
+
+                <h2 class="mt60">animation</h2>
+                <table class="table table-striped table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            <th>Property</th>
+                            <th>Sample</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>animation-name</td>
+                            <td>animation-name : name</td>
+                            <td>@keyframes에 지정된 이름을 설정합니다.</td>
+                        </tr>
+                        <tr>
+                            <td>animation-duration</td>
+                            <td>animation-duration : 4s</td>
+                            <td>애니메이션이 실행되는 시간을 설정합니다.</td>
+                        </tr>
+                        <tr>
+                            <td>animation-timing-function</td>
+                            <td>animation-timing-function: linear;</td>
+                            <td>애니메이션 키프레임 변화 정도를 설정합니다.</td>
+                        </tr>
+                        <tr>
+                            <td>animation-delay</td>
+                            <td>animation-delay: 1s;</td>
+                            <td>애니메이션이 시작되기 전에 대기 시간을 설정합니다.</td>
+                        </tr>
+                        <tr>
+                            <td>animation-iteration-count</td>
+                            <td>animation-iteration-count: 99;</td>
+                            <td>애니메이션 반복 횟수를 설정합니다.</td>
+                        </tr>
+                        <tr>
+                            <td>animation-direction</td>
+                            <td>animation-direction: alternate;</td>
+                            <td>애니메이션 연결 방향을 설정합니다.</td>
+                        </tr>
+                        <tr>
+                            <td>animation-fill-mode</td>
+                            <td>animation-fill-mode: forwards;</td>
+                            <td>애니메이션이 시작되기 전이나 끝나고 난 후 어떤 값이 적용될지 설정합니다.</td>
+                        </tr>
+                        <tr>
+                            <td>animation-play-state</td>
+                            <td>animation-play-state: paused;</td>
+                            <td>애니메이션의 실행 상태를 설정합니다.</td>
+                        </tr>
+                    </tbody>
+                </table>
+   
+                
+                
+                
+                
+                <h2 class="mt60">transition</h2>
+                <table class="table table-striped table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            <th>Property</th>
+                            <th>Sample</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>transition-property</td>
+                            <td>transition-property : all;</td>
+                            <td>트랜지션을 적용할 CSS 대상을 설정합니다.</td>
+                        </tr>
+                        <tr>
+                            <td>transition-duration</td>
+                            <td>transition-duration : 0.3s;</td>
+                            <td>트랜지션 작동시간을 설정합니다.</td>
+                        </tr>
+                        <tr>
+                            <td>transition-timing-function</td>
+                            <td>transition-timing-function : linear;</td>
+                            <td>트랜지션 움직임 효과를 설정합니다.</td>
+                        </tr>
+                        <tr>
+                            <td>transition-delay</td>
+                            <td>transition-delay : 1s;</td>
+                            <td>트랜지션이 시작되기 전에 대기시간을 설정합니다.</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+
+                <h2 class="mt60">timing-function</h2>
+                <table class="table table-striped table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            <th>Property</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>linear</td>
+                            <td>일정한 간격으로 움직입니다.</td>
+                        </tr>
+                        <tr>
+                            <td>ease</td>
+                            <td>처음에는 서서히 가속하고 마지막 부분에서 급격히 감속합니다.</td>
+                        </tr>
+                        <tr>
+                            <td>ease-in</td>
+                            <td>처음에는 천천히 시작하고 마지막에 가속합니다.</td>
+                        </tr>
+                        <tr>
+                            <td>ease-out</td>
+                            <td>처음에는 최대속도로 시작하고 마지막 부분에는 감속합니다.</td>
+                        </tr>
+                        <tr>
+                            <td>ease-in-out</td>
+                            <td>처음에는 제로 속도에서 시작하고, 중간 지점에서 최고 속도록 움직이고, 마지막 부분에서 서서히 감속합니다.</td>
+                        </tr>
+                        <tr>
+                            <td>step-start</td>
+                            <td>애니메이션을 시작점에서만 표현됩니다.</td>
+                        </tr>
+                        <tr>
+                            <td>step-end</td>
+                            <td>애니메이션을 끝점에서만 표현됩니다.</td>
+                        </tr>
+                        <tr>
+                            <td>steps(int,start|end)</td>
+                            <td>애니메이션을 단계별로 설정합니다.</td>
+                        </tr>
+                        <tr>
+                            <td>cubic-bezier(n,n,n,n)</td>
+                            <td>베지어 곡선값을 만들어서 속도를 설정합니다.</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <style>
+                    .box {position: relative;}
+                    .box > div {
+                        width: 60px; height: 60px; line-height: 60px; text-align: center; margin: 10px; 
+                        background: #40c4ff;  border-radius: 50%; overflow: hidden; position: relative;
+                        font-size: 12px;  color: #fff; 
+                        position: relative; /*left: calc(100% - 100px);*/ left: 0%;
+                    }
+                    .start {
+                        background: #333;border-radius: 5px;
+                        font-size: 15px; line-height: 15px; margin-bottom: 5px;
+                        color: #fff; padding: 5px 10px 6px 10px; display: inline-block; cursor: pointer;
+                    }
+                   
+                    @keyframes box1 {
+                        0% {left: 0%;}
+                        50% {left: calc(100% - 80px);}
+                        100% {left: 0%;}
+                    }
+                    @keyframes box2 {
+                        0% {left: 0%; top:0%;}
+                        25% {left: calc(100% - 80px); top:0%;}
+                        50% {left: calc(100% - 80px); top: calc(100% - 80px);}
+                        75% {left: 0%; top: calc(100% - 80px); }
+                        100% {left: 0%; top:0%;}
+                    }
+                    @keyframes box3 {
+                        0% {left: 0%;}
+                        100% {left: calc(100% - 80px);}
+                    }
+
+                </style>
+
+
+<style>
+.tr1.mo1 {animation: box1 4s 100 linear;}
+.tr2.mo2 {animation: box1 4s 100 ease;}
+.tr3.mo3 {animation: box1 4s 100 ease-in;}
+.tr4.mo4 {animation: box1 4s 100 ease-out;}
+.tr5.mo5 {animation: box1 4s 100 ease-in-out;}    
+</style>
+                <h4>animation-timing-function : Basic <a href="#c" class="start start1">Start</a></h4>
+                <div class="well">
+                    <div class="box box1">
+                        <div class="tr1">linear</div>
+                        <div class="tr2">ease</div>
+                        <div class="tr3">ease-in</div>
+                        <div class="tr4">ease-out</div>
+                        <div class="tr5">ease-in-out</div>
+                    </div>
+                </div>
+<pre class="pre-show prettyprint linenums">
+.tr1.mo1 {animation: box1 4s 100 linear;}
+.tr2.mo2 {animation: box1 4s 100 ease;}
+.tr3.mo3 {animation: box1 4s 100 ease-in;}
+.tr4.mo4 {animation: box1 4s 100 ease-out;}
+.tr5.mo5 {animation: box1 4s 100 ease-in-out;}
+</pre>
+
+
+
+
+<style>
+.tr6.mo6 {animation: box1 4s 100 step-start;}
+.tr7.mo7 {animation: box1 4s 100 step-end;}
+.tr8.mo8 {animation: box1 4s 100 steps(4, start);}
+.tr9.mo9 {animation: box1 4s 100 steps(4, end);}  
+</style>
+                <h4>animation-timing-function : step <a href="#c" class="start start2">Start</a></h4>
+                <div class="well">
+                    <div class="box box2">
+                        <div class="tr6">step-start</div>
+                        <div class="tr7">step-end</div>
+                        <div class="tr8">steps(4.start)</div>
+                        <div class="tr9">steps(4.end)</div>
+                    </div>
+                </div>
+<pre class="pre-show prettyprint linenums">
+.tr6.mo6 {animation: box1 4s 100 step-start;}
+.tr7.mo7 {animation: box1 4s 100 step-end;}
+.tr8.mo8 {animation: box1 4s 100 steps(4, start);}
+.tr9.mo9 {animation: box1 4s 100 steps(4, end);}
+</pre>
+
+
+
+
+
+<style>
+.tr10.mo10 {animation: box1 4s 100 cubic-bezier(0, 0, 0, 0);}
+.tr11.mo11 {animation: box1 4s 100 cubic-bezier(1, 0, 0, 1);}
+.tr12.mo12 {animation: box1 4s 100 cubic-bezier(0.95,-0.39, 0, 1.66);}
+.tr13.mo13 {animation: box1 4s 100 cubic-bezier(0.95,-0.39, 1, 0.08)}
+</style>
+                <h4>animation-timing-function : cubic-bezier <a href="#c" class="start start3">Start</a></h4>
+                <div class="well">
+                    <div class="box box3">
+                        <div class="tr10">cubic-bezier</div>
+                        <div class="tr11">cubic-bezier</div>
+                        <div class="tr12">cubic-bezier</div>
+                        <div class="tr13">cubic-bezier</div>
+                    </div>
+                </div>
+<pre class="pre-show prettyprint linenums">
+.tr10.mo10 {animation: box1 4s 100 cubic-bezier(0, 0, 0, 0);}
+.tr11.mo11 {animation: box1 4s 100 cubic-bezier(1, 0, 0, 1);}
+.tr12.mo12 {animation: box1 4s 100 cubic-bezier(0.95,-0.39, 0, 1.66);}
+.tr13.mo13 {animation: box1 4s 100 cubic-bezier(0.95,-0.39, 1, 0.08)}
+</pre>
+
+
+
+
+<style>
+.tr14.mo14 {animation: box1 4s 0.5s 100 linear;}
+.tr15.mo15 {animation: box1 4s 1s 100 linear;}
+.tr16.mo16 {animation: box1 4s 1.5s 100 linear;}
+.tr17.mo17 {animation: box1 4s 2s 100 linear;}
+</style>           
+                
+                <h3 class="mt60">animation-delay <a href="#c" class="start start4">Start</a></h3>
+                <div class="well">
+                    <div class="box box4">
+                        <div class="tr14">delay</div>
+                        <div class="tr15">delay</div>
+                        <div class="tr16">delay</div>
+                        <div class="tr17">delay</div>
+                    </div>
+                </div>
+<pre class="pre-show prettyprint linenums">
+.tr14.mo14 {animation: box1 4s 0.5s 100 linear;}
+.tr15.mo15 {animation: box1 4s 1s 100 linear;}
+.tr16.mo16 {animation: box1 4s 1.5s 100 linear;}
+.tr17.mo17 {animation: box1 4s 2s 100 linear;}
+</pre>
+
+
+
+
+
+
+
+
+<style>
+.box5 {height: 300px}
+.sbtn1 a { background: #333;border-radius: 5px; font-size: 15px; line-height: 15px; margin-bottom: 5px; color: #fff; padding: 5px 10px 6px 10px; display: inline-block; cursor: pointer;}
+.tr18 {animation: box2 4s 10 linear; animation-direction: normal;}
+.tr19 {animation: box2 4s 10 linear; animation-direction: reverse;}
+.tr20 {animation: box2 4s 10 linear; animation-direction: alternate;}
+.tr21 {animation: box2 4s 10 linear; animation-direction: alternate-reverse;}
+</style>
+                <h3 class="mt60 sbtn1">animation-direction 
+                    <a href="#c" class="s1">normal</a>
+                    <a href="#c" class="s2">reverse</a>
+                    <a href="#c" class="s3">alternate</a>
+                    <a href="#c" class="s4">alternate-reverse</a>
+                </h3>
+                <div class="well">
+                    <div class="box box5">
+                        <div>direction</div>
+                    </div>
+                </div>
+<pre class="pre-show prettyprint linenums">
+.tr18 {animation: box2 4s 10 linear; animation-direction: normal;}
+.tr19 {animation: box2 4s 10 linear; animation-direction: reverse;}
+.tr20 {animation: box2 4s 10 linear; animation-direction: alternate;}
+.tr21 {animation: box2 4s 10 linear; animation-direction: alternate-reverse;}
+</pre>
+              
+
+
+
+
+<style>
+.tr22.mo22 {animation: box3 2s 1 linear; animation-fill-mode : none;}
+.tr23.mo23 {animation: box3 2s 1 linear; animation-fill-mode : forwards;}
+.tr24.mo24 {animation: box3 2s 1 linear; animation-fill-mode : backwards;}
+.tr25.mo25 {animation: box3 2s 1 linear; animation-fill-mode : both;}
+</style>           
+                
+                <h3 class="mt60">animation-fill-mode <a href="#c" class="start start6">Start</a></h3>
+                <div class="well">
+                    <div class="box box6">
+                        <div class="tr22">delay</div>
+                        <div class="tr23">delay</div>
+                        <div class="tr24">delay</div>
+                        <div class="tr25">delay</div>
+                    </div>
+                </div>
+<pre class="pre-show prettyprint linenums">
+.tr22.mo22 {animation: box3 2s 1 linear; animation-fill-mode : none;}
+.tr23.mo23 {animation: box3 2s 1 linear; animation-fill-mode : forwards;}
+.tr24.mo24 {animation: box3 2s 1 linear; animation-fill-mode : backwards;}
+.tr25.mo25 {animation: box3 2s 1 linear; animation-fill-mode : both;}
+</pre>
+
+
+
+
+
+
+
+
+<style>
+.tr26.mo26 {animation: box1 4s linear; animation-iteration-count : 1;}
+.tr27.mo27 {animation: box1 4s linear; animation-iteration-count : 2;}
+.tr28.mo28 {animation: box1 4s linear; animation-iteration-count : 3;}
+.tr29.mo29 {animation: box1 4s linear; animation-iteration-count : infinite;}
+</style>           
+                
+                <h3 class="mt60">animation-iteration-count <a href="#c" class="start start7">Start</a></h3>
+                <div class="well">
+                    <div class="box box7">
+                        <div class="tr26">delay</div>
+                        <div class="tr27">delay</div>
+                        <div class="tr28">delay</div>
+                        <div class="tr29">delay</div>
+                    </div>
+                </div>
+<pre class="pre-show prettyprint linenums">
+.tr26.mo26 {animation: box1 4s linear; animation-iteration-count : 1;}
+.tr27.mo27 {animation: box1 4s linear; animation-iteration-count : 2;}
+.tr28.mo28 {animation: box1 4s linear; animation-iteration-count : 3;}
+.tr29.mo29 {animation: box1 4s linear; animation-iteration-count : infinite;}
+</pre>
+
+
+
+
+
+<style>
+.box8 {height: 300px}
+.sbtn8 a { background: #333;border-radius: 5px; font-size: 15px; line-height: 15px; margin-bottom: 5px; color: #fff; padding: 5px 10px 6px 10px; display: inline-block; cursor: pointer;}
+.tr30 {animation: box2 4s 10 linear; animation-play-state : running;}
+.tr31 {animation: box2 4s 10 linear; animation-play-state : paused;}
+</style>
+                <h3 class="mt60 sbtn8">animation-play-state 
+                    <a href="#c" class="s1">running</a>
+                    <a href="#c" class="s2">paused</a>
+                </h3>
+                <div class="well">
+                    <div class="box box8">
+                        <div>direction</div>
+                    </div>
+                </div>
+<pre class="pre-show prettyprint linenums">
+.tr30 {animation: box2 4s 10 linear; animation-play-state : running;}
+.tr31 {animation: box2 4s 10 linear; animation-play-state : paused;}
+</pre>
+              
+
+
+
+                <h3 class="mt60">Rotat Bar </h3>
+                <p data-height="500" data-theme-id="26135" data-slug-hash="OjbRvw" data-default-tab="result" data-user="webstoryboy" data-embed-version="2" data-pen-title="Rotate Bar" class="codepen">See the Pen <a href="https://codepen.io/webstoryboy/pen/OjbRvw/">Rotate Bar</a> by Webstoryboy (<a href="https://codepen.io/webstoryboy">@webstoryboy</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+
+                <h3 class="mt60">Circle loadig </h3>
+                <p data-height="500" data-theme-id="26135" data-slug-hash="JybRwN" data-default-tab="result" data-user="webstoryboy" data-embed-version="2" data-pen-title="Circle Loading" class="codepen">See the Pen <a href="https://codepen.io/webstoryboy/pen/JybRwN/">Circle Loading</a> by Webstoryboy (<a href="https://codepen.io/webstoryboy">@webstoryboy</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+                
+                <h3 class="mt60">Loadig Ball </h3>
+                <p data-height="500" data-theme-id="26135" data-slug-hash="vJyyXV" data-default-tab="result" data-user="webstoryboy" data-embed-version="2" data-pen-title="Loading Ball" class="codepen">See the Pen <a href="https://codepen.io/webstoryboy/pen/vJyyXV/">Loading Ball</a> by Webstoryboy (<a href="https://codepen.io/webstoryboy">@webstoryboy</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+
+
+
+
+            </div>
+            <!--//span12-->
+        </div>
+        <!--//row-fluid-->
+    </div>
+    <!-- //contents -->
+
+    <!-- //footer -->
+    <div id="footer">
+        <div class="container">
+            <div class="row">
+                <div class="span12">
+                    <h5>Webstoryboy</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- //footer -->
+
+    <!-- script -->
+    <script src="../assets/js/jquery-1.9.1.min.js"></script>
+    <script src="../assets/js/bootstrap-collapse.js"></script>
+    <script src="../assets/js/bootstrap-transition.js"></script>
+    <script src="../assets/js/google-code-prettify/prettify.js"></script>
+    <script src="../assets/js/application.js"></script>
+    <script src="../assets/js/bootstrap-tab.js"></script>
+    <script src="js/jquery.transit.min.js"></script>
+    <script src="js/mo.min.js"></script>
+    <script>
+        $(".start1").click(function(){
+            $(".tr1").addClass("mo1");
+            $(".tr2").addClass("mo2");
+            $(".tr3").addClass("mo3");
+            $(".tr4").addClass("mo4");
+            $(".tr5").addClass("mo5");
+        });
+        $(".start2").click(function(){
+            $(".tr6").addClass("mo6");
+            $(".tr7").addClass("mo7");
+            $(".tr8").addClass("mo8");
+            $(".tr9").addClass("mo9");
+        });
+        $(".start3").click(function(){
+            $(".tr10").addClass("mo10");
+            $(".tr11").addClass("mo11");
+            $(".tr12").addClass("mo12");
+            $(".tr13").addClass("mo13");
+        });
+        $(".start4").click(function(){
+            $(".tr14").addClass("mo14");
+            $(".tr15").addClass("mo15");
+            $(".tr16").addClass("mo16");
+            $(".tr17").addClass("mo17");
+        });
+
+
+        
+
+
+        $(".sbtn1 a").click(function(){
+            var num = $(this).attr("class");
+            $(".box5 > div").removeClass();
+            //alert(num);
+
+            if(num == "s1"){
+                $(".box5 > div").addClass("tr18");
+            }
+            if(num == "s2"){
+                $(".box5 > div").addClass("tr19");
+            }
+            if(num == "s3"){
+                $(".box5 > div").addClass("tr20");
+            }
+            if(num == "s4"){
+                $(".box5 > div").addClass("tr21");
+            }
+        });
+
+        $(".start6").click(function(){
+            $(".tr22").addClass("mo22");
+            $(".tr23").addClass("mo23");
+            $(".tr24").addClass("mo24");
+            $(".tr25").addClass("mo25");
+        });
+
+        $(".start7").click(function(){
+            $(".tr26").addClass("mo26");
+            $(".tr27").addClass("mo27");
+            $(".tr28").addClass("mo28");
+            $(".tr29").addClass("mo29");
+        });
+
+        $(".sbtn8 a").click(function(){
+            var num = $(this).attr("class");
+            $(".box8 > div").removeClass();
+            //alert(num);
+
+            if(num == "s1"){
+                $(".box8 > div").addClass("tr30");
+            }
+            if(num == "s2"){
+                $(".box8 > div").addClass("tr31");
+            }
+        });
+
+        
+
+    </script>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		@import url('https://fonts.googleapis.com/css?family=Playball');
+		/* font-family: 'Playball', cursive; */
+		
+		/* reset */
+		*{margin:0; padding:0}
+		li,ul {list-style:none}
+		a {text-decoration:none}
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,700');
+@import url('//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css');
+
+ul.sidebar-menu {
+  list-style-type: none;
+  list-style: none;
+  max-width: 400px;
+  background: #4d5158;
+  margin: 0;
+  padding: 0;
+}
+
+.sidebar-menu a {
+  position: relative;
+  display: block;
+  color: #ffffff;
+  text-decoration: none;
+  padding: 20px 25px;
+}
+
+.sidebar-menu ul {
+  /* by default hide all sub menus */
+  display: none;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.sidebar-menu li:hover, .sidebar-menu a:hover {
+  background: #52565d;
+}
+
+ul.sidebar-menu ul a {
+  background: #3c3636;
+}
+
+li.have-children  {
+  position: relative;
+
+}
+li.have-children:after {
+  right: 35px;
+  top: 15px;
+  border: solid transparent;
+  content: ">";
+  position: absolute;
+  pointer-events: none;
+  transition: all 0.2s ease;
+  font-family: 'FontAwesome';
+}
+li.active.have-children:after {
+  transform: rotate(90deg);
+}
+.sidebar-menu > li > a > span{
+  margin-right: 30px;
+}
+.sidebar-menu ul a {
+  padding-left: 72px;
+}
+
+
+	</style>
+</head>
+<body>
+<ul class="sidebar-menu">
+	<li class="have-children"><a href="#">Exhibitions</a>
+		<ul>
+			<li><a href="#">Add Exhibition</a></li>
+			<li><a href="#">View Exhibitions</a></li>
+		</ul>
+	</li>
+	<li class="have-children"><a href="#">Category</a>
+		<ul>
+			<li><a href="#">Add Category</a></li>
+			<li><a href="#">View Categories</a></li>
+		</ul>
+	</li>
+	<li class="have-children"><a href="#">Category</a>
+		<ul>
+			<li><a href="#">Add Category</a></li>
+			<li><a href="#">View Categories</a></li>
+		</ul>
+	</li>
+	<li class="have-children"><a href="#">Category</a>
+		<ul>
+			<li><a href="#">Add Category</a></li>
+			<li><a href="#">View Categories</a></li>
+		</ul>
+	</li>
+</ul>
+<!-- sidebar menu end-->
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+	<script>
+
+
+  // $('.sidebar-menu > li.have-children > a').click(function(e){
+  //   e.preventDefault();
+  //   if ( ! $(this).parent().hasClass('active') ){
+  //     $('.sidebar-menu li ul').slideUp();
+  //     $(this).next().slideToggle();
+  //     $('.sidebar-menu li').removeClass('active');
+  //     $(this).parent().addClass('active');
+  //   } else {
+  //     $(this).next().slideToggle();
+  //     $('.sidebar-menu li').removeClass('active');
+  //   }
+  // });
+
+  $('.sidebar-menu > li.have-children > a').click(function(e){
+    e.preventDefault();
+    if (!$(this).parent().hasClass('active') ){
+      $('.sidebar-menu li ul').slideUp();
+      $(this).next().slideToggle();
+      $('.sidebar-menu li').removeClass('active');
+      $(this).parent().addClass('active');
+    } else {
+      $(this).next().slideToggle();
+      $('.sidebar-menu li').removeClass('active');
+    }
+  });
+
+
+
+
+
+
+	</script>
+</body>
+</html>

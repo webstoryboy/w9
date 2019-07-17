@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8">
+		<title>제이쿼리(jQuery)</title>
+		<style>
+			.list2 {overflow: hidden;}
+			.list2 li {float: left; width: 19%; margin:0.5%; min-height: 150px; list-style: none; position: relative;}
+			.list2 li img {width: 100%;}
+			.list2 li em {display:block; width: 20px; height: 20px; background-color: #ec407a; color: #fff; font-size: 12px; position: absolute; left: 5px; top:5px; border-radius: 50%; text-align: center; line-height: 22px;}
+		</style>
+	</head>
+	<body>
+		<h3 class="h3">효과(Effect)</h3>
+		<div class="list2">
+			<ul>
+				<li class="one1"><em>1</em><img src="https://tistory1.daumcdn.net/tistory/2141493/skin/images/img01.jpg" width="200"></li>
+				<li class="one2"><em>2</em><img src="https://tistory1.daumcdn.net/tistory/2141493/skin/images/img02.jpg" width="200"></li>
+				<li class="one3"><em>3</em><img src="https://tistory1.daumcdn.net/tistory/2141493/skin/images/img03.jpg" width="200"></li>
+				<li class="one4"><em>4</em><img src="https://tistory1.daumcdn.net/tistory/2141493/skin/images/img04.jpg" width="200"></li>
+				<li class="one5"><em>5</em><img src="https://tistory1.daumcdn.net/tistory/2141493/skin/images/img05.jpg" width="200"></li>
+			</ul>
+		</div>
+
+		<div class="btn btn2">
+			<ul>
+				<li><input type="radio" name="radio" id="ex10" value="1"><label for="ex10">$(".list2 .one1 img").fadeOut();</label></li> 
+				<li><input type="radio" name="radio" id="ex11" value="2"><label for="ex11">$(".list2 .one2 img").fadeOut("slow");</label></li>
+				<li><input type="radio" name="radio" id="ex12" value="3"><label for="ex12">$(".list2 .one3 img").fadeOut("normal");</label></li>
+				<li><input type="radio" name="radio" id="ex13" value="4"><label for="ex13">$(".list2 .one4 img").fadeOut("fast");</label></li>
+				<li><input type="radio" name="radio" id="ex14" value="5"><label for="ex14">$(".list2 .one5 img").fadeOut(2000);</label></li>
+				<li><input type="radio" name="radio" id="ex15" value="6"><label for="ex15">$(".list2 img").fadeIn();</label></li>
+			</ul>
+		</div>
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+		<script type="text/javascript">
+		$(document).ready(function(){    
+			var btn2 = $(".btn2 > ul > li > input");	
+			
+			btn2.click(function(){
+				var num = $(this).attr("value");
+				$("*").removeClass("on");
+				
+				if(num == 1){$(".list2 .one1 img").fadeOut();}
+				if(num == 2){$(".list2 .one2 img").fadeOut("slow");}
+				if(num == 3){$(".list2 .one3 img").fadeOut("normal");}
+				if(num == 4){$(".list2 .one4 img").fadeOut("fast");}
+				if(num == 5){$(".list2 .one5 img").fadeOut(2000);}
+				if(num == 6){$(".list2 img").fadeIn();}
+			});
+		}); 
+		</script> 
+	</body>
+</html>       

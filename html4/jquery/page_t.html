@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  color: #514F6F;
+}
+
+body {
+  padding: 2rem;
+  text-align: center;
+}
+
+a {
+  color: inherit;
+}
+
+.page-transition {
+  visibility: hidden;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  z-index: 9999;
+}
+.page-transition.loading {
+  visibility: visible;
+}
+.page-transition.loading .circle {
+  -webkit-transform: scale(4);
+          transform: scale(4);
+}
+
+.circle {
+  position: absolute;
+  width: 25vmax;
+  height: 25vmax;
+  background-color: #5AA8B3;
+  border-radius: 50%;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  -webkit-transform-origin: center center;
+          transform-origin: center center;
+  -webkit-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
+}
+.circle:nth-of-type(1) {
+  top: 20%;
+  left: 10%;
+}
+.circle:nth-of-type(2) {
+  top: 75%;
+  left: 25%;
+  -webkit-transition-delay: 0.25s;
+          transition-delay: 0.25s;
+}
+.circle:nth-of-type(3) {
+  top: 45%;
+  left: 55%;
+  -webkit-transition-delay: 0.15s;
+          transition-delay: 0.15s;
+}
+.circle:nth-of-type(4) {
+  top: 10%;
+  left: 80%;
+  -webkit-transition-delay: 0.2s;
+          transition-delay: 0.2s;
+}
+.circle:nth-of-type(5) {
+  top: 85%;
+  left: 70%;
+  -webkit-transition-delay: 0.3s;
+          transition-delay: 0.3s;
+}
+
+.content {
+  display: none;
+}
+
+	</style>
+</head>
+<body>
+	<div class="page-transition">
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+</div>
+
+<a href="#" class="btn js-toggle-transition">Toggle Transition</a>
+
+<div class="content">
+    <p>Normcore migas cronut art party photo booth lo-fi. Fashion axe bespoke cold-pressed, letterpress humblebrag live-edge iPhone. Plaid prism you probably haven't heard of them, humblebrag PBR&B roof party jean shorts shoreditch. 3 wolf moon lomo marfa single-origin coffee, affogato ennui viral gastropub chartreuse readymade leggings cold-pressed distillery shoreditch. Poutine cronut vinyl gochujang flexitarian marfa celiac. Lo-fi ennui retro next level, selfies helvetica chartreuse. Organic pabst hot chicken, banh mi thundercats kombucha tacos migas hexagon hashtag selfies four loko.</p>
+    <p>Scenester put a bird on it tacos four loko chillwave. Snackwave poke vinyl etsy, ennui iPhone meditation tousled leggings shabby chic cray 3 wolf moon. Cardigan copper mug tumeric fanny pack subway tile ennui swag, selvage synth celiac raw denim hoodie pop-up. Polaroid woke cliche slow-carb enamel pin hammock. Pork belly leggings viral fanny pack trust fund. Pug gentrify snackwave williamsburg, knausgaard typewriter tilde master cleanse scenester. Fixie hammock selfies, gentrify tattooed pabst neutra tote bag.</p>
+    <p>Shoreditch vape la croix bushwick, synth celiac tote bag lyft succulents waistcoat tumeric poutine live-edge. Post-ironic next level pour-over 90's try-hard, jianbing umami health goth. Blue bottle yuccie organic taxidermy retro. Lyft cardigan tilde polaroid bespoke kogi plaid small batch. Pinterest everyday carry godard authentic lyft vinyl craft beer, cardigan polaroid pop-up. Gluten-free mlkshk crucifix, stumptown VHS ramps locavore hammock brunch copper mug subway tile literally DIY try-hard pug. Kitsch 90's banjo, pabst tbh +1 knausgaard.</p>
+</div>
+
+	<script src="assets/js/jquery-1.12.4.min.js"></script>
+	<script type="text/javascript">
+		$('.js-toggle-transition').click(function() {
+		    $('.page-transition').addClass('loading');
+		    
+		    setTimeout(function() {
+		        $('.content').toggle();
+		        $('.page-transition').removeClass('loading');        
+		    }, 1000);
+		});
+	</script>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Menu</title>
+	<style>
+		body {
+			height:100vh;
+			background-image: linear-gradient(45deg, #ff0844 0%, #ffb199 100%);
+		}
+		.loading {
+			position: absolute; 
+			left: 0; top: 0; right: 0; bottom: 0;
+			margin: auto;
+			display: flex;
+			padding: 0 10%;
+			justify-content : space-around;
+			align-items : center;
+		}
+		.ball {
+			width: 20px; height: 20px; background-color:#fff;
+			border-radius: 50%;
+		}
+		.ball:nth-child(odd){
+			animation: up 1s infinite ease-in-out;
+		}
+		.ball:nth-child(even){
+			animation: down 1s infinite ease-in-out;
+		}
+		@keyframes up {
+			0% {transform: translatey(-20px);}
+			50% {transform: translatey(20px);}
+			100% {transform: translatey(-20px);}
+		}
+		@keyframes down {
+			0% {transform: translatey(20px);}
+			50% {transform: translatey(-20px);}
+			100% {transform: translatey(20px);}
+		}
+	</style>
+</head>
+<body>
+	<div class="loading">
+		<div class="ball"></div>
+		<div class="ball"></div>
+		<div class="ball"></div>
+		<div class="ball"></div>
+		<div class="ball"></div>
+		<div class="ball"></div>
+		<div class="ball"></div>
+		<div class="ball"></div>
+		<div class="ball"></div>
+		<div class="ball"></div>
+		<div class="ball"></div>
+		<div class="ball"></div>
+		<div class="ball"></div>
+		<div class="ball"></div>
+		<div class="ball"></div>
+		<div class="ball"></div>
+		<div class="ball"></div>
+		<div class="ball"></div>
+		<div class="ball"></div>
+		<div class="ball"></div>
+	</div>
+</body>
+</html>

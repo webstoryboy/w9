@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		* {margin: 0;}
+		.list {}
+		.list ul {display: flex; align-items: center; justify-content: center;}
+		.list li {list-style: none; margin:10px;}
+		.list li img {max-width: 400px}
+		.btn li {display: inline-block;}
+	</style>
+</head>
+<body>
+	<div class="btn">
+		<ul>
+			<li><a href="#c">hide</a></li>
+			<li><a href="#c">fadeOut</a></li>
+			<li><a href="#c">slideUp</a></li>
+			<li><a href="#c">show</a></li>
+			<li><a href="#c">fadeIn</a></li>
+			<li><a href="#c">slideDown</a></li>
+			<li><a href="#c">toggle</a></li>
+			<li><a href="#c">fadeToggle</a></li>
+			<li><a href="#c">slideToggle</a></li>
+		</ul>
+	</div>
+
+	<div class="list">
+		<ul>
+			<li><img src="assets/img/img08.jpg" alt=""></li>
+			<li><img src="assets/img/img07.jpg" alt=""></li>
+			<li><img src="assets/img/img06.jpg" alt=""></li>
+		</ul>
+	</div>
+	<div class="list list2">
+		<ul>
+			<li><img src="assets/img/img05.jpg" alt=""></li>
+			<li><img src="assets/img/img04.jpg" alt=""></li>
+			<li><img src="assets/img/img03.jpg" alt=""></li>
+		</ul>
+	</div>
+	
+
+
+
+	<script src="assets/js/jquery-1.12.4.min.js"></script>
+	<script>
+		$(".btn li").eq(0).click(function(){
+			$(".list li").eq(0).hide();
+		});
+		$(".btn li").eq(1).click(function(){
+			$(".list li").eq(1).fadeOut();
+		});
+		$(".btn li").eq(2).click(function(){
+			$(".list li").eq(2).slideUp();
+		});
+		$(".btn li").eq(3).click(function(){
+			$(".list li").eq(0).show();
+		});
+		$(".btn li").eq(4).click(function(){
+			$(".list li").eq(1).fadeIn();
+		});
+		$(".btn li").eq(5).click(function(){
+			$(".list li").eq(2).slideDown();
+		});
+
+		$(".btn li").eq(6).click(function(){
+			$(".list2 li").eq(0).toggle();
+		});
+		$(".btn li").eq(7).click(function(){
+			$(".list2 li").eq(1).fadeToggle();
+		});
+		$(".btn li").eq(8).click(function(){
+			$(".list2 li").eq(2).slideToggle();
+		});
+		
+	</script>
+</body>
+</html>
+
+
+
+
+

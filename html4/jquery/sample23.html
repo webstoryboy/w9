@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jQuery</title>
+	<style>
+		* {padding: 0; margin: 0;}
+		li{list-style: none;}
+		a {text-decoration: none;}
+		#tab-menu {width:350px; margin: 50px auto;}
+		#tab-btn ul {overflow: hidden;}
+		#tab-btn li {float: left; width: 20%; text-align: center;}
+		#tab-btn li a {display: block; padding:14px 10px 10px 10px; background-color: #ba68c8; color:#fff; margin-right: 1px; margin-bottom: 1px; }
+		#tab-btn li.active a {background-color: #7b1fa2;}
+
+		#tab-cont {width: 350px; height: 260px;}
+		#tab-cont > div {display: none; text-align: center; background-color: #e1bee7;}
+		#tab-cont > div:first-child {display: block;}
+		#tab-cont > div img {width: 100%;}
+	</style>
+</head>
+<body>
+	
+	<div id="tab-menu">
+		<div id="tab-btn">
+			<ul>
+				<li class="active"><a href="#">Tab1</a></li>
+				<li><a href="#">Tab2</a></li>
+				<li><a href="#">Tab3</a></li>
+				<li><a href="#">Tab4</a></li>
+				<li><a href="#">Tab5</a></li>
+			</ul>
+		</div>
+		<div id="tab-cont">
+			<div>
+				<img src="assets/img/img05.jpg">
+				<h3>이미지4</h3>
+				<p>이미지가 이쁘네요!</p>
+			</div>
+			<div>
+				<img src="assets/img/img04.jpg">
+				<h3>이미지2</h3>
+				<p>이미지가 이쁘네요!</p>
+			</div>
+			<div>
+				<img src="assets/img/img03.jpg">
+				<h3>이미지1</h3>
+				<p>이미지가 이쁘네요!</p>
+			</div>
+			<div>
+				<img src="assets/img/img02.jpg">
+				<h3>이미지3</h3>
+				<p>이미지가 이쁘네요!</p>
+			</div>
+			<div>
+				<img src="assets/img/img01.jpg">
+				<h3>이미지1</h3>
+				<p>이미지가 이쁘네요!</p>
+			</div>
+		</div>
+	</div>
+
+	<script src="assets/js/jquery-1.12.4.min.js"></script>
+	<script src="assets/js/jquery-ui-1.12.1.min.js"></script>
+	<script>
+		var btn = $("#tab-btn > ul > li");
+		var contents = $("#tab-cont > div");
+
+		btn.click(function(e){
+			e.preventDefault();	
+			var target = $(this);
+			var index = target.index();
+			btn.removeClass();
+			target.addClass("active");
+			contents.css("display","none");
+			contents.eq(index).css("display","block");
+		});
+
+	</script>
+</body>
+</html>
+
+
+
+

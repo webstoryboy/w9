@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    li.show {font-size: 90%; color: #c7254e; background-color: #f9f2f4; border-radius: 4px; border: 1px dashed #a51a3d;}
+
+  </style>
+</head>
+<body>
+  <h3>탐색</h3>
+  <div class="list">
+      <ul>
+        <li class="one1"><em>.childred()</em>	선택한 요소의 모든 자식을 선택합니다.(자손 포함안됨)</li>
+        <li class="one2"><em>.find()</em>	선택한 요소의 자손 요소 중 조건에 맞는 요소를 선택합니다.</li>
+        <li class="one3"><em>.next()</em>	선택한 요소의 다음 요소를 선택합니다.</li>
+        <li class="one4"><em>.nextAll()</em>	선택한 요소의 다음 모든 요소를 선택합니다.</li>
+        <li class="one5"><em>.parent()</em>	선택한 요소의 부모 요소를 선택합니다.</li>
+        <li class="one6"><em>.parents()</em>	선택한 요소의 <strong>모든 부모</strong> 요소를 선택합니다.</li>
+        <li class="one7"><em>.prev()</em>	선택한 요소의 <strong>이전 요소</strong>를 선택합니다.</li>
+        <li class="one8"><em>.prevAll()</em>	선택한 요소의 이전 요소를 선택합니다.</li>
+        <li class="one9"><em>.closest()</em>	선택한 요소를 포함하면서 <span>가장</span> 가까운 <span>상위</span> 요소를 선택합니다.</li>
+      </ul>
+  </div>
+
+
+
+
+
+  <script src="assets/js/jquery-1.12.4.min.js"></script>
+	<script>
+    $(".list li").each(function(i){
+      setTimeout(function(){
+        $(".list li").eq(i).addClass("show"); 
+      }, 100 * (i + 1) );
+    });
+
+
+	</script>
+</body>
+</html>

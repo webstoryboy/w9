@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>제이쿼리(jQuery)</title>
+	<style>
+	.list ul li.on{padding: 4px 4px 2px 10px; font-size: 90%; color: #c7254e; white-space: nowrap; background-color: #f9f2f4; border-radius: 4px; border:1px dashed #a51a3d;}
+	.list p.on{padding: 4px 4px 2px 10px; font-size: 90%; color: #c7254e; white-space: nowrap; background-color: #f9f2f4; border-radius: 4px; border:1px dashed #a51a3d;}
+	</style>
+   </head>
+   <body>
+		<h3>선택자(Selectors)</h3>
+		<div class="list">
+			<ul>
+				<li>기본 선택자(Basic)</li>
+				<li>계층 선택자(Hierarchy)
+					<ul>
+						<li>Descendant Selector 모든 자식을 선택합니다.</li>
+						<li>Child Selector는 바로 하위 자식만 선택합니다.(parent > child)</li>
+						<li>Next Adjacent Selector 다음 형제 태그를 선택합니다.(prev + next)</li>
+						<li>Next Siblings Selector 다음 형제 모든 태그를 선택합니다.(prev ~ siblings)</li>
+					</ul>
+				</li>
+				
+			</ul>
+			<p>&lt;p&gt;기본 선택자입니다.&lt;/p&gt;</p>
+			<p>&lt;p&gt;선택자(Selectors) 선택자입니다.&lt;/p&gt;</p>
+		</div>
+
+		<div class="nSample-de">
+			<ul>
+				<li><input type="radio" name="radio" id="ex1" value="0" checked=""><label for="ex1">$("#one1").addClass("on");	//아이디 선택자</label></li>
+				<li><input type="radio" name="radio" id="ex2" value="1"><label for="ex2">$(".one2").addClass("on");	//클래스 선택자</label></li>
+				<li><input type="radio" name="radio" id="ex3" value="2"><label for="ex3">$("*").addClass("on"); 	// 전체 선택자</label></li>
+				<li><input type="radio" name="radio" id="ex4" value="3"><label for="ex4">$("li").addClass("on");	//태그 선택자</label></li>
+				<li><input type="radio" name="radio" id="ex5" value="4"><label for="ex5">$("li, p").addClass("on");	//다중 태그 선택자</label></li>
+			</ul>
+		</div>
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+		<script type="text/javascript">
+		$(document).ready(function(){        
+			var btn = $(".nSample-de > ul > li > input");
+
+			btn.click(function(){
+				var num = $(this).attr("value");
+				//alert(num);
+
+				if(num == 0){
+					$("li, p").removeClass("on");
+					$("#one1").addClass("on"); 		// 전체 선택자
+				}
+				if(num == 1){
+					$("li, p").removeClass("on");
+					$(".one2").addClass("on");	//클래스 선택자
+				}
+				if(num == 2){
+					$("li, p").removeClass("on");
+					$("*").addClass("on"); 	//아이디 선택자
+				}
+				if(num == 3){
+					$("li, p").removeClass("on");
+					$("li").addClass("on"); 	//태그 선택자
+				}
+				if(num == 4){
+					$("li, p").removeClass("on");
+					$("li, p").addClass("on"); 	//다중 태그 선택자
+				}
+			});
+		}); 
+		</script> 
+	</body>
+</html>       

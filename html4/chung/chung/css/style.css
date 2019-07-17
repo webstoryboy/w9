@@ -1,0 +1,17 @@
+@charset "UTF-8";
+
+@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+/* font-family: "Noto Sans KR", sans-serif; 100,300,400,500,700,900 */
+
+/* layout */
+#header {}
+
+/* container */
+.container {width: 1100px; margin: 0 auto; background: rgba(0,0,0,.5);}
+
+/* header */
+.header {}
+.header .header_top {}
+.header .header_top .search {}
+.header .header_top .login {}
+.header .header_gnb {}

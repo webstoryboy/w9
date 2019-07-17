@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>제이쿼리(jQuery)</title>
+	<style>
+		li.on{padding: 4px 4px 2px 10px; font-size: 90%; color: #c7254e; white-space: nowrap; background-color: #f9f2f4; border-radius: 4px; border:1px dashed #a51a3d;}
+	</style>
+   </head>
+   <body>
+		<h3>선택자(Selectors)</h3>
+		<div class="list">
+			<ul>
+				<li class="on">:eq() 셀렉터는 선택된 태그의 인덱스 번호를 통해 선택합니다.</li>
+				<li>:even 셀렉터는 선택된 태그의 짝수번째 요소를 찾아 선택합니다.</li>
+				<li>:first 셀렉터는 선택된 태그의 첫 번째 요소를 찾아 선택합니다.</li>
+				<li>:gt() 셀렉터는 선택된 태그에서 인덱스보다 큰 인덱스를 가지고 있는 태그를 선택합니다.</li>
+				<li>:header 셀럭터는 제목요소(h1~h6) 태그들을 선택합니다.</li>
+				<li lang="en">:lang() 셀렉터는 언어 속성이 설정된 태그를 선택합니다.</li>
+				<li>:last 셀렉터는 선택된 요소 중에서 마지막 번째 요소를 선택합니다.</li>
+				<li>:lt() 셀렉터는 선택된 태그에서 인덱스보다 작은 인덱스를 가지고 있는 태그를 선택합니다.</li>
+				<li>:not() 셀렉터는 현재 선택한 요소의 반대 요소를 선택합니다.</li>
+				<li>:odd 셀렉터는 선택된 요소 중에서 홀수 번째 요소를 선택합니다.</li>
+				<li>:root 셀렉터는 문서의 루트 요소를 선택합니다.</li>
+				<li>:target 셀렉터는 이벤트를 발생한 타겟을 선택합니다.</li>
+				<li>:animated 셀럭터는 애니메이션 태그를 선택합니다.</li>
+			</ul>
+		</div>
+
+		<div class="nSample-de">
+			<ul>
+				<li><input type="radio" name="radio" id="ex1" value="0" checked=""><label for="ex1">$(".list li:eq(6)").addClass("on");  //:eq() 셀렉터</label></li>
+				<li><input type="radio" name="radio" id="ex2" value="1"><label for="ex2">$(".list li:even").addClass("on");	//:even 선택자</label></li>
+				<li><input type="radio" name="radio" id="ex3" value="2"><label for="ex3">$(".list li:first").addClass("on"); //:first 선택자</label></li>
+				<li><input type="radio" name="radio" id="ex4" value="3"><label for="ex4">$(".list li:gt(5)").addClass("on"); 	//:gt() 선택자</label></li>
+				<li><input type="radio" name="radio" id="ex5" value="4"><label for="ex5">$(".list li:lang(en)").addClass("on"); 	//:lang() 선택자</label></li>
+				<li><input type="radio" name="radio" id="ex6" value="5"><label for="ex6">$(".list li:last").addClass("on"); 	//:last 선택자</label></li>
+				<li><input type="radio" name="radio" id="ex7" value="6"><label for="ex7">$(".list li:lt(6)").addClass("on"); 	//:lt() 선택자</label></li>
+				<li><input type="radio" name="radio" id="ex8" value="7"><label for="ex8">$(".list li:not(:eq(6))").addClass("on"); 	//:not() 선택자</label></li>
+				<li><input type="radio" name="radio" id="ex9" value="8"><label for="ex9">$(".list li:odd").addClass("on"); 	//:odd 선택자</label></li>
+			</ul>
+		</div>
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+		<script type="text/javascript">
+		$(document).ready(function(){        
+			var btn = $(".nSample-de > ul > li > input");
+
+			btn.click(function(){
+				var num = $(this).attr("value");
+				//alert(num);
+
+				if(num == 0){
+					$("li").removeClass("on");
+					$(".list li:eq(6)").addClass("on");  //:eq() 셀렉터
+				}
+				if(num == 1){
+					$("li").removeClass("on");
+					$(".list li:even").addClass("on");	//:even 선택자
+				}
+				if(num == 2){
+					$("li").removeClass("on");
+					$(".list li:first").addClass("on"); //:first 선택자
+				}
+				if(num == 3){
+					$("li").removeClass("on");
+					$(".list li:gt(5)").addClass("on"); //:gt() 선택자
+				}
+				if(num == 4){
+					$("li").removeClass("on");
+					$(".list li:lang(en)").addClass("on"); 	//:lang() 선택자
+				}
+				if(num == 5){
+					$("li").removeClass("on");
+					$(".list li:last").addClass("on"); 	//:last 선택자
+				}
+				if(num == 6){
+					$("li").removeClass("on");
+					$(".list li:lt(6)").addClass("on"); 	//:lt() 선택자
+				}
+				if(num == 7){
+					$("li").removeClass("on");
+					$(".list li:not(:eq(6))").addClass("on"); 	//:not() 선택자
+				}
+				if(num == 8){
+					$("li").removeClass("on");
+					$(".list li:odd").addClass("on"); 	//:odd 선택자
+				}
+			});
+		}); 
+		</script> 
+	</body>
+</html>       

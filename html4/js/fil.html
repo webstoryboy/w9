@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>제이쿼리(jQuery)</title>
+	<style>
+		li.on{padding: 4px 4px 2px 10px; font-size: 90%; color: #c7254e; white-space: nowrap; background-color: #f9f2f4; border-radius: 4px; border:1px dashed #a51a3d;}
+	</style>
+   </head>
+   <body>
+		<div class="list">
+			<ul>
+				<li>1</li>
+				<li>2</li>
+				<li>3</li>
+			</ul>
+		</div>
+
+		<div class="nSample-de">
+			<ul>
+				<li><input type="radio" name="radio" id="ex1" value="0" checked=""><label for="ex1">1</label></li>
+				<li><input type="radio" name="radio" id="ex2" value="1"><label for="ex2">2</label></li>
+				<li><input type="radio" name="radio" id="ex3" value="2"><label for="ex3">3</label></li>
+
+			</ul>
+		</div>
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+		<script type="text/javascript">
+		$(document).ready(function(){        
+			var btn = $(".nSample-de > ul > li > input");
+
+			btn.click(function(){
+				var num = $(this).attr("value");
+				//alert(num);
+
+				if(num == 0){
+					ex1();
+				}
+				if(num == 1){
+					 ex2();
+				}
+				if(num == 2){
+					$(".list li").eq(2).css("background","#222");  
+				}
+			});
+
+			//btn.off("click");
+			function ex1(){
+				$(".list li").eq(0).css("background","#000"); 
+			}
+			function ex2(){
+				$(".list li").eq(1).css("background","#111"); 
+			}
+
+		}); 
+		</script> 
+	</body>
+</html>       

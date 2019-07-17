@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>addClass & removeClass</title>
+	<style>
+		li.bg1 {font-size: 90%; color: #c7254e; background-color: #f9f2f4; border-radius: 4px; border: 1px dashed #a51a3d;}
+		li.bg2 {font-size: 90%; color: #3d90b7; background-color: #e7f6fd; border-radius: 4px; border: 1px dashed #3d90b7;}
+		li.bg3 {font-size: 90%; color: #3d90b7; background-color: #e8f5e9; border-radius: 4px; border: 1px dashed #1b5e20;}
+		li.bg4 {font-size: 90%; color: #3d90b7; background-color: #ede7f6; border-radius: 4px; border: 1px dashed #4527a0;}
+		li.bg5 {font-size: 90%; color: #3d90b7; background-color: #fff3e0; border-radius: 4px; border: 1px dashed #e65100;}
+	</style>
+</head>
+<body>
+	<div class="list">
+		<h3>addClass & removeClass</h3>
+		<ul>
+			<li>.css() CSS 요소 값을 알아낼 수도 있고, 설정도 할 수 있습니다.</li>
+			<li>.addClass() 선택한 요소에 클래스를 추가합니다.</li>
+			<li>.hasClass() 선택한 요소에 특정한 클래스가 있는지 찾습니다.</li>
+			<li>.removeClass() 선택한 요소에 클래스를 제거합니다.</li>
+			<li>.toggleClass() 선택한 요소의 클래스 추가/제거를 한번에 할 수 있습니다.</li>
+		</ul>
+	</div>
+
+	<script src="assets/js/jquery-1.12.4.min.js"></script>
+	<script>
+		$(".list li").click(function(){
+			var num = Math.ceil(Math.random()*5);
+			//alert(num);
+			$(this).removeClass().addClass("bg"+num);
+		});
+	</script>
+</body>
+</html>
+
+
+
+
+
+
+

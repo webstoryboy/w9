@@ -1,0 +1,205 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css?family=Quicksand:400,700');
+@import url('https://fonts.googleapis.com/css?family=Poiret+One');
+/*font-family: 'Quicksand', sans-serif;*/
+/*font-family: 'Rozha One', serif;*/
+/* reset */
+body, div, dl, dd, dt, ul, li, ul, h2, h3, h4, h1, h5, h6, form, legend, textarea, select, fieldset, p, button, figure, figcaption {margin:0; padding:0;}
+fieldset,img{border:0 none}
+a {color: #000; text-decoration: none;}
+a:hover {color: #000;}
+body, input, textarea, select, button, table {font-family: 'Quicksand', "돋움", Dotum, sans-serif;  font-size: 12px;}
+h1, h2, h3, h4, h5, h6 {font-size: 12px; font-weight: normal;}
+li, ol, ul {list-style: none;}
+address,caption,cite,code,dfn,em,var{font-style:normal;font-weight:normal}
+.ir {width: 0; height: 0; font-size: 0; line-height: 0; overflow: hidden; position: absolute; left: 0; top: 0;}
+img, fieldset {border: 0;}
+.clearfix{*zoom:1;}
+.clearfix:before, .clearfix:after {display: block; content: ''; line-height: 0;}
+.clearfix:after {clear: both;}
+
+body:before {content: ''; width: 0%; height: 100%; position: absolute; left: 0; top: 0; background: #fff; transition: all 1s ease; z-index: 5500;}
+body.aboutActive:before {width: 100%;}
+
+/* nav */
+#nav {position: fixed; left: 0; top: 0; width: 100%; z-index: 5000;  background: #fff; }
+#nav .bar {position: absolute; right: 100px; top: 38px; width: 38px; cursor: pointer;}
+#nav .bar span {width: 38px; height: 2px; background: #e9d9f5; display: block; margin: 3px 0;}
+#nav h2 {text-align: center; font-size: 14px; letter-spacing: 10px; color:#000;
+  font-weight: 400; height: 100px;  line-height: 100px;}
+#nav .menu {position: absolute; left: 100px; top: 0px; font-size: 14px; letter-spacing: 2px; height: 100px;  line-height: 100px;}
+#nav .menu li {display: inline-block; margin-right: 10px;}
+
+/* slide */
+.slide-wrap {position: relative; height: 100vh; z-index: 1000; overflow: hidden; }
+.slide-wrap .s1 {background:#e8eefe; transition: all 0.6s ease; }
+.slide-wrap .s2 {background:#a1ddd5; transition: all 0.6s ease;}
+.slide-wrap .s3 {background:#fdf0c1; transition: all 0.6s ease;}
+.slide-wrap .s4 {background:#fdd6c1; transition: all 0.6s ease;}
+
+/* slide-img */
+.slide-img {position: absolute; width: 100%; height: 100%; }
+
+/* slide */
+.slide {position: absolute; width: 100%; height: 100%; overflow: hidden;}
+.slide .txt {position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%); width: 100%; height: 185px; text-align: center;  }
+.slide .txt span {font-size: 170px; font-weight: 700; text-align: center; color: #fff; line-height: 200px; overflow: hidden; letter-spacing: 0.05em;}
+.slide .img {position: fixed; left: 50%; top: 50%; transform: translate(200%,-50%);}
+.slide .count {position: absolute; left: 130px; top: 130px; z-index: 1200; font-size:70px; color: #000; line-height: 70px; opacity: 0; font-family: 'Poiret One', cursive; }
+.slide .count:before {content: ''; width: 100%; height: 100%; background: #fff; position: absolute; left: 0; top: 0; transform: scaleX(0)}
+.slide .count .currentIndex {position: relative; margin-right: 100px;}
+.slide .count .currentIndex:after {content: ''; width: 80px; height: 2px; background: #000; position: absolute; right: -90px; top: 50%; display: block; }
+
+/* slide-nav */
+.slide-nav {vertical-align: middle;}
+.slide-nav .sl {position: absolute; top: 0; left: 0; width: 100px; height: 100vh; background: #fff; color:#000;}
+.slide-nav .sr {position: absolute; top: 0; right: 0; width: 100px; height: 100vh; background: #fff; color:#000;}
+.slide-nav .prev {display: block; width: 100px; height: 100vh; position: absolute; bottom: 0; left: 0; z-index: 10000; text-align: center; line-height: 100px;}
+.slide-nav .prev img {display: block; position: absolute; bottom: 50px; left: 40px; transition: all 0.3s ease;}
+.slide-nav .prev:hover img {left: 35px;}
+.slide-nav .next {display: block; width: 100px; height: 100vh; position: absolute; bottom: 0; left: 0; z-index: 10000; text-align: center; line-height: 100px;}
+.slide-nav .next img {position: absolute; bottom: 50px; right: 40px; transition: all 0.3s ease;}
+.slide-nav .next:hover img {right: 35px;}
+
+/* slide-indicator */
+.slide-indicator {position: fixed; left: 50%; bottom: -10px; z-index: 1000; transform: translate(-50%); background: #fff; height: 100px; width: 100%; text-align: center; width: calc(100% - 200px);}
+.slide-indicator a {position: relative; display: block; text-align:center; background-color: rgba(0,0,0,0.04); width: 25%; float: left; opacity: 0; transition: all 0.3s ease; height: 10px;}
+.slide-indicator a span {background: rgba(0,0,0,0.18); position: absolute; left: 5px; top: 0px; display: block; padding:5px; color:#fff; transition: all 0.6s 0.8s ease; border-radius: 3px;}
+.slide-indicator a:after {content: ''; width: 1px; height: 0px; position: absolute; right: 0; top: 0;  background: rgba(0,0,0,0.3); transition: all 0.8s ease;}
+.slide-indicator a:nth-child(1) {transition-delay: 0.1s}
+.slide-indicator a:nth-child(2) {transition-delay: 0.3s}
+.slide-indicator a:nth-child(3) {transition-delay: 0.5s}
+.slide-indicator a:nth-child(4) {transition-delay: 0.7s}
+.slide-indicator a span:nth-child(1) {transition-delay: 0.2s}
+.slide-indicator a span:nth-child(2) {transition-delay: 0.4s}
+.slide-indicator a span:nth-child(3) {transition-delay: 0.6s}
+.slide-indicator a span:nth-child(4) {transition-delay: 0.7s}
+
+.slide-indicator:hover a {opacity: 1; height: 14px; }
+.slide-indicator:hover a span {top: 20px; left: 5px;}
+.slide-indicator:hover a:after {height: 50px;}
+.slide-indicator:hover a.active {background-color: rgba(0,0,0,0.18); color:#000; opacity: 1;}
+
+/* side_text */
+.side_text { }
+.side_text .left {position: absolute; left:10px; top:50%; z-index: 10000; transform: rotate(-90deg); opacity: 0;}
+.side_text .right {position: absolute; right:10px; top:50%; z-index: 10000; transform: rotate(90deg); opacity: 0;}
+
+/* slide-animation */
+.slide .txt h2 {font-size: 170px; text-align: center; color: #fff; line-height: 200px; overflow: hidden; letter-spacing: 0.05em; height: 200px;}
+.slide .txt h2 span {display: inline-block; opacity: 1; transform: translate(50px,170px);}
+
+.slide.active .txt h2 span:nth-child(1)  {animation: anim1 1s 0.45s ease forwards;}
+.slide.active .txt h2 span:nth-child(2)  {animation: anim1 1s 0.5s ease forwards;}
+.slide.active .txt h2 span:nth-child(3)  {animation: anim1 1s 0.55s ease forwards;}
+.slide.active .txt h2 span:nth-child(4)  {animation: anim1 1s 0.6s ease forwards;}
+.slide.active .txt h2 span:nth-child(5)  {animation: anim1 1s 0.65s ease forwards;}
+.slide.active .txt h2 span:nth-child(6)  {animation: anim1 1s 0.7s ease forwards;}
+.slide.active .txt h2 span:nth-child(7)  {animation: anim1 1s 0.75s ease forwards;}
+.slide.active .txt h2 span:nth-child(8)  {animation: anim1 1s 0.8s ease forwards;}
+.slide.active .txt h2 span:nth-child(9)  {animation: anim1 1s 0.85s ease forwards;}
+.slide.active .txt h2 span:nth-child(10) {animation: anim1 1s 0.9s ease forwards;}
+.slide.active .txt h2 span:nth-child(11) {animation: anim1 1s 0.95s ease forwards;}
+.slide.active .txt h2 span:nth-child(12) {animation: anim1 1s 1s ease forwards;}
+.slide.active .img                       {animation: moti1 0.5s 0.8s ease forwards;} 
+.slide.active .count:before              {animation: moti2 0.5s 1s ease forwards; } 
+.slide.active .count                     {animation: opac1 0.5s 1.1s ease forwards; } 
+.slide.active .side_text .left           {animation: opac1 0.5s 1.4s ease forwards; }
+.slide.active .side_text .right          {animation: opac1 0.5s 1.4s ease forwards; }
+
+.slide-img.leftActive .slide.active .txt h2 span:nth-child(1)  {animation: anim1_left 1s 1s ease forwards;}
+.slide-img.leftActive .slide.active .txt h2 span:nth-child(2)  {animation: anim1_left 1s 0.95s ease forwards;}
+.slide-img.leftActive .slide.active .txt h2 span:nth-child(3)  {animation: anim1_left 1s 0.9s ease forwards;}
+.slide-img.leftActive .slide.active .txt h2 span:nth-child(4)  {animation: anim1_left 1s 0.85s ease forwards;}
+.slide-img.leftActive .slide.active .txt h2 span:nth-child(5)  {animation: anim1_left 1s 0.8s ease forwards;}
+.slide-img.leftActive .slide.active .txt h2 span:nth-child(6)  {animation: anim1_left 1s 0.75s ease forwards;}
+.slide-img.leftActive .slide.active .txt h2 span:nth-child(7)  {animation: anim1_left 1s 0.7s ease forwards;}
+.slide-img.leftActive .slide.active .txt h2 span:nth-child(8)  {animation: anim1_left 1s 0.65s ease forwards;}
+.slide-img.leftActive .slide.active .txt h2 span:nth-child(9)  {animation: anim1_left 1s 0.6s ease forwards;}
+.slide-img.leftActive .slide.active .txt h2 span:nth-child(10) {animation: anim1_left 1s 0.55s ease forwards;}
+.slide-img.leftActive .slide.active .txt h2 span:nth-child(11) {animation: anim1_left 1s 0.5s ease forwards;}
+.slide-img.leftActive .slide.active .txt h2 span:nth-child(12) {animation: anim1_left 1s 0.45s ease forwards;}
+.slide-img.leftActive .slide.active .img                       {animation: moti1_left 0.5s 0.8s ease forwards;} 
+.slide-img.leftActive .slide.active .count:before              {animation: moti2_left 0.5s 1s ease forwards;} 
+.slide-img.leftActive .slide.active .count                     {animation: opac1      0.5s 1.1s ease forwards;} 
+.slide-img.leftActive .slide.active .side_text .left           {animation: opac1      0.5s 1.4s ease forwards;}
+.slide-img.leftActive .slide.active .side_text .right          {animation: opac1      0.5s 1.4s ease forwards;}
+
+
+
+.slide .slide-nav .sl {transition: all 0.35s ease;}
+.slide .side_text .left {transition: all 0.35s ease;}
+.slide-indicator {transition: all 0.35s ease;}
+#nav {transition: all 0.35s ease;}
+.slide {transition: all 0.35s ease;}
+.slide .img {transition: top .7s cubic-bezier(.55,0,.1,1) .1s}
+
+.notActive .slide .count:before {animation: moti3 0.7s ease forwards;}
+.notActive .slide .count {display: none;}
+.notActive .slide-nav .sl {left: -100px;}
+.notActive .side_text .left {left: -50px}
+.notActive .slide-nav .sr {right: -100px;}
+.notActive .side_text .right {right: -50px}
+.notActive .slide-indicator {bottom: -100px;}
+.notActive #nav {background: none}
+.notActive .slide {height: 350px;}
+.notActive .slide .txt {position: fixed; animation: up 0.3s 0.5s cubic-bezier(.55,0,.1,1) forwards;}
+.notActive .slide .img {top: 37%; transition-delay: .5s}
+@keyframes up {
+  0% {top:50%;}
+  100% {top:20%;}
+}
+
+
+@keyframes anim1 {
+    0% {transform: translate(50px,170px); transform-origin: bottom left;}
+    95% {transform: translateY(-1px) translateX(0px);}
+    100% {transform: translateY(0px) translateX(0px);}
+}
+@keyframes anim1_left {
+    0% {transform: translate(-50px,170px); transform-origin: bottom right;}
+    95% {transform: translateY(-1px) translateX(0px);}
+    100% {transform: translateY(0px) translateX(0px);}
+}
+@keyframes anim2 {
+    0% {transform: translate(50px,170px); transform-origin: bottom left;}
+    95% {transform: translateY(-1px) translateX(0px);}
+    100% {transform: translateY(0px) translateX(0px);}
+}
+@keyframes moti1 {
+    0% {transform: translate(200%,-50%) scale(0.5);}
+    100% {transform: translate(-50%,-50%) scale(1);}
+}
+@keyframes moti1_left {
+    0% {transform: translate(-200%,-50%) scale(0.5);}
+    100% {transform: translate(-50%,-50%) scale(1);}
+}
+@keyframes moti2 {
+  0% {transform-origin: left; transform: scaleX(0);}
+  50% {transform-origin: left; transform: scaleX(1);}
+  51% {transform-origin: right; transform: scaleX(1);}
+  100% {transform-origin: right; transform: scaleX(0);}
+}
+@keyframes moti2_left {
+  0% {transform-origin: right; transform: scaleX(0);}
+  50% {transform-origin: right; transform: scaleX(1);}
+  51% {transform-origin: left; }
+  100% {transform-origin: left; transform: scaleX(0);}
+}
+@keyframes moti3 {
+  0% {transform-origin: left; transform: scaleX(0);}
+  50% {transform-origin: left; transform: scaleX(1);}
+  51% {transform-origin: right; }
+  100% {transform-origin: right; transform: scaleX(0);}
+}
+@keyframes opac1 {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+
+
+
+
+

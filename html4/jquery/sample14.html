@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>jQuery</title>
+	<style>
+		a {text-decoration: none; color: #666;}
+		div {font-size:0;}
+		.box {width: 150px; height: 100px; overflow: hidden;}
+	</style>
+</head>
+<body>
+
+	<a href="#" class="btn">Click</a>
+
+	<img src="assets/img/img01.jpg" alt="이미지1" width="150">
+	<img src="assets/img/img02.jpg" alt="이미지2" width="150">
+	<img src="assets/img/img03.jpg" alt="이미지3" width="150">
+	<img src="assets/img/img04.jpg" alt="이미지4" width="150">
+	<img src="assets/img/img05.jpg" alt="이미지5" width="150">
+
+
+	<script src="assets/js/jquery-1.12.4.min.js"></script>
+	<script>
+		//img 상위 박스 <div class="box"></div>
+		$("img").wrapAll("<div />");
+
+		//상위 박스 div 클래스 box를 추가시켜 주세요.
+		$("img").parent().addClass("box");
+
+		//첫 번째 이미지를 클릭하면 이미지를 사라지게 해주세요.
+		// var img = $("img").eq(0);
+		// img.click(function(){
+		// 	img.remove();
+		// });
+
+		//이미지를 클릭하면 이미지를 사라지게 해주세요
+		// $("img").click(function(){
+		// 	$(this).remove();
+		// });
+
+		//이미지를 클릭하면 이미지를 100픽셀 더 키워주세요~
+		// $("img").click(function(){
+		// 	$(this).css("width","250");
+		// });
+
+		// //이미지를 클릭할 때마다 이미지를 100픽셀 더 키워주세요~
+		// $("img").click(function(){
+		// 	$(this).css("width","+=100");
+		// });
+
+		//첫번재 이미지를 선택해서 제일 마지막으로 보내주세요.
+		setInterval(function(){
+			$("img").first().appendTo(".box");
+		},2000);
+
+		
+	</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

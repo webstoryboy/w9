@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8">
+		<title>제이쿼리(jQuery)</title>
+		<style>
+			li.on{padding: 4px 4px 2px 10px; font-size: 90%; color: #c7254e; white-space: nowrap; background-color: #f9f2f4; border-radius: 4px; border:1px dashed #a51a3d;}
+			span.on{padding: 4px 4px 2px 10px; font-size: 90%; color: #3d90b7; white-space: nowrap; background-color: #e7f6fd; border-radius: 4px; border: 1px dashed #3d90b7;}
+			p.on{padding: 4px 4px 2px 10px; font-size: 90%; color: #3d90b7; white-space: nowrap; background-color: #e7f6fd; border-radius: 4px; border: 1px dashed #3d90b7;}
+		</style>
+	</head>
+	<body>
+		<h3 class="h3">변경(Manipulation)</h3>
+		<div class="list">
+			<ul>
+				<li class="one1">.append() 메서드는 선택한 요소 마지막 위치에 새로운 요소를 추가합니다.</li>
+				<li class="one2">.appendTo() 메서드는 선택한 타겟 마지막 위치에 새로운 요소를 추가합니다.</li>
+				<li class="one3">.html() 메서드는 선택한 요소 내부의 HTML을 읽거나 쓸 수 있습니다.</li>
+				<li class="one4">이곳은 텍스트가 변경될 곳입니다.</li>
+				<li class="one5">.prepend() 메서드는 선택한 요소 처음 위치에 새로운 요소를 추가합니다.</li>
+				<li class="one6">.prependTo() 메서드는 선택한 타겟 처음 위치에 새로운 요소를 추가합니다.</li>
+				<li class="one7">.text() 메서드는 선택한 요소 내부의 텍스트를 읽거나 쓸 수 있습니다.</li>
+			</ul>
+		</div>
+
+		<div class="btn">
+			<ul>
+				<li><input type="radio" name="radio" id="ex1" value="1"><label for="ex1">$(".list ul").append("&lt;li class='on'&gt;맨 뒤에 새로운 요소를 추가합니다.&lt;/li&gt;");</label></li> 
+				<li><input type="radio" name="radio" id="ex2" value="2"><label for="ex2">$(".list ul").prepend("&lt;li class='on'&gt;맨 앞에 새로운 요소를 추가합니다.&lt;/li&gt;");</label></li>	
+				<li><input type="radio" name="radio" id="ex3" value="3"><label for="ex3">$(".one1").appendTo($(".list ul")).addClass("on");</label></li>
+				<li><input type="radio" name="radio" id="ex4" value="4"><label for="ex4">$(".one7").prependTo($(".list ul")).addClass("on");</label></li>
+				<li><input type="radio" name="radio" id="ex5" value="5"><label for="ex5">$(".one4").html("&lt;span class='on'&gt;.html()&lt;/span&gt;를 통해 태그 및 텍스트가 변경되었습니다.");</label></li>
+				<li><input type="radio" name="radio" id="ex6" value="6"><label for="ex6">$(".one4").text(".text()를 통해 텍스트가 변경되었습니다.");</label></li>
+				<li><input type="radio" name="radio" id="ex7" value="7"><label for="ex7">$(".list").after("&lt;p class='on'&gt;.after()를 통해 추가하였습니다.&lt;/p&gt;");</label></li>
+				<li><input type="radio" name="radio" id="ex8" value="8"><label for="ex8">$(".list").before("&lt;p class='on'&gt;.before()를 통해 추가하였습니다.&lt;/p&gt;");</label></li>
+				<li><input type="radio" name="radio" id="ex9" value="9"><label for="ex9">$("&lt;li class='on'&gt;.insertAfter()를 통해 새로운 요소를 추가합니다.&lt;/li&gt;").insertAfter(".one1");</label></li>
+				<li><input type="radio" name="radio" id="ex10" value="10"><label for="ex10">$("&lt;li class='on'&gt;.insertBefore()를 통해 새로운 요소를 추가합니다.&lt;/li&gt;").insertBefore(".one1");</label></li>
+			</ul>
+		</div>
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+		<script type="text/javascript">
+		$(document).ready(function(){    
+			var btn = $(".btn > ul > li > input");	
+			
+			btn.click(function(){
+				var num = $(this).attr("value");
+				$("*").removeClass("on");
+				
+				if(num == 1){$(".list ul").append("<li class='on'>맨 뒤에 새로운 요소를 추가합니다.</li>");}
+				if(num == 2){$(".list ul").prepend("<li class='on'>맨 앞에 새로운 요소를 추가합니다.</li>");}
+				if(num == 3){$(".one1").appendTo($(".list ul")).addClass("on");}
+				if(num == 4){$(".one6").prependTo($(".list ul")).addClass("on");}
+				if(num == 5){$(".one4").html("<span class='on'>.html()</span>를 통해 태그 및 텍스트가 변경되었습니다.").addClass("on");}
+				if(num == 6){$(".one4").text(".text()를 통해 텍스트가 변경되었습니다.").addClass("on");}
+				if(num == 7){$(".list").after("<p class='on'>.after()를 통해 추가하였습니다.</p>");}
+				if(num == 8){$(".list").before("<p class='on'>.before()를 통해 추가하였습니다.</p>");}
+				if(num == 9){$("<li class='on'>.insertAfter()를 통해 새로운 요소를 추가합니다.</li>").insertAfter(".one1");}
+				if(num == 10){$("<li class='on'>.insertBefore()를 통해 새로운 요소를 추가합니다.</li>").insertBefore(".one1");}
+			});
+		}); 
+		</script> 
+	</body>
+</html>       

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    li.on {font-size: 90%; color: #c7254e; background-color: #f9f2f4; border-radius: 4px; border: 1px dashed #a51a3d;}
+    ul.on {font-size: 90%; color: #3d90b7; background-color: #e7f6fd; border-radius: 4px; border: 1px dashed #3d90b7;}
+  </style>
+</head>
+<body>
+  <h3>탐색</h3>
+  <div class="list">
+    <ul>
+      <li>트리구조 탐색
+        <ul>
+          <li class="one1">.childred()	선택한 요소의 모든 자식을 선택합니다.(자손 포함안됨)</li>
+          <li class="one2">.find()	선택한 요소의 자손 요소 중 조건에 맞는 요소를 선택합니다.</li>
+          <li class="one3">.next()	선택한 요소의 다음 요소를 선택합니다.</li>
+          <li class="one4">.nextAll()	선택한 요소의 다음 모든 요소를 선택합니다.</li>
+          <li class="one5">.parent()	선택한 요소의 부모 요소를 선택합니다.</li>
+          <li class="one6">.parents()	선택한 요소의 모든 부모 요소를 선택합니다.</li>
+          <li class="one7">.prev()	선택한 요소의 이전 요소를 선택합니다.</li>
+          <li class="one8">.prevAll()	선택한 요소의 이전 요소를 선택합니다.</li>
+          <li class="one9">.closest()	선택한 요소를 포함하면서 가장 가까운 상위 요소를 선택합니다.</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+  <div class="btn">
+    <ul>
+      <li><input type="radio" name="radio" id="ex1" value="1"><label for="ex1">$(".list li").children()</label></li>
+      <li><input type="radio" name="radio" id="ex2" value="2"><label for="ex2">$(".list li").find("li")</label></li>
+      <li><input type="radio" name="radio" id="ex3" value="3"><label for="ex3">$(".one5").next()</label></li>
+      <li><input type="radio" name="radio" id="ex4" value="4"><label for="ex4">$(".one5").nextAll()</label></li>
+      <li><input type="radio" name="radio" id="ex5" value="5"><label for="ex5">$(".one5").nextUntil("ul")</label></li>
+      <li><input type="radio" name="radio" id="ex6" value="6"><label for="ex6">$(".one5").parent()</label></li>
+      <li><input type="radio" name="radio" id="ex7" value="7"><label for="ex7">$(".one5").parents()</label></li>
+      <li><input type="radio" name="radio" id="ex8" value="8"><label for="ex8">$(".one5").prev()</label></li>
+      <li><input type="radio" name="radio" id="ex9" value="9"><label for="ex9">$(".one5").prevAll()</label></li>
+      <li><input type="radio" name="radio" id="ex10" value="10"><label for="ex10">$(".one5").prevUntil()</label></li>
+      <li><input type="radio" name="radio" id="ex11" value="11"><label for="ex11">$(".one5").siblings()</label></li>
+      <li><input type="radio" name="radio" id="ex12" value="12"><label for="ex12">$(".one5").closest("ul")</label></li>
+
+    </ul>
+  </div>
+
+
+
+
+  <script src="assets/js/jquery-1.12.4.min.js"></script>
+	<script>
+    var btn = $(".btn > ul > li > input");
+
+
+
+    btn.click(function(){
+      var num = $(this).attr("value");
+      $("*").removeClass("on");
+      //alert(target);
+
+      if(num == 1){
+        $(".list li").children().addClass("on");
+      }
+      if(num == 2){
+        $(".list li").find("li").addClass("on");
+      }
+      if(num == 3){
+        $(".one5").next().addClass("on");
+      }
+      if(num == 4){
+        $(".one5").nextAll().addClass("on");
+      }
+      if(num == 5){
+        $(".one5").nextUntil(".one8").addClass("on");
+      }
+      if(num == 6){
+        $(".one5").parent().addClass("on");
+      }
+      if(num == 7){
+        $(".one5").parents().addClass("on");
+      }
+      if(num == 8){
+        $(".one5").prev().addClass("on");
+      }
+      if(num == 9){
+        $(".one5").prevAll().addClass("on");
+      }
+      if(num == 10){
+        $(".one5").prevUntil(".one2").addClass("on");
+      }
+      if(num == 11){
+        $(".one5").siblings().addClass("on");
+      }
+      if(num == 12){
+        $(".one5").closest("ul").addClass("on");
+      }
+
+
+    });
+
+
+	</script>
+</body>
+</html>

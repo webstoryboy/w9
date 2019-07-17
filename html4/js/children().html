@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>제이쿼리(jQuery)</title>
+			<style>
+				li.on{padding: 4px 4px 2px 10px; font-size: 90%; color: #c7254e; white-space: nowrap; background-color: #f9f2f4; border-radius: 4px; border:1px dashed #a51a3d;}
+				ul.on{padding: 4px 4px 2px 10px; font-size: 90%; color: #3d90b7; white-space: nowrap; background-color: #e7f6fd; border-radius: 4px; border: 1px dashed #3d90b7;}
+			</style>
+    </head>
+    <body>
+		<h3>탐색(Traversing)</h3>
+		<div class="list">
+			<ul class="level1">
+				<li>트리구조 탐색(Tree Traversal)
+					<ul class="level2">
+						<li class="one1">.children() 메서드는 선택한 요소의 모든 자식을 선택합니다.</li>
+						<li class="one2">.closest() 메서드는 선택한 요소의 상위 요소 중 가장 가까운 요소를 선택합니다.</li>
+						<li class="one3">.find() 메서드는 선택한 요소에서 조건에 맞는 요소를 다시 선택합니다.</li>
+						<li class="one4">.next() 메서드는 선택한 요소의 다음 요소를 선택합니다.</li>
+						<li class="one5">.nextAll() 메서드는 선택한 요소의 다음 요소를 선택합니다.</li>
+						<li class="one6">.nextUntil() 메서드는 지정한 선택 요소의 모든 요소를 선택합니다.</li>
+						<li class="one7">.parent() 메서드는 선택한 요소의 부모 요소를 선택합니다.</li>
+						<li class="one8">.parents() 메서드는 선택한 요소의 부모 요소를 선택합니다.</li>
+						<li class="one9">.parentsUntil() 메서드는 지정한 선택 요소의 모든 부모 요소를 선택합니다.</li>
+						<li class="one10">.prev() 메서드는 선택한 요소의 이전 요소를 선택합니다.</li>
+						<li class="one11">.prevAll() 메서드는 선택한 요소의 이전 모든 요소를 선택합니다.</li>
+						<li class="one12">.prevUntil() 메서드는 지정한 선택 요소의 이전 모든 요소를 선택합니다.</li>
+						<li class="one13">.siblings() 메서드는 선택한 요소의 모든 형제 요소를 선택합니다.</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+
+		<div class="btn">
+			<ul>
+				<li><input type="radio" name="radio" id="ex1" value="1"><label for="ex1">$(".list li").children().addClass("on");</label></li> 
+				<li><input type="radio" name="radio" id="ex2" value="2"><label for="ex2">$(".list li").find("li").addClass("on");</label></li>
+				<li><input type="radio" name="radio" id="ex3" value="3"><label for="ex3">$( ".one5" ).closest( "ul" ).addClass("on");</label></li>	
+				<li><input type="radio" name="radio" id="ex4" value="4"><label for="ex4">$(".one4").next().addClass("on");</label></li> 
+				<li><input type="radio" name="radio" id="ex5" value="5"><label for="ex5">$(".one4").nextAll().addClass("on");</label></li>
+				<li><input type="radio" name="radio" id="ex6" value="6"><label for="ex6">$( ".one4" ).nextUntil( "ul" ).addClass("on");</label></li>
+				<li><input type="radio" name="radio" id="ex7" value="7"><label for="ex7">$(".one13").parent().addClass("on");</label></li>
+				<li><input type="radio" name="radio" id="ex8" value="8"><label for="ex8">$(".one13").parents().addClass("on");</label></li>
+				<li><input type="radio" name="radio" id="ex9" value="9"><label for="ex9">$(".one13").parentsUntil("li").addClass("on");</label></li>
+				<li><input type="radio" name="radio" id="ex10" value="10"><label for="ex10">$(".one5").prev().addClass("on");</label></li>
+				<li><input type="radio" name="radio" id="ex11" value="11"><label for="ex11">$(".one5").prevAll().addClass("on");</label></li>
+				<li><input type="radio" name="radio" id="ex12" value="12"><label for="ex12">$(".one5").prevUntil("ul").addClass("on");</label></li>
+				<li><input type="radio" name="radio" id="ex13" value="13"><label for="ex13">$(".one5").siblings().addClass("on");</label></li>
+			</ul>
+		</div>
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+		<script type="text/javascript">
+		$(document).ready(function(){    
+			var btn = $(".btn > ul > li > input")
+			
+			btn.click(function(){
+				var num = $(this).attr("value");
+				$("*").removeClass("on");
+
+				if(num == 1){$(".list li").children().addClass("on");}
+				if(num == 2){$(".list li").find("li").addClass("on");}
+				if(num == 3){$( ".one5" ).closest( "ul" ).addClass("on");}
+				if(num == 4){$(".one4").next().addClass("on");}
+				if(num == 5){$(".one4").nextAll().addClass("on");}
+				if(num == 6){$( ".one4" ).nextUntil( "ul" ).addClass("on");}
+				if(num == 7){$(".one13").parent().addClass("on");}
+				if(num == 8){$(".one13").parents().addClass("on");}
+				if(num == 9){$(".one13").parentsUntil("li").addClass("on");}
+				if(num == 10){$(".one5").prev().addClass("on");}
+				if(num == 11){$(".one5").prevAll().addClass("on");}
+				if(num == 12){$(".one5").prevUntil("ul").addClass("on");}
+				if(num == 13){	$(".one5").siblings().addClass("on");}
+			});
+		}); 
+		</script> 
+	</body>
+</html>       

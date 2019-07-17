@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		div[class^='hand']{display: none; position: absolute; left: 0; top: 0;}
+		#box {text-align: center; margin:200px;}
+		#box span {border: 1px solid #ccc; display: inline-block; padding: 10px 50px; margin:20px;}
+	</style>
+
+</head>
+<body>
+	
+	<div class="hand h1"><img src="http://leeseulgi.co.kr/jquery/assets/img/cursor_img1_on.png" ></div>
+	<div class="hand h2"><img src="http://leeseulgi.co.kr/jquery/assets/img/cursor_img5_on.png" ></div>
+	<div class="hand h3"><img src="http://leeseulgi.co.kr/jquery/assets/img/cursor_img4_on.png" ></div>
+	<div class="hand h4"><img src="assets/img/simg05.png" ></div>
+	<div class="hand h5"><img src="assets/img/simg07.png" ></div>
+
+
+
+	<div id="box">
+		<span class="mh1">mouse1</span>
+		<span class="mh2">mouse2</span>
+		<span class="mh3">mouse3</span>
+		<span class="mh4">mouse4</span>
+	</div>
+
+	<script src="assets/js/jquery-1.12.4.min.js"></script>
+	<script>
+
+		$(".mh1").hover(function(){$(".h1").show()},function(){$(".h1").hide()});
+		$(".mh2").hover(function(){$(".h2").show()},function(){$(".h2").hide()});
+		$(".mh3").hover(function(){$(".h3").show()},function(){$(".h3").hide()});
+		$(".mh4").hover(function(){$(".h4").show()},function(){$(".h4").hide()});
+
+		$("#box").mousemove(function(e){
+			$(".hand").css("left",e.pageX + 30).css("top",e.pageY);
+		});
+	</script>
+
+</body>
+</html>
+
+
+
+
+
+

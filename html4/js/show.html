@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8">
+		<title>제이쿼리(jQuery)</title>
+		<style>
+			.list {overflow: hidden;}
+			.list li {float: left; width: 19%; margin:0.5%; min-height: 150px; list-style: none; position: relative;}
+			.list li img {width: 100%; display:none;}
+			.list li em {display:block; width: 20px; height: 20px; background-color: #ec407a; color: #fff; font-size: 12px; position: absolute; left: 5px; top:5px; border-radius: 50%; text-align: center; line-height: 22px;}
+		</style>
+	</head>
+	<body>
+		<h3 class="h3">효과(Effect)</h3>
+		<div class="list">
+			<ul>
+				<li class="one1"><em>1</em><img src="https://tistory1.daumcdn.net/tistory/2141493/skin/images/img01.jpg" width="200"></li>
+				<li class="one2"><em>2</em><img src="https://tistory1.daumcdn.net/tistory/2141493/skin/images/img02.jpg" width="200"></li>
+				<li class="one3"><em>3</em><img src="https://tistory1.daumcdn.net/tistory/2141493/skin/images/img03.jpg" width="200"></li>
+				<li class="one4"><em>4</em><img src="https://tistory1.daumcdn.net/tistory/2141493/skin/images/img04.jpg" width="200"></li>
+				<li class="one5"><em>5</em><img src="https://tistory1.daumcdn.net/tistory/2141493/skin/images/img05.jpg" width="200"></li>
+			</ul>
+		</div>
+
+		<div class="btn">
+			<ul>
+				<li><input type="radio" name="radio" id="ex1" value="1"><label for="ex1">$(".one1 img").show();</label></li> 
+				<li><input type="radio" name="radio" id="ex2" value="2"><label for="ex2">$(".one2 img").show("slow");</label></li>
+				<li><input type="radio" name="radio" id="ex3" value="3"><label for="ex3">$(".one3 img").show("normal");</label></li>
+				<li><input type="radio" name="radio" id="ex4" value="4"><label for="ex4">$(".one4 img").show("fast");</label></li>
+				<li><input type="radio" name="radio" id="ex5" value="5"><label for="ex5">$(".one5 img").show(2000);</label></li>
+				<li><input type="radio" name="radio" id="ex6" value="6"><label for="ex6">$(".list img").hide();</label></li>
+			</ul>
+		</div>
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+		<script type="text/javascript">
+		$(document).ready(function(){    
+			var btn = $(".btn > ul > li > input");	
+			
+			btn.click(function(){
+				var num = $(this).attr("value");
+				$("*").removeClass("on");
+				
+				if(num == 1){$(".one1 img").show();}
+				if(num == 2){$(".one2 img").show("slow");}
+				if(num == 3){$(".one3 img").show("normal");}
+				if(num == 4){$(".one4 img").show("fast");}
+				if(num == 5){$(".one5 img").show(2000);}
+				if(num == 6){$(".list img").hide();}
+			});
+		}); 
+		</script> 
+	</body>
+</html>       

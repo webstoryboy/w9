@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="assets/js/modernizr.js"></script> <!-- Modernizr -->
+	<style>
+/*css reset*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+img{vertical-align:top;}
+a{text-decoration:none;}
+/* CSS Document */
+html,
+body{
+	height:100%;	
+}
+
+
+
+.navi {background: #000; width: 100px; position: absolute; top: 0; left: 0; color:#fff; z-index: 99999;}
+#scrollBox{height:100%;overflow:hidden;position:relative;}
+#scrollBox .wrap{width:9100px;height:2100px;background:#f1f1f1;		}
+#scrollBox .wrap > div{position:absolute;width:1900px;height:950px;}
+#scene01{left:0px;top:0px;background:#111;}
+#scene02{left:1900px;top:0px;background:#222;}
+#scene03{left:1832px;top:1000px;background:#333;}
+#scene04{left:3380px;top:1110px;background:#eee;}
+#scene05{left:3320px;top:220px;background:#ddd;}
+#scene06{left:4840px;top:174px;background:#ccc;}
+	</style>
+</head>
+<body>
+
+
+<ul class="navi">
+	<li class="n01"><a href="#scene01">list01</a></li>
+	<li class="n02"><a href="#scene02">list02</a></li>
+	<li class="n03"><a href="#scene03">list03</a></li>
+	<li class="n04"><a href="#scene05">list04</a></li>
+	<li class="n05"><a href="#scene04">list05</a></li>
+	<li class="n06"><a href="#scene06">list06</a></li>
+</ul>
+
+<div id="scrollBox">
+	<div class="wrap">	
+    	<div id="scene01"></div><!-- scene01 end -->
+    	<div id="scene02"></div><!-- scene02 end -->
+    	<div id="scene03"></div><!-- scene03 end -->
+    	<div id="scene04"></div><!-- scene04 end -->
+    	<div id="scene05"></div><!-- scene05 end -->
+    	<div id="scene06"></div><!-- scene06 end -->
+	</div>
+</div>
+
+	<script src="assets/js/jquery-1.11.3.min.js"></script>
+	<script src="assets/js/jquery.easing.1.3.js"></script>
+	<script src="assets/js/jquery.overscroll.js"></script>
+	<script src="assets/js/jQueryRotate.js"></script>
+	<script src="assets/js/TweenMax.min.js"></script>
+	<script src="assets/js/common.js"></script>
+	<script type="text/javascript">
+	$('#scrollBox').overscroll({
+		scrollLeft :0,
+		scrollTop : 300,
+		captureWheel  : false
+	});
+	</script>
+</body>
+</html>

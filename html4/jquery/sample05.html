@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    * {margin: 0; top: 0; color: #666;}
+    li {list-style: none; padding: 3px;}
+    a {text-decoration: none;}
+    h2 {padding: 10px;}
+    #wrap {overflow: hidden;}
+    .left {width: 50%; float: left; }
+    .right {width: 50%; float: left;  background-color: #ccc;}
+    a.on {background-color:#faf2f4; border:1px dashed #a51a3d; border-radius:4px;}
+  </style>
+</head>
+<body>
+  <div id="wrap">
+    <div class="left">
+      <h2>Select</h2>
+      <ul>
+        <li><a href="#">전체 선택자(*)</a></li>
+        <li><a href="#">child 선택자 : 자식(하위)태그만 선택한다. (자손 포함 안됨)</a></li>
+        <li><a href="#">sibling 선택자 : 자식(하위)태그 다음 형제 태그를 선택한다.</a></li>
+        <li><a href="#">siblings 선택자 : 자식(하위)태그 다음 모든 형제 태그를 선택한다.</a></li>
+        <li><a href="#">[name='value'] : 속성 중에 #page와 일치하는 태그를 선택한다.</a></li>
+        <li><a href="#">[name^='value'] : 속성 중에 http로 시작하는 태그를 선택한다.</a></li>
+        <li><a href="#">[name$='value'] : 속성 중에 .com으로 끝나는 태그를 선택한다.</a></li>
+        <li><a href="#">[name*='value'] : 속성 중에 'web'이 포함되어있는 태그를 선택한다.</a></li>
+        <li><a href="#">[name!='value'] : 속성 중에 'naver.com'이 포함되어있지 않은 태그를 선택한다.</a></li>
+        <li><a href="#">[name!='value'][name!='value'] : [name!='value'][name!='value']</a></li>
+        <li><a href="#">:animated : show,hide,slideDown 등의 애니메이션 태그를 선택</a></li>
+        <li><a href="#">:eq(index) : 선택된 태그들의 인덱스 번호를 통해 선택</a></li>
+        <li><a href="#">:gt(index) : 선택된 집합에서 인덱스 번호보다 큰 인덱스를 가지고 있는 태그 선택</a></li>
+        <li><a href="#">:lt(index) : 선택된 집합에서 인덱스 번호보다 작은 인덱스를 가지고 있는 태그 선택</a></li>
+        <li><a href="#">:header : 제목 요소(h1~h6) 태그를 선택</a></li>
+        <li><a href="#">:first : 선택된 요소 중에서 첫 번째 요소를 선택</a></li>
+        <li><a href="#">:last : 선택된 요소 중에서 마지막 요소를 선택</a></li>
+        <li><a href="#">:odd : 선택된 요소 중에서 홀수 번째 요소를 선택</a></li>
+        <li><a href="#">:even : 선택된 요소 중에서 짝수 번째 요소를 선택</a></li>
+        <li><a href="#">:not : 현재 선택한 요소의 반대 요소를 선택</a></li>
+      </ul>
+    </div>
+    <div class="right">
+      <h2>선택하기</h2>
+      <ul>
+        <li><a href="#" class="a1">1. 자손 선택자 : 자식(하위)태그를 모두 선택한다.</a></li>
+        <li><a href="#" class="a2">2. child 선택자 </a></li>
+        <li><a href="#" class="a3">3. sibling 선택자 .</a></li>
+        <li><a href="#" class="a4">4. siblings 선택자 </a></li>
+        <li><a href="#" class="a5">5. [name='value']</a></li>
+        <li><a href="#" class="a6">6. [name^='value'] </a></li>
+        <li><a href="#" class="a7">7. [name$='value'] </a></li>
+        <li><a href="#" class="a8">8. [name*='value'] </a></li>
+        <li><a href="#" class="a9">9. [name!='value']</a></li>
+        <li><a href="#" class="a10">10. [name!='value']</a></li>
+        <li><a href="#" class="a11">11. :animated : </a></li>
+        <li><a href="#" class="a12">12. :eq(index) : </a></li>
+        <li><a href="#" class="a13">13. :gt(index) : </a></li>
+        <li><a href="#" class="a14">14. :lt(index) : </a></li>
+        <li><a href="#" class="a15">15. :header : </a></li>
+        <li><a href="#" class="a16">16. :first : </a></li>
+        <li><a href="#" class="a17">17. :last : </a></li>
+        <li><a href="#" class="a18">18. :odd : </a></li>
+        <li><a href="#" class="a19">19. :even : </a></li>
+        <li><a href="#" class="a20">20. :not : </a></li>
+      </ul>
+    </div>
+  </div>
+
+
+  <script src="assets/js/jquery-1.12.4.min.js"></script>
+  <script>
+    $(".right ul li a").click(function(){
+      var target = $(this).attr("class");
+      //alert(target);
+
+      if(target = "a1"){
+        $(".left li a").removeClass("on");
+        $(".left li:odd a").addClass("on")
+      } else if(target = "a2"){
+        $(".left li a").removeClass("on");
+        $(".left li:even a").addClass("on")
+      }
+
+    });
+    //$(".left ul li").css({"background-Color":"#faf2f4","border":"1px dashed #a51a3d","border-radius":"4px"});
+
+  </script>
+
+</body>
+</html>

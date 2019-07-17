@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+	<html lang="ko">
+	<head>
+		<meta charset="UTF-8">
+		<title>CSS</title>
+		<style>
+			.list2 > div {width: 60px; height: 60px; background-image: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); line-height: 60px; text-align: center; border-radius: 50%;font-size: 12px; color: #fff; margin: 10px; position: relative;}
+			.list2 .timing6 {animation: move1 2s; animation-timing-function:step-start;}
+			.list2 .timing7 {animation: move1 2s; animation-timing-function:step-end;}
+			.list2 .timing8 {animation: move1 2s; animation-timing-function:steps(4, start);}
+			.list2 .timing9 {animation: move1 2s; animation-timing-function:steps(4, end);}
+			.list2 .timing10 {animation: move1 2s; animation-timing-function:steps(10, start);}
+			.list2 .timing11 {animation: move1 2s; animation-timing-function:steps(10, end);}
+
+			@keyframes move1 {
+				0% {left: 0%;}
+				50% {left: calc(100% - 70px);}
+				100% {left: 0%;}
+			}
+		</style>
+	</head>
+	<body>
+		
+		<h3 class="h3">애니메이션(animation-timing-function)</h3>
+		<div class="list2">
+			<div>timing</div>
+			<div>timing</div>
+			<div>timing</div>
+			<div>timing</div>
+			<div>timing</div>
+			<div>timing</div>
+		</div>
+
+		<div class="btn btn2">
+			<a href="#c" class="line">Click : 클릭하면 이미지가 움직입니다.</a><br><br>
+			<ul>
+				<li>.list2 .timing6 {animation: move1 2s; animation-timing-function:step-start;}</li>
+				<li>.list2 .timing7 {animation: move1 2s; animation-timing-function:step-end;}</li>
+				<li>.list2 .timing8 {animation: move1 2s; animation-timing-function:steps(4, start);}</li>
+				<li>.list2 .timing9 {animation: move1 2s; animation-timing-function:steps(4, end);}</li>
+				<li>.list2 .timing10 {animation: move1 2s; animation-timing-function:steps(10, start);}</li>
+				<li>.list2 .timing11 {animation: move1 2s; animation-timing-function:steps(10, end);}</li>
+			</ul>
+		</div>
+	
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+		<script type="text/javascript">
+			$(".btn2 a").click(function(){
+				$(".list2 > div").eq(0).addClass("timing6");
+				$(".list2 > div").eq(1).addClass("timing7");
+				$(".list2 > div").eq(2).addClass("timing8");
+				$(".list2 > div").eq(3).addClass("timing9");
+				$(".list2 > div").eq(4).addClass("timing10");
+				$(".list2 > div").eq(5).addClass("timing11");
+			});
+		</script>
+	</body>
+</html>  

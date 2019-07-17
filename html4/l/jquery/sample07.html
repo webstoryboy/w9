@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    li.on {font-size: 90%; color: #c7254e; background-color: #f9f2f4; border-radius: 4px; border: 1px dashed #a51a3d;}
+    ul.on {font-size: 90%; color: #3d90b7; background-color: #e7f6fd; border-radius: 4px; border: 1px dashed #3d90b7;}
+    p.on {font-size: 90%; color: #3d90b7; background-color: #e7f6fd; border-radius: 4px; border: 1px dashed #3d90b7;}
+    strong.on {font-size: 90%; color: #3d90b7; background-color: #e7f6fd; border-radius: 4px; border: 1px dashed #3d90b7;}
+    em.on {font-size: 90%; color: #3d90b7; background-color: #e7f6fd; border-radius: 4px; border: 1px dashed #3d90b7;}
+    span.on {font-size: 90%; color: #3d90b7; background-color: #e7f6fd; border-radius: 4px; border: 1px dashed #3d90b7;}
+  </style>
+</head>
+<body>
+  <h3>탐색</h3>
+  <div class="list">
+      <ul>
+        <li class="one1"><em>.childred()</em>	선택한 요소의 모든 자식을 선택합니다.(자손 포함안됨)</li>
+        <li class="one2"><em>.find()</em>	선택한 요소의 자손 요소 중 조건에 맞는 요소를 선택합니다.</li>
+        <li class="one3"><em>.next()</em>	선택한 요소의 다음 요소를 선택합니다.</li>
+        <li class="one4"><em>.nextAll()</em>	선택한 요소의 다음 모든 요소를 선택합니다.</li>
+        <li class="one5"><em>.parent()</em>	선택한 요소의 부모 요소를 선택합니다.</li>
+        <li class="one6"><em>.parents()</em>	선택한 요소의 <strong>모든 부모</strong> 요소를 선택합니다.</li>
+        <li class="one7"><em>.prev()</em>	선택한 요소의 <strong>이전 요소</strong>를 선택합니다.</li>
+        <li class="one8"><em>.prevAll()</em>	선택한 요소의 이전 요소를 선택합니다.</li>
+        <li class="one9"><em>.closest()</em>	선택한 요소를 포함하면서 <span>가장</span> 가까운 <span>상위</span> 요소를 선택합니다.</li>
+      </ul>
+      <p id="add">이것은 p태그 아이디 add입니다.</p>
+      <p class="add">이것은 p태그 클래스 add입니다.</p>
+  </div>
+  <div class="btn">
+    <ul>
+      <li><input type="radio" name="radio" id="ex1" value="1"><label for="ex1">$(".list li").add("p")</label></li>
+      <li><input type="radio" name="radio" id="ex2" value="2"><label for="ex2">2</label></li>
+      <li><input type="radio" name="radio" id="ex3" value="3"><label for="ex3">3</label></li>
+      <li><input type="radio" name="radio" id="ex4" value="4"><label for="ex4">4</label></li>
+      <li><input type="radio" name="radio" id="ex5" value="5"><label for="ex5">5</label></li>
+      <li><input type="radio" name="radio" id="ex6" value="6"><label for="ex6">6</label></li>
+      <li><input type="radio" name="radio" id="ex7" value="7"><label for="ex7">7</label></li>
+      <li><input type="radio" name="radio" id="ex8" value="8"><label for="ex8">8</label></li>
+      <li><input type="radio" name="radio" id="ex9" value="9"><label for="ex9">9</label></li>
+    </ul>
+  </div>
+
+
+
+
+  <script src="assets/js/jquery-1.12.4.min.js"></script>
+	<script>
+    var btn = $(".btn > ul > li > input");
+
+    btn.click(function(){
+      var num = $(this).attr("value");
+      $("*").removeClass("on");
+      //alert(target);
+
+      if(num == 1){
+        $(".list li").add("p").addClass("on");
+      }
+      if(num == 2){
+        $(".list li").add("#add").addClass("on");
+      }
+      if(num == 3){
+        $(".list li").add(".add").addClass("on");
+      }
+      if(num == 4){
+        $(".one9").find("span").addClass("on");
+      }
+      if(num == 5){
+        $(".one9").find("span").addBack().addClass("on");
+      }
+      if(num == 6){
+        $(".list").contents().find("em").addClass("on");
+      }
+      if(num == 7){
+        $(".list").contents().find("strong").addClass("on");
+      }
+      if(num == 8){
+        $(".list").find(".one3").addClass("on").end().find(".one8").addClass("on");
+      }
+      if(num == 9){
+        $(".list li").each(function(){
+          $(this).addClass("on");
+        });
+      }
+
+
+
+    });
+
+
+	</script>
+</body>
+</html>

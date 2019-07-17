@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		* {margin: 0; padding:0;}
+		a {text-decoration: none}
+		li {list-style: none;}
+		
+		.slide-wrap {
+			background-color: #ccc; height: 600px;	position: relative;
+			overflow: hidden;
+		}
+		.slide-img {
+			position: absolute; /* left:0; */ width: 100%; height: 100%;
+		}
+		.slide-img .slide {
+			position: absolute; /* left: 0; */ width: 100%; height: 100%;
+		}
+		.slide-img .slide img {
+			position: absolute; left: 50%; transform: translateX(-50%);
+		}
+		.slide-img .slide .text {position: absolute; left: 10px; top: 20%; font-size: 30px;}
+		.slide-img .slide .text .t1 {opacity: 0; transform: translateY(-20px); transition: all 0.3s 1s ease}
+		.slide-img .slide .text .t2 {opacity: 0; transform: translateY(-20px);transition: all 0.3s 1.3s ease}
+		.slide-img .slide .text .t3 {opacity: 0; transform: translateY(-20px); transition: all 0.3s 1.6s ease}
+		.slide-img .slide.active .text .t1 {opacity: 1; transform: translateY(0px);}
+		.slide-img .slide.active .text .t2 {opacity: 1; transform: translateY(0px);}
+		.slide-img .slide.active .text .t3 {opacity: 1; transform: translateY(0px);}
+
+
+		.slide-nav {}
+		.slide-nav a {
+			position: absolute; top: 50%; width: 50px; height: 50px; color:#fff;
+			background: rgba(0,0,0,0.5); display: block; border-radius: 50%; 
+			line-height: 50px; text-align: center;
+		}
+		.slide-nav a.prev {left: 10%;}
+		.slide-nav a.next {right: 10%;}
+		.slide-nav a.disable {display: none;}
+		
+		.slide-indicator {position: absolute; left: 50%; bottom: 10px; transform: translateX(-50%);}
+		.slide-indicator a {
+			display: inline-block; width: 20px; height: 20px; color:#fff;
+			background: rgba(0,0,0,0.5); border-radius: 50%; 
+			line-height: 20px; text-align: center;
+		}
+		.slide-indicator a.active {
+			background: #f00;
+		}
+		
+		.slide-count {position: absolute; left: 30px; top: 30px; font-size: 20px;}
+		.slide-play {position: absolute; bottom: 10px; left: 10px;}
+		.slide-play a {display: inline-block; background: rgba(0,0,0,0.5);}
+	</style>
+</head>
+<body>
+	
+	<div class="slide-wrap">
+		<div class="slide-img">
+			<div class="slide">
+				<img src="https://tistory4.daumcdn.net/tistory/2141493/skin/images/simg01.png">
+				<div class="text">
+					<h3 class="t1">Image Slide1</h3>
+					<p class="t2">slide-imgslide-img slide-img slide-img</p>
+					<p class="t3">slide slide slide slide slide slide</p>
+				</div>
+			</div>
+			<div class="slide">
+				<img src="https://tistory4.daumcdn.net/tistory/2141493/skin/images/simg02.png">
+				<div class="text">
+					<h3 class="t1">Image Slide1</h3>
+					<p class="t2">slide-imgslide-img slide-img slide-img</p>
+					<p class="t3">slide slide slide slide slide slide</p>
+				</div>
+			</div>
+			<div class="slide">
+				<img src="https://tistory4.daumcdn.net/tistory/2141493/skin/images/simg03.png">
+				<div class="text">
+					<h3 class="t1">Image Slide1</h3>
+					<p class="t2">slide-imgslide-img slide-img slide-img</p>
+					<p class="t3">slide slide slide slide slide slide</p>
+				</div>
+			</div>
+			<div class="slide">
+				<img src="https://tistory4.daumcdn.net/tistory/2141493/skin/images/simg04.png">
+				<div class="text">
+					<h3 class="t1">Image Slide1</h3>
+					<p class="t2">slide-imgslide-img slide-img slide-img</p>
+					<p class="t3">slide slide slide slide slide slide</p>
+				</div>
+			</div>
+			<div class="slide">
+				<img src="https://tistory4.daumcdn.net/tistory/2141493/skin/images/simg05.png">
+				<div class="text">
+					<h3 class="t1">Image Slide1</h3>
+					<p class="t2">slide-imgslide-img slide-img slide-img</p>
+					<p class="t3">slide slide slide slide slide slide</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="slide-play">
+			<a class="sprev">sprev</a>
+			<a class="splay">splay</a>
+			<a class="sstop">sstop</a>
+			<a class="snext">snext</a>
+		</div>
+		
+	</div>
+
+	
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+	<script>
+
+		$(".slide-wrap").append("<div class='slide-nav'><a href='#' class='prev'>Prev</a><a href='#' class='next'>Next</a></div>");
+		$(".slide-wrap").append("<div class='slide-indicator'></div>");
+		$(".slide-wrap").append("<div class='slide-count'><span class='currentIndex'>0</span> / <span class='currentCount'>0</span></div>");
+
+		$(".slide-wrap").each(function(){
+			var $container = $(this),										//슬라이드 전체 컨테이너
+				 $slideGroup = $container.find('.slide-img'),		//슬라이드 그룹
+				 $slide = $slideGroup.find('.slide'),					//슬라이드 이미지
+				 $nav = $container.find('.slide-nav'),					//네비게이션
+				 $indicator = $container.find('.slide-indicator'),	//인디케이터
+
+				 slideCount = $slide.length,								//슬라이드 갯수
+				 currentIndex = 0,											//현재 슬라이드 인덱스
+				 indicatorHTML = '',											//인디케이터 콘텐츠
+				 duration = 500,												//슬라이드 지속 시간
+				 easing = 'easeInOutExpo',									//이징 효과
+				 interval = 2000,												//이동 시간
+				 timer;															//타이머
+
+			$slide.each(function(i){
+				$(this).css({ left: 100 * i +'%'});
+				indicatorHTML += '<a href="#">'+ (i+1) +'</a>'
+			}); 	
+
+			$indicator.html(indicatorHTML);
+
+			function gotoSlide(index){
+				$slideGroup.animate({ left: -100 * index + '%' },duration,easing);
+				currentIndex = index;
+				updateNav();
+			}
+
+			function updateNav(){
+				var $navPrev = $nav.find('.prev'),
+					 $navNext = $nav.find('.next');
+
+				if(currentIndex === 0){
+					$navPrev.addClass('disable')
+				}else{
+					$navPrev.removeClass('disable')
+				}
+
+				if(currentIndex === slideCount - 1 ){
+					$navNext.addClass('disable')
+				}else{
+					$navNext.removeClass('disable')
+				}
+
+				$indicator.find('a').removeClass('active').eq(currentIndex).addClass('active');
+				$slide.removeClass('active').eq(currentIndex).addClass('active');
+				$(".slide-count .currentIndex").text(currentIndex+1);
+				$(".slide-count .currentCount").text(slideCount);
+			}
+
+			$nav.on('click','a',function(e){
+				e.preventDefault();
+				if($(this).hasClass('prev')){
+					gotoSlide(currentIndex - 1);
+				} else {
+					gotoSlide(currentIndex + 1);
+				}
+			});
+
+			$indicator.on('click','a',function(e){
+				e.preventDefault();
+				if(!$(this).hasClass('active')){
+					gotoSlide($(this).index());
+				}
+			});
+
+			function startTimer(){
+				timer = setInterval(function(){
+					var nextIndex = (currentIndex + 1) % slideCount;
+					gotoSlide(nextIndex)
+				},interval);
+			}
+
+			function stopTimer(){
+				clearInterval(timer);
+			}
+
+			$container.on({ 
+				mouseenter:stopTimer,
+				mouseleave:startTimer
+			})
+
+			$('.slide-play .splay').click(function(e){
+				e.preventDefault();
+				startTimer()
+			});
+			$('.slide-play .sstop').click(function(e){
+				e.preventDefault();
+				clearInterval(timer);
+				alert("dd");
+			});
+
+
+			//첫 번째 슬라이드 실행
+			gotoSlide(currentIndex);
+			//타이머 설정
+			startTimer()
+		});
+
+	</script>
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

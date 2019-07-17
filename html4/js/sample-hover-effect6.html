@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>hover-effect1.html</title>
+	<style>
+		*{padding: 0; margin: 0;}
+		body {background:#1a237e}
+
+		.box-wrap {
+			width: 100vw;
+			height: 100vh;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+		.box {
+			position: relative;  
+			margin:10px; 
+			box-shadow: 1px 1px 3px rgba(0,0,0,0.3); 
+			cursor: pointer; 
+			overflow: hidden; 
+			width:400px; height: 300px; 
+			border:7px solid #283593;
+		}
+		.box img {
+			width: 400px; display: block; 
+			position: absolute; 
+			z-index: 10;
+			transform: translatey(0px)
+			z-index: 30;
+			transition: all 0.35s ease-in-out;
+		}
+		.box .info {
+			opacity:0; visibility:visible; z-index: 50;
+			position: absolute; left: 50%; top:50%; 
+			transform: translate(-50%, -50%);
+			color: #fff; 
+			text-align: center;
+			transition: all 0.35s ease-in-out; 
+		}
+		.box .info h3 {
+			font-size:28px; padding-bottom: 3px;
+		}
+		.box:before{
+			content: '';
+			width: 500px; height: 500px; 
+			background:rgba(0,0,0,0.7);
+			position: absolute; z-index:40;
+			top: 0; right: 0; left: auto;
+			transform-origin: 100% 0;
+			transform: rotate(52.5deg) translatex(-280px);
+			transition: all 0.35s ease-in-out;
+		}
+		.box:after {
+			content: '';
+			width: 500px; height: 500px; 
+			background:rgba(0,0,0,0.7);
+			position: absolute; z-index:40;
+			bottom: 0; right: 0; left: 0;
+			transform-origin: 0 100%;
+			transform: rotate(52.5deg) translatex(280px);
+			transition: all 0.35s ease-in-out;
+		}
+		.box:hover .info {
+			opacity:1; visibility: visible; 
+		}
+		.box:hover:before {
+			transform: rotate(53.1deg) translatex(0px);
+		}
+		.box:hover:after {
+			transform: rotate(53.1deg) translatex(0px);
+		}
+	</style>
+</head>
+<body>
+
+	<div class="box-wrap">
+		<div class="box">
+			<div class="img"><img src="https://tistory4.daumcdn.net/tistory/2141493/skin/images/simg06.png" alt=""></div>
+			<div class="info">
+				<h3>Title</h3>
+				<p>이미지 설명 부분입니다.</p>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>

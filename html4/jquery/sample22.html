@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>jQuery</title>
+	<style>
+		* {padding: 0; margin: 0;}
+		li{list-style: none;}
+		a {text-decoration: none;}
+		#tab-menu {width:350px; margin: 50px auto;}
+		#tab-btn ul {overflow: hidden;}
+		#tab-btn li {float: left; width: 20%; text-align: center;}
+		#tab-btn li a {display: block; padding:14px 10px 10px 10px; background-color: #ec407a; color:#fff; margin-right: 1px; margin-bottom: 1px; }
+		#tab-cont {width: 350px; height: 260px;}
+		#tab-cont.img1 {background: url(assets/img/img01.jpg) no-repeat; background-size: 350px; }
+		#tab-cont.img2 {background: url(assets/img/img02.jpg) no-repeat; background-size: 350px; }
+		#tab-cont.img3 {background: url(assets/img/img03.jpg) no-repeat; background-size: 350px; }
+		#tab-cont.img4 {background: url(assets/img/img04.jpg) no-repeat; background-size: 350px; }
+		#tab-cont.img5 {background: url(assets/img/img05.jpg) no-repeat; background-size: 350px; }
+	</style>
+</head>
+<body>
+	
+	<div id="tab-menu">
+		<div id="tab-btn">
+			<ul>
+				<li><a href="#">Tab1</a></li>
+				<li><a href="#">Tab2</a></li>
+				<li><a href="#">Tab3</a></li>
+				<li><a href="#">Tab4</a></li>
+				<li><a href="#">Tab5</a></li>
+			</ul>
+		</div>
+		<div id="tab-cont" class="img1"></div>
+	</div>
+
+	<script src="assets/js/jquery-1.12.4.min.js"></script>
+	<script src="assets/js/jquery-ui-1.12.1.min.js"></script>
+	<script>
+		//버튼을 클릭하면 모든 글씨는 munu로 변경해주세요~
+		// $("#tab-btn ul li").click(function(){
+		// 	$("#tab-btn ul li a").text("menu");
+		// });
+
+		// //해당 버튼을 클릭하면 tab1 --> menu1으로 변경해주세요~
+		// $("#tab-btn ul li").click(function(){
+		// 	var target = $(this);
+		// 	var index = target.index() + 1;
+		// 	//alert(index);
+		// 	target.find("a").text("Menu"+index);
+		// });
+
+		// $("#tab-btn ul li:eq(0)").click(function(){
+		// 	$("#tab-cont").removeClass().addClass("img1");
+		// });
+		// $("#tab-btn ul li:eq(1)").click(function(){
+		// 	$("#tab-cont").removeClass().addClass("img2");
+		// });
+		// $("#tab-btn ul li:eq(2)").click(function(){
+		// 	$("#tab-cont").removeClass().addClass("img3");
+		// });
+		// $("#tab-btn ul li:eq(3)").click(function(){
+		// 	$("#tab-cont").removeClass().addClass("img4");
+		// });
+		// $("#tab-btn ul li:eq(4)").click(function(){
+		// 	$("#tab-cont").removeClass().addClass("img5");
+		// });
+
+		$("#tab-btn ul li").click(function(){
+			var target = $(this);
+			var index = target.index()+1;
+			$("#tab-cont").removeClass().addClass("img"+index);
+		});
+
+	</script>
+</body>
+</html>
+
+
+
+

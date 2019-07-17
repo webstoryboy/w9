@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+	<html lang="ko">
+	<head>
+		<meta charset="UTF-8">
+		<title>CSS</title>
+		<style>
+			.list3 > div {width: 60px; height: 60px; background-image: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); line-height: 60px; text-align: center; border-radius: 50%;font-size: 12px; color: #fff; margin: 10px; position: relative;}
+			.list3 .timing12 {animation: move1 2s; animation-timing-function:cubic-bezier(0,0,0,0);}
+			.list3 .timing13 {animation: move1 2s; animation-timing-function:cubic-bezier(1,0,0,1);}
+			.list3 .timing14 {animation: move1 2s; animation-timing-function:cubic-bezier(1,-0.6, 0, 1.44);}
+			.list3 .timing15 {animation: move1 2s; animation-timing-function:cubic-bezier(1,-0.62, 1, 0.15);}
+			.list3 .timing16 {animation: move1 2s; animation-timing-function:cubic-bezier(1,-0.62, 0, 3.01);}
+
+			@keyframes move1 {
+				0% {left: 0%;}
+				50% {left: calc(100% - 70px);}
+				100% {left: 0%;}
+			}
+		</style>
+	</head>
+	<body>
+		
+		<h3 class="h3">애니메이션(animation-timing-function)</h3>
+		<div class="list3">
+			<div>timing</div>
+			<div>timing</div>
+			<div>timing</div>
+			<div>timing</div>
+			<div>timing</div>
+		</div>
+
+		<div class="btn btn3">
+			<a href="#c" class="line">Click : 클릭하면 이미지가 움직입니다.</a><br><br>
+			<ul>
+				<li>.list3 .timing12 {animation: move1 2s; animation-timing-function:cubic-bezier(0,0,0,0);}</li>
+				<li>.list3 .timing13 {animation: move1 2s; animation-timing-function:cubic-bezier(1,0,0,1);}</li>
+				<li>.list3 .timing14 {animation: move1 2s; animation-timing-function:cubic-bezier(1,-0.6, 0, 1.44);}</li>
+				<li>.list3 .timing15 {animation: move1 2s; animation-timing-function:cubic-bezier(1,-0.62, 1, 0.15);}</li>
+				<li>.list3 .timing16 {animation: move1 2s; animation-timing-function:cubic-bezier(1,-0.62, 0, 3.01);}</li>
+			</ul>
+		</div>
+	
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+		<script type="text/javascript">
+			$(".btn3 a").click(function(){
+				$(".list3 > div").eq(0).addClass("timing12");
+				$(".list3 > div").eq(1).addClass("timing13");
+				$(".list3 > div").eq(2).addClass("timing14");
+				$(".list3 > div").eq(3).addClass("timing15");
+				$(".list3 > div").eq(4).addClass("timing16");
+			});
+		</script>
+	</body>
+</html>  

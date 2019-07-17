@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8">
+		<title>제이쿼리(jQuery)</title>
+		<style>
+			.list3 {overflow: hidden; min-height: 150px;}
+			.list3 li {float: left; width: 19%; margin:0.5%; list-style: none; position: relative;}
+			.list3 li img {width: 100%; }
+			.list3 li em {display:block; width: 20px; height: 20px; background-color: #ec407a; color: #fff; font-size: 12px; position: absolute; left: 5px; top:5px; border-radius: 50%; text-align: center; line-height: 22px;}
+			.btn3 {border:1px solid #F06950; padding: 7px 20px 5px 20px; display: inline-block; border-radius: 20px; text-decoration: none;}
+		</style>
+	</head>
+	<body>
+		<h3 class="h3">효과(Effect)</h3>
+		<div class="list3">
+			<ul>
+				<li class="one1"><em>1</em><img src="https://tistory1.daumcdn.net/tistory/2141493/skin/images/img01.jpg" width="200"></li>
+				<li class="one2"><em>2</em><img src="https://tistory1.daumcdn.net/tistory/2141493/skin/images/img02.jpg" width="200"></li>
+				<li class="one3"><em>3</em><img src="https://tistory1.daumcdn.net/tistory/2141493/skin/images/img03.jpg" width="200"></li>
+				<li class="one4"><em>4</em><img src="https://tistory1.daumcdn.net/tistory/2141493/skin/images/img04.jpg" width="200"></li>
+				<li class="one5"><em>5</em><img src="https://tistory1.daumcdn.net/tistory/2141493/skin/images/img05.jpg" width="200"></li>
+			</ul>
+		</div>
+
+		<div class="btn">
+			<a href="#" class="btn3">Click : 클릭하면 이미지가 순차적으로 없어집니다.</a>
+		</div>
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+		<script type="text/javascript">
+		$(document).ready(function(){    
+			$( ".btn3" ).click(function(e) {
+				e.preventDefault();
+				$(".list3 li").first().slideUp(1000, function Next() {
+					$(this).next("li").slideUp(1000, Next );
+				});
+			});
+		}); 
+		</script> 
+	</body>
+</html>       

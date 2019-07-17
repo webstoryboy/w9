@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+   <head>
+         <meta charset="UTF-8">
+         <title>제이쿼리(jQuery)</title>
+			<style>
+				li.on {padding: 4px 4px 2px 10px; font-size: 90%; color: #c7254e; white-space: nowrap; background-color: #f9f2f4; border-radius: 4px; border:1px dashed #a51a3d;}
+			</style>
+   </head>
+   <body>
+		<h3>탐색(Traversing)</h3>
+		<div class="list">
+			<ul>
+				<li class="one1">.replaceAll() 메서드는 선택한 요소를 새로운 요소로 바꿉니다.</li>
+				<li class="one2">.replaceWith() 메서드는 선택한 요소를 새로운 컨텐츠로 바꿉니다.</li>
+				<li class="one">.clone() 메서드는 선택한 요소 본사본을 만듭니다.</li>
+				<li class="one">.wrap() 메서드는 선택한 요소에 새로운 요소를 추가합니다.</li>
+				<li class="one">.wrapAll() 메서드는 선택한 모든 요소에 새로운 요소를 추가합니다.</li>
+				<li class="two">.wrapInner() 메서드는 선택한 각각의 요소에 새로운 요소를 추가합니다.</li>
+				<li class="two">.html() 메서드는 선택한 요소 내부의 HTML을 읽거나 쓸 수 있습니다.</li>
+				<li class="two">.text() 메서드는 선택한 요소 내부의 텍스트를 읽거나 쓸 수 있습니다.</li>
+			</ul>
+		</div>
+
+		<div class="btn">
+			<ul>
+				<li><input type="radio" name="radio" id="ex1" value="1"><label for="ex1">$("&lt;li class='on'&gt;.replaceAll()를 통해서 변경했습니다.&lt;/li&gt;" ).replaceAll(".one1");</label></li> 
+				<li><input type="radio" name="radio" id="ex2" value="2"><label for="ex2">$(".one2" ).replaceWith("&lt;li class='on'&gt;.replaceWith()를 통해서 변경했습니다.&lt;/li&gt;");</label></li>
+				<li><input type="radio" name="radio" id="ex3" value="3"><label for="ex3">$("&lt;li class='on'&gt;.replaceAll()를 통해서 변경했습니다.&lt;/li&gt;" ).replaceAll(".one");</label></li>
+				<li><input type="radio" name="radio" id="ex4" value="4"><label for="ex4">$(".two" ).replaceWith("&lt;li class='on'&gt;.replaceWith()를 통해서 변경했습니다.&lt;/li&gt;");</label></li>
+			</ul>
+		</div>
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+		<script type="text/javascript">
+		$(document).ready(function(){    
+			var btn = $(".btn > ul > li > input");
+		
+			btn.click(function(){
+				var num = $(this).attr("value");
+				$("*").removeClass("on");
+				
+				if(num == 1){$("<li class='on'>.replaceAll()를 통해서 변경했습니다.</li>" ).replaceAll(".one1");}
+				if(num == 2){$(".one2" ).replaceWith("<li class='on'>.replaceWith()를 통해서 변경했습니다.</li>");}
+				if(num == 3){$("<li class='on'>.replaceAll()를 통해서 변경했습니다.</li>" ).replaceAll(".one");}
+				if(num == 4){$(".two" ).replaceWith("<li class='on'>.replaceWith()를 통해서 변경했습니다.</li>");}
+			});
+		}); 
+		</script> 
+	</body>
+</html>       

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+	<html lang="ko">
+	<head>
+		<meta charset="UTF-8">
+		<title>제이쿼리(jQuery) : attr()</title>
+		<style>
+			#box2 {
+				border: 5px solid #ccc; padding:50px; margin:50px;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<div id="box2">
+			box를 클릭하면 width값이 줄어듭니다.<br>
+		</div>
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+		<script type="text/javascript">
+			var mWidth = $("#box").width();
+			$("#box2").click(function() {
+			  $(this).width(mWidth);
+			  mWidth -= 100;
+			});
+		</script>
+	</body>
+</html>  
+
+
+
+
+

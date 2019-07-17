@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>jQuery</title>
+	<style>
+		* {color:#666;}
+		div {padding: 40px;}
+		a {text-decoration: none; color:#666;}
+		a.on {background-color: #faf2f4;}
+	</style>
+
+
+
+</head>
+<body>
+
+	<div>
+		<h3>제이쿼리 샘플</h3>
+		<ul id="list1" class="list">
+			<li class="one1"><a href="#list2">one1</a></li>
+			<li class="one2"><a href="http://naver.com">one2</a></li>
+			<li class="one3"><a href="http://www.duam.com">one3</a></li>
+			<li class="one4"><a href="http://webstoryboy.co.kr" title="바로가기">one4</a></li>
+			<li class="one5">one5</li>
+			<li class="one6">one6</li>
+			<li class="one7">one7</li>
+			<li class="one8">one8</li>
+			<li class="one9">one9</li>
+			<li class="one10">one10</li>
+		</ul>
+		<ul id="list2" class="list">
+			<li class="one1">one1</li>
+			<li class="one2">one2</li>
+			<li class="one3">one3</li>
+			<li class="one4">one4</li>
+			<li class="one5">one5</li>
+			<li class="one6">one6</li>
+			<li class="one7">one7</li>
+			<li class="one8">one8</li>
+			<li class="one9">one9</li>
+			<li class="one10">one10
+				<ul>
+					<li>one10-1</li>
+					<li style="width:0; height:0; overflow:hidden">one10-2</li>
+					<li style="opacity:0;">one10-3</li>
+					<li style="visibility: hidden;">one10-4</li>
+					<li style="display:none;">one10-5</li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+
+
+  <ul>
+    <li class="a1"><a href="#c">li:eq(3)</a></li>
+		<li class="a2"><a href="#c">li:eq(3)</a></li>
+  </ul>
+
+  <script src="assets/js/jquery-1.12.4.min.js"></script>
+  <script>
+    $(document).ready(function(){
+
+		$("ul li").click(function(){
+			var val = $(this).attr("class");
+
+			if(val == "a1"){
+				$("ul li a").removeClass("on");
+				$("li a[href='#list2']").addClass("on");
+			} else if(val == "a2"){
+				$("ul li a").removeClass("on");
+				$("li a[href^='http']").addClass("on");
+			}
+
+		});
+
+    });
+  </script>
+
+</body>
+</html>

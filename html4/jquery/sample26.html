@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{padding: 0; margin: 0; }
+		body {font-size:18px; font-family: "돋움"}
+		.box-wrap {overflow: hidden; width: 1260px; margin:100px auto;}
+		.box {position: relative; width: 400px; height: 300px; float: left; margin:10px; box-shadow: 1px 1px 3px rgba(0,0,0,0.3); cursor: pointer;}
+		.box img {width: 100%; display: block;}
+		.box .info {position: absolute; left: 0; top: auto; bottom: 0; right: 0;
+			background: rgba(0,0,0,0.7); color: #fff; padding: 13px;}
+
+		/* box1 */
+		.box1 .img {}
+		.box1 .info {}
+		.box1 .info h3 {}
+		.box1 .info p {}
+		.box1:hover .info {}
+
+	</style>
+</head>
+<body>
+
+	<section class="box-wrap">
+		<article class="box box1">
+			<figure class="img"><img src="assets/img/simg01.png" alt=""></figure>
+			<figcaption class="info">
+				<h3>.click()</h3>
+				<p>클릭해 보세요!</p>
+			</figcaption>
+		</article>
+		<article class="box box2">
+			<figure class="img"><img src="assets/img/simg02.png" alt=""></figure>
+			<figcaption class="info">
+				<h3>.dblclick()</h3>
+				<p>더블 클릭해 보세요!</p>
+			</figcaption>
+		</article>
+		<article class="box box3">
+			<figure class="img"><img src="assets/img/simg03.png" alt=""></figure>
+			<figcaption class="info">
+				<h3>.hover()</h3>
+				<p>마우스 오버를 해보세요!</p>
+			</figcaption>
+		</article>
+		<br>
+		<div>
+			<ul>
+				<li>.click():선택한 요소에 클릭했을 때 이벤트가 발생합니다.</li>
+				<li>.dblclick():선택한 요소에 더블 클릭했을 때 이벤트가 발생합니다.</li>
+				<li>.hover():선택한 요소에 마우스를 올렸을 때 벗어났을 때 각각 이벤트가 발생합니다.</li>
+				<li>.mousedown():선택한 요소에 마우스를 눌렀을 때 이벤트가 발생합니다.</li>
+				<li>.mouseout():선택한 요소에 마우스가 벗어 났을 때 이벤트가 발생합니다.</li>
+				<li>.mouseover():선택한 요소에 마우스를 올렸을 때 이벤트가 발생합니다.</li>
+				<li>.mouseup():선택한 요소에 마우스를 눌렀다가 떼었을 때 이벤트가 발생합니다.</li>
+				<li>.mouseenter():선택한 요소 범위 내에서 마우스를 올렸을 때 이벤트가 발생합니다.</li>
+				<li>.mouseleave():선택한 요소 범위 내에서 마우스를 벗어 났을 때 이벤트가 발생합니다.</li>
+				<li>.mousemove():선택한 요소 범위 내에서 마우스를 움직였을 때 이벤트가 발생합니다.</li>
+			</ul>
+		</div>
+		<br>
+		
+		<h2>폰트 종류 설정하기</h2>
+		<div class="font">
+			<select name="fontKind" id="fontKind">
+				<option value="'Nanum Gothic'">나눔고딕</option>
+				<option value="'NanumBarunGothic'">바른고딕</option>
+				<option value="'NanumSquare'">나눔스퀘어</option>
+				<option value="'Noto Sans Korean'">본고딕</option>
+				<option value="'돋움',dotum">돋움</option>
+				<option value="'굴림',gulim">굴림</option>
+				<option value="'궁서',Gungsuh">궁서</option>
+			</select>
+		</div>
+		<br>
+		<h2>폰트 크기 설정하기</h2>
+		<div class="size">
+			<button class="sizeAdd">+</button>
+			<button class="sizeBasic">0</button>
+			<button class="sizeRemove">-</button>
+		</div>
+	</section>
+
+	
+	<script src="assets/js/jquery-1.12.4.min.js"></script>
+	<script>
+		var fontSize = 16;
+
+		$(".sizeAdd").on("click",function(){
+			fontSize++;
+			$("body").css("font-size",fontSize+"px");
+		});
+
+		$(".sizeBasic").on("click",function(){
+			fontSize = 14;
+			$("body").css("font-size",fontSize+"px");
+		});
+
+		$(".sizeRemove").on("click",function(){
+			fontSize--;
+			$("body").css("font-size",fontSize+"px");
+		});
+
+
+		$("#fontKind").on("change",function(){
+			var font = $(this).val();
+			$("body").css("font-family",font);
+		});
+
+
+
+	</script>
+
+
+
+
+
+</body>
+</html>
+
+
+
+

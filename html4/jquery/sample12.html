@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>jQuery</title>
+	<style>
+		li {font-size: 90%; color: #c7254e; background-color: #f9f2f4; border-radius: 4px; border: 1px dashed #a51a3d;}
+	</style>
+</head>
+<body>
+	<div class="list">
+		<ul>
+			<li class="one1">.clone() 선택한 요소를 복사합니다.</li>
+			<li class="one2">.wrap() 선택한 요소의 부모 요소를 추가합니다.</li>
+			<li class="one3">.wrapAll() 선택한 요소의 부모 요소를 한꺼번에 추가합니다.
+				<ul>
+					<li>.wrapAll() 선택한 요소의 부모 요소를 한꺼번에 추가합니다.</li>
+					<li>.wrapAll() 선택한 요소의 부모 요소를 한꺼번에 추가합니다.</li>
+					<li>.wrapAll() 선택한 요소의 부모 요소를 한꺼번에 추가합니다.</li>
+				</ul>
+			</li>
+			<li class="one4">.wrapInner() 선택한 요소의 새로운 요소를 각각 추가합니다.
+				<ul>
+					<li>.wrapAll() 선택한 요소의 부모 요소를 한꺼번에 추가합니다.</li>
+					<li>.wrapAll() 선택한 요소의 부모 요소를 한꺼번에 추가합니다.</li>
+					<li>.wrapAll() 선택한 요소의 부모 요소를 한꺼번에 추가합니다.</li>
+				</ul>
+			</li>
+			<li class="one5">.append() 선택한 요소의 마지막 위치에 새로운 요소를 추가합니다.</li>
+		</ul>
+	</div>
+	
+
+	<div class="btn">
+		<ul>
+			<li><input type="checkbox" name="checkbox" id="ex1" value="1"><label for="ex1">.detach()</label></li>
+			<li><input type="checkbox" name="checkbox" id="ex2" value="2"><label for="ex2">.remove()</label></li>
+			<li><input type="checkbox" name="checkbox" id="ex3" value="3"><label for="ex3">.remove()</label></li>
+			<li><input type="checkbox" name="checkbox" id="ex4" value="4"><label for="ex4">.wrapInner</label></li>
+			<li><input type="checkbox" name="checkbox" id="ex5" value="5"><label for="ex5">.append</label></li>
+			
+		</ul>
+	</div>
+
+	<script src="assets/js/jquery-1.12.4.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			var btn = $(".btn > ul > li > input");
+
+			btn.click(function(){
+				var num = $(this).attr("value");
+				//alert(num);
+
+				if(num == 1){
+					$(".one1").detach();
+				}
+				if(num == 2){
+					$(".one2").remove();
+				}
+				if(num == 3){
+					$(".one3").remove();
+				}
+				if(num == 4){
+					$(".one4").empty();
+				}
+			});
+		});
+	</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

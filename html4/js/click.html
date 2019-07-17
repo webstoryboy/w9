@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8">
+		<title>제이쿼리(jQuery)</title>
+		<style>
+			* {padding: 0; margin: 0;}
+			.effect {overflow: hidden;}
+			.effect li {
+				float: left; width: 31.3333%; 
+				margin:1%; list-style: none; 
+				position: relative; cursor: pointer; 
+			}
+			.effect li img {
+				width: 100%; display: block;
+			}
+			.effect li em {
+				opacity: 1; 
+				position: absolute; bottom: 0; left: 0; 
+				width: 100%; padding: 20px; 
+				box-sizing: border-box; 
+				background-color:#000;
+    			background: rgba(0,0,0,0.7); 
+    			color: #fff;
+    			transition: all 0.3s ease; 
+    			z-index: 10;
+    		}
+		</style>
+	</head>
+	<body>
+		<h3 class="h3">이벤트(Event)</h3>
+		<div class="effect">
+			<ul>
+				<li><img src="https://tistory4.daumcdn.net/tistory/2141493/skin/images/simg01.png"><em>.click() : 클릭해보세요!</em></li>
+				<li><img src="https://tistory4.daumcdn.net/tistory/2141493/skin/images/simg02.png"><em>.dblclick() : 더블 클릭해보세요!</em></li>
+				<li><img src="https://tistory4.daumcdn.net/tistory/2141493/skin/images/simg03.png"><em>.hover() : 마우스 오버해보세요!</em></li>
+				<li><img src="https://tistory4.daumcdn.net/tistory/2141493/skin/images/simg04.png"><em>.mousedown() : 마우스 버튼을 놀러보세요!</em></li>
+				<li><img src="https://tistory4.daumcdn.net/tistory/2141493/skin/images/simg05.png"><em>.mouseenter() : 마우스를 여기에 올려보세요!</em></li>
+				<li><img src="https://tistory4.daumcdn.net/tistory/2141493/skin/images/simg06.png"><em>.mouseleave() : 마우스를 벗어나보세요!</em></li>
+				<li><img src="https://tistory4.daumcdn.net/tistory/2141493/skin/images/simg07.png"><em>.mousemove() : 마우스를 움직여보세요!</em></li>
+				<li><img src="https://tistory4.daumcdn.net/tistory/2141493/skin/images/simg08.png"><em>.mouseout() : 마우스를 벗어나보세요!</em></li>
+				<li><img src="https://tistory4.daumcdn.net/tistory/2141493/skin/images/simg09.png"><em>.mouseover() : 마우스를 올려보세요!</em></li>
+				<li><img src="https://tistory4.daumcdn.net/tistory/2141493/skin/images/simg10.png"><em>.mouseup() : 마우스를 눌렀다가 떼어보세요!</em></li>
+			</ul>
+			</ul>
+		</div>
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+		<script>
+ 			$(".effect li:eq(0)").click(function(){
+ 				$(this).find("em").text("클릭하였습니다.");
+ 				$(this).find("img").attr("src","https://tistory4.daumcdn.net/tistory/2141493/skin/images/simg11.png");
+ 			});
+ 			$(".effect li:eq(1)").dblclick(function(){
+ 				$(this).find("em").text("더블클릭하였습니다.");
+ 				$(this).find("img").attr("src","https://tistory4.daumcdn.net/tistory/2141493/skin/images/simg10.png");
+ 			});
+ 			$(".effect li:eq(2)").hover(function(){
+ 				$(this).find("em").text("마우스 오버했습니다.");
+ 				$(this).find("img").attr("src","https://tistory4.daumcdn.net/tistory/2141493/skin/images/simg09.png");
+ 			},function(){
+ 				$(this).find("em").text("마우스 오버해보세요!");
+ 				$(this).find("img").attr("src","https://tistory4.daumcdn.net/tistory/2141493/skin/images/simg03.png");
+ 			});
+ 			$(".effect li:eq(3)").mousedown(function(){
+ 				$(this).find("em").text("마우스 버튼을 눌렀습니다.");
+ 				$(this).find("img").attr("src","https://tistory4.daumcdn.net/tistory/2141493/skin/images/simg08.png");
+ 			});
+ 			$(".effect li:eq(4)").mouseenter(function(){
+ 				$(this).find("em").text("마우스 버튼을 올렸습니다.");
+ 				$(this).find("img").attr("src","https://tistory4.daumcdn.net/tistory/2141493/skin/images/simg07.png");
+ 			});
+ 			$(".effect li:eq(5)").mouseleave(function(){
+ 				$(this).find("em").text("마우스가 벗어났습니다.");
+ 				$(this).find("img").attr("src","https://tistory4.daumcdn.net/tistory/2141493/skin/images/simg11.png");
+ 			});
+ 			$(".effect li:eq(6)").mousemove(function(){
+ 				$(this).find("em").text("마우스를 움직였습니다.");
+ 				$(this).find("img").attr("src","https://tistory4.daumcdn.net/tistory/2141493/skin/images/simg05.png");
+ 			});
+ 			$(".effect li:eq(7)").mouseout(function(){
+ 				$(this).find("em").text("마우스가 벗어났습니다.");
+ 				$(this).find("img").attr("src","https://tistory4.daumcdn.net/tistory/2141493/skin/images/simg04.png");
+ 			});
+ 			$(".effect li:eq(8)").mouseover(function(){
+ 				$(this).find("em").text("마우스를 올렸습니다.");
+ 				$(this).find("img").attr("src","https://tistory4.daumcdn.net/tistory/2141493/skin/images/simg03.png");
+ 			});
+ 			$(".effect li:eq(9)").mouseup(function(){
+ 				$(this).find("em").text("마우스를 올렸다가 떼었습니다.");
+ 				$(this).find("img").attr("src","https://tistory4.daumcdn.net/tistory/2141493/skin/images/simg02.png");
+ 			});
+		</script> 
+	</body>
+</html>       

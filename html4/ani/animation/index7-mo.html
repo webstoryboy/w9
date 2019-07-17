@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.list {position: relative;}
+		.list > div {
+			width: 60px;
+			height: 60px;
+			background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+			line-height: 60px;
+			text-align: center;
+			border-radius: 50%;
+			font-size: 12px;
+			color: #fff;
+			margin: 10px;
+			position: relative;
+			perspective: 500px;
+		}
+		.target > a{
+			border: 1px solid #F06950;
+			padding: 7px 20px 5px 20px;
+			display: inline-block;
+			border-radius: 20px;
+			text-decoration: none;
+		}
+
+	</style>
+</head>
+<body>
+	
+<h3>CSS API Reference</h3>
+<div class="table-responsive">
+	<table class="table table-bordered table-striped table-hover">
+		<colgroup>
+			<col width="15%">
+			<col width="10%">
+			<col width="75%">
+		</colgroup>
+		<thead>
+			<tr>
+				<th>속성</th>
+				<th>기본값</th>
+				<th>설명</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>el</td>
+				<td>null</td>
+				<td>선택자 선택</td>
+			</tr>
+			<tr>
+				<td>x</td>
+				<td>0</td>
+				<td>translateX 속성 값 설정</td>
+			</tr>
+			<tr>
+				<td>y</td>
+				<td>0</td>
+				<td>translateY 속성 값 설정</td>
+			</tr>
+			<tr>
+				<td>z</td>
+				<td>0</td>
+				<td>translateZ 속성 값 설정</td>
+			</tr>
+			<tr>
+				<td>skewX</td>
+				<td>0</td>
+				<td>skewX 속성 값 설정</td>
+			</tr>
+			<tr>
+				<td>skewY</td>
+				<td>0</td>
+				<td>skewY 속성 값 설정</td>
+			</tr>
+			<tr>
+				<td>angleX</td>
+				<td>0</td>
+				<td>rotateX 속성 값 설정</td>
+			</tr>
+			<tr>
+				<td>angleY</td>
+				<td>0</td>
+				<td>rotateY 속성 값 설정</td>
+			</tr>
+			<tr>
+				<td>angleZ</td>
+				<td>0</td>
+				<td>rotateZ 속성 값 설정</td>
+			</tr>
+			<tr>
+				<td>scale</td>
+				<td>1</td>
+				<td>scale 속성 값 설정</td>
+			</tr>
+			<tr>
+				<td>scaleX</td>
+				<td>1</td>
+				<td>scaleX 속성 값 설정</td>
+			</tr>
+			<tr>
+				<td>scaleY</td>
+				<td>1</td>
+				<td>scaleY 속성 값 설정</td>
+			</tr>
+			<tr>
+				<td>opacity</td>
+				<td>1</td>
+				<td>투명도 속성 값 설정</td>
+			</tr>
+			<tr>
+				<td>borderStyle</td>
+				<td>'solid'</td>
+				<td>선 스타일을 설정합니다.</td>
+			</tr>
+			<tr>
+				<td>borderWidth</td>
+				<td>0</td>
+				<td>선 두께를 설정합니다.</td>
+			</tr>
+			<tr>
+				<td>borderColor</td>
+				<td>transparent</td>
+				<td>선 색을 설정합니다.</td>
+			</tr>
+			<tr>
+				<td>customProperties</td>
+				<td>null</td>
+				<td>속성을 개별적을 설정합니다.</td>
+			</tr>
+			<tr>
+				<td>isShowStart</td>
+				<td>true</td>
+				<td>애니메이션을 시작합니다.</td>
+			</tr>
+			<tr>
+				<td>isShowEnd</td>
+				<td>true</td>
+				<td>애니메이션을 끝냅니다.</td>
+			</tr>
+			<tr>
+				<td>isForce3d</td>
+				<td>false</td>
+				<td>애니메이션을 수동으로 설정합니다.</td>
+			</tr>
+			<tr>
+				<td>isSoftHide</td>
+				<td>true</td>
+				<td>display 대신에 tramsform을 이용하여 숨김니다.</td>
+			</tr>
+			<tr>
+				<td>isRefreshState</td>
+				<td>true</td>
+				<td>애니메이션을 새로고침 합니다.</td>
+			</tr>
+			<tr>
+				<td>callbacksContext</td>
+				<td>this</td>
+				<td>애니메이션 완료 후 텍스트를 설정합니다.</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+<h3>SHAPE PROPERTIES Reference</h3>
+<div class="table-responsive">
+	<table class="table table-bordered table-striped table-hover">
+		<colgroup>
+			<col width="15%">
+			<col width="10%">
+			<col width="75%">
+		</colgroup>
+		<thead>
+			<tr>
+				<th>속성</th>
+				<th>기본값</th>
+				<th>설명</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>parent</td>
+				<td>document.body</td>
+				<td>부모 선택자를 설정합니다.</td>
+			</tr>
+			<tr>
+				<td>className</td>
+				<td>string</td>
+				<td>클래스 이름을 설정합니다.</td>
+			</tr>
+			<tr>
+				<td>shape</td>
+				<td>'circle'</td>
+				<td>객체 모양을 설정합니다. [ 'circle' | 'rect' | 'polygon' | 'line' | 'cross' | 'equal' | 'curve' | 'zigzag' ]</td>
+			</tr>
+			<tr>
+				<td>stroke</td>
+				<td>'transparent'</td>
+				<td>선 색을 설정합니다.[color name, rgb, rgba, hex]</td>
+			</tr>
+			<tr>
+				<td>strokeOpacity</td>
+				<td>1</td>
+				<td>선 투명도를 설정합니다.</td>
+			</tr>
+			<tr>
+				<td>strokeLinecap</td>
+				<td>''</td>
+				<td>선 끝 모양을 설정합니다. ['butt' | 'round' | 'square']</td>
+			</tr>
+			<tr>
+				<td>strokeWidth</td>
+				<td>2</td>
+				<td>선 두께를 설정합니다.</td>
+			</tr>
+			<tr>
+				<td>strokeDasharray</td>
+				<td>2</td>
+				<td>선의 Dasharray를 설정합니다.</td>
+			</tr>
+			<tr>
+				<td>strokeDashoffset</td>
+				<td>2</td>
+				<td>선의 Dashoffset을 설정합니다.</td>
+			</tr>
+			<tr>
+				<td>fill</td>
+				<td>'deeppink'</td>
+				<td>면색을 설정합니다.</td>
+			</tr>
+			<tr>
+				<td>fillOpacity</td>
+				<td>1</td>
+				<td>면의 투명도를 설정합니다.</td>
+			</tr>
+			<tr>
+				<td>left</td>
+				<td>'50%'</td>
+				<td>요소의 왼쪽 위치 포지션 값을 설정합니다.</td>
+			</tr>
+			<tr>
+				<td>top</td>
+				<td>'50%'</td>
+				<td>요소의 위쪽 위치 포지션 값을 설정합니다.</td>
+			</tr>
+			<tr>
+				<td>x</td>
+				<td>0</td>
+				<td>요소의 X축 위치를 설정합니다.</td>
+			</tr>
+			<tr>
+				<td>y</td>
+				<td>0</td>
+				<td>요소의 Y축 위치를 설정합니다.</td>
+			</tr>
+			<tr>
+				<td>angle</td>
+				<td>0</td>
+				<td>요소의 각도를 설정합니다.</td>
+			</tr>
+			<tr>
+				<td>scale</td>
+				<td>1</td>
+				<td>요소의 크기를 설정합니다.</td>
+			</tr>
+			<tr>
+				<td>scaleX</td>
+				<td>null</td>
+				<td>요소의 X축 크기를 설정합니다.</td>
+			</tr>
+			<tr>
+				<td>scaleY</td>
+				<td>null</td>
+				<td>요소의 Y축 크기를 설정합니다.</td>
+			</tr>
+			<tr>
+				<td>origin</td>
+				<td>'50% 50%'</td>
+				<td>요소의  x, y, scale, rotate 속성의 방향을 설정합니다.</td>
+			</tr>
+			<tr>
+				<td>opacity</td>
+				<td>1</td>
+				<td>요소의  투명도를 설정합니다.</td>
+			</tr>
+			<tr>
+				<td>rx</td>
+				<td>0</td>
+				<td>circle 요소의 보더 레디우스의 X축 값을 설정합니다.</td>
+			</tr>
+			<tr>
+				<td>ry</td>
+				<td>0</td>
+				<td>circle 요소의 보더 레디우스의 Y축 값을 설정합니다.</td>
+			</tr>
+			<tr>
+				<td>points</td>
+				<td>3</td>
+				<td>요소의 꼭지점 값을 설정합니다.</td>
+			</tr>
+			<tr>
+				<td>radius</td>
+				<td>50</td>
+				<td>요소의 레디우스 값을 설정합니다.</td>
+			</tr>
+			<tr>
+				<td>radiusX</td>
+				<td>50</td>
+				<td>요소의 레디우스 X축 값을 설정합니다.</td>
+			</tr>
+			<tr>
+				<td>radiusY</td>
+				<td>50</td>
+				<td>요소의 레디우스 Y축 값을 설정합니다.</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+
+
+
+<h3>TWEEN API Reference</h3>
+<div class="table-responsive">
+	<table class="table table-bordered table-striped table-hover">
+		<colgroup>
+			<col width="15%">
+			<col width="10%">
+			<col width="75%">
+		</colgroup>
+		<thead>
+			<tr>
+				<th>속성</th>
+				<th>기본값</th>
+				<th>설명</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>duration</td>
+				<td>350</td>
+				<td>애니메이션 지속 시간을 설정합니다.</td>
+			</tr>
+			<tr>
+				<td>delay</td>
+				<td>0</td>
+				<td>애니메이션 지연 시간을 설정합니다.</td>
+			</tr>
+			<tr>
+				<td>repeat</td>
+				<td>0</td>
+				<td>애니메이션 반복 횟수를 설정합니다.</td>
+			</tr>
+			<tr>
+				<td>speed</td>
+				<td>1</td>
+				<td>애니메이션 스피드를 설정합니다.</td>
+			</tr>
+			<tr>
+				<td>isYoyo</td>
+				<td>false</td>
+				<td>애니메이션 끝난 후 다시 처음으로 이동합니다.</td>
+			</tr>
+			<tr>
+				<td>easing</td>
+				<td>sin.out</td>
+				<td>애니메이션 움직임을 설정합니다.</td>
+			</tr>
+			<tr>
+				<td>backwardEasing</td>
+				<td>null</td>
+				<td>애니메이션 반대로 움직일 때 설정합니다.</td>
+			</tr>
+			<tr>
+				<td>timeline</td>
+				<td>CALLBACKS</td>
+				<td>타임라인 전체의 속성을 설정합니다.</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+<h3>TWEEN CALLBACKS API Reference</h3>
+<div class="table-responsive">
+	<table class="table table-bordered table-striped table-hover">
+		<colgroup>
+			<col width="25%">
+			<col width="75%">
+		</colgroup>
+		<thead>
+			<tr>
+				<th>속성</th>
+				<th>설명</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>onProgress(p, isForward, isYoyo){}</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>onStart (isForward, isYoyo){}</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>onStart (isForward, isYoyo){}</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>onStart (isForward, isYoyo){}</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>onFirstUpdate (isForward, isYoyo){}</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>onUpdate (ep, p, isForward, isYoyo){}</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>onRepeatComplete (isForward, isYoyo){}</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>onComplete (isForward, isYoyo){}</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>onPlaybackStart (){}</td>
+				<td>애니메이션 시작하고 트윗이 동작하기 전에 이벤트가 발생합니다.</td>
+			</tr>
+			<tr>
+				<td>onPlaybackPause (){}</td>
+				<td>애니메이션 멈추고 트윗이 동작하기 전에 이벤트가 발생합니다.</td>
+			</tr>
+			<tr>
+				<td>onPlaybackStop (){}</td>
+				<td>애니메이션 정지되고 트윗이 동작하기 전에 이벤트가 발생합니다.</td>
+			</tr>
+			<tr>
+				<td>onPlaybackComplete (){}</td>
+				<td>애니메이션 끝나고 이벤트가 발생합니다.</td>
+			</tr>
+			<tr>
+				<td>.then({ })</td>
+				<td>애니메이션 다음 동작을 설정합니다.</td>
+			</tr>
+			<tr>
+				<td>.play()</td>
+				<td>애니메이션을 플레이합니다.</td>
+			</tr>
+			<tr>
+				<td>.playBackward()</td>
+				<td>애니메이션을 뒤로 플레이합니다.</td>
+			</tr>
+			<tr>
+				<td>.resume()</td>
+				<td>애니메이션을 다시 시작합니다.</td>
+			</tr>
+			<tr>
+				<td>.pause()</td>
+				<td>애니메이션을 정지합니다.</td>
+			</tr>
+			<tr>
+				<td>.stop()</td>
+				<td>애니메이션을 멈춥니다.</td>
+			</tr>
+			<tr>
+				<td>.replay()</td>
+				<td>애니메이션을 다시 시작합니다.</td>
+			</tr>
+			<tr>
+				<td>.replayBackward()</td>
+				<td>애니메이션을 뒤로 리플레이합니다.</td>
+			</tr>
+			<tr>
+				<td>.setProgress()</td>
+				<td>애니메이션 진행을 다시 설정합니다.</td>
+			</tr>
+			<tr>
+				<td>.setSpeed()</td>
+				<td>애니메이션 스피드를 다시 설정합니다.</td>
+			</tr>
+			<tr>
+				<td>.reset()</td>
+				<td>애니메이션 리셋합니다.</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+
+
+<!-- nSample1 -->
+<div class="nSample">
+	<h3>Sample1 <em>클릭하면 움직이는 기본 예제입니다.</em></h3>
+	<div class="nSample-ex">
+		<h4><span class="iii"><i></i><i></i><i></i></span></h4>
+		<div id="ex">
+			<br>
+			<div class="list">
+				<div class="circle1">Mojs</div>
+			</div>
+		</div>
+		<!-- //ex// -->
+	</div>
+	<!-- //nSample-ex// -->
+	<div class="btn-wrap">
+		<a href="#c" class="btn1">Click</a>
+	</div>
+</div>
+<!-- //nSample1// -->
+
+
+<!-- nSample2 -->
+<div class="nSample">
+	<h3>Sample2 <em>클릭하면 크기가 작아지는 애니메이션입니다.</em></h3>
+	<div class="nSample-ex">
+		<h4><span class="iii"><i></i><i></i><i></i></span></h4>
+		<div id="ex">
+			<br>
+			<div class="list">
+				<div class="circle2">Mojs</div>
+			</div>
+		</div>
+		<!-- //ex// -->
+	</div>
+	<!-- //nSample-ex// -->
+	<div class="btn-wrap">
+		<a href="#c" class="btn2">Click</a>
+	</div>
+</div>
+<!-- //nSample2// -->
+
+
+
+<!-- nSample3 -->
+<div class="nSample">
+	<h3>Sample3 <em>클릭하면 보더 속성 값을 변경하는 예제입니다.</em></h3>
+	<div class="nSample-ex">
+		<h4><span class="iii"><i></i><i></i><i></i></span></h4>
+		<div id="ex">
+			<br>
+			<div class="list">
+				<div class="circle3">Mojs</div>
+			</div>
+		</div>
+		<!-- //ex// -->
+	</div>
+	<!-- //nSample-ex// -->
+	<div class="btn-wrap">
+		<a href="#c" class="btn3">Click</a>
+	</div>
+</div>
+<!-- //nSample3// -->
+
+
+<!-- nSample4 -->
+<div class="nSample">
+	<h3>Sample4 <em>여러가지 Shape 속성을 설정합니다.</em></h3>
+	<div class="nSample-ex">
+		<h4><span class="iii"><i></i><i></i><i></i></span></h4>
+		<div id="ex">
+			<br>
+			<div class="circle4">
+
+			</div>
+		</div>
+		<!-- //ex// -->
+	</div>
+	<!-- //nSample-ex// -->
+</div>
+<!-- //nSample4// -->
+
+
+<!-- nSample5 -->
+<div class="nSample">
+	<h3>Sample5 <em>여러가지 Shape 속성을 설정합니다.</em></h3>
+	<div class="nSample-ex">
+		<h4><span class="iii"><i></i><i></i><i></i></span></h4>
+		<div id="ex">
+			<br>
+			<div class="circle5">
+
+			</div>
+		</div>
+		<!-- //ex// -->
+	</div>
+	<!-- //nSample-ex// -->
+</div>
+<!-- //nSample5// -->
+
+
+
+
+<!-- nSample6 -->
+<div class="nSample">
+	<h3>Sample6 <em>요소의 위치를 랜덤으로 설정합니다.</em></h3>
+	<div class="nSample-ex">
+		<h4><span class="iii"><i></i><i></i><i></i></span></h4>
+		<div id="ex">
+			<br>
+			<div class="list circle6">
+
+			</div>
+		</div>
+		<!-- //ex// -->
+	</div>
+	<!-- //nSample-ex// -->
+</div>
+<!-- //nSample6// -->
+
+
+<!-- nSample7 -->
+<div class="nSample">
+	<h3>Sample7 <em>요소의 위치를 랜덤으로 설정합니다.</em></h3>
+	<div class="nSample-ex">
+		<h4><span class="iii"><i></i><i></i><i></i></span></h4>
+		<div id="ex">
+			<br>
+			<div class="circle7">
+
+			</div>
+		</div>
+		<!-- //ex// -->
+	</div>
+	<!-- //nSample-ex// -->
+	<div class="btn-wrap">
+		<a href="#c" class="btn7-1">Start</a>
+		<a href="#c" class="btn7-2">Pause</a>
+	</div>
+</div>
+<!-- //nSample6// -->
+
+
+
+
+<script src="../assets/js/jquery-1.9.1.min.js"></script>
+<script src="https://tistory4.daumcdn.net/tistory/2141493/skin/images/mo.min.js"></script>
+<script>
+	//sample1
+	var circle1 = new mojs.Html({
+		el: '.circle1',
+		x: { 0: '600'},
+		duration: 1000,
+		easing: 'cubic.in'
+	});
+
+	$(".btn1").click(function(){
+		circle1.play();
+	});
+</script>
+
+
+
+<script>
+	//sample2
+	var circle2 = new mojs.Html({
+		el: '.circle2',
+		x: { 0: '600'},
+		duration: 1000,
+		easing: 'cubic.in',
+		scale: { 1 : 0.5 }
+	});
+
+	$(".btn2").click(function(){
+		circle2.play();
+	});
+</script>
+
+
+<script>
+	//sample3
+	var circle3 = new mojs.Html({
+		el: '.circle3',
+		x: { 0: '600'},
+		duration: 1000,
+		easing: 'cubic.in',
+		borderStyle: 'solid',
+		borderWidth: { 0: 20 },
+		borderColor: { '#880e4f': '#4a148c' }
+	});
+
+	$(".btn3").click(function(){
+		circle3.play();
+	});
+</script>
+
+<style>
+	.list {min-height: 100px;}
+	.circle4 {position: relative; height: 100px; background-image: none;}
+	.circle5 {position: relative; height: 100px; background-image: none;}
+	.circle7 {position: relative; height: 100px; background-image: none;}
+</style>
+
+<script>
+	//sample4
+	var circle4_1 = new mojs.Shape({
+		parent:'.circle4',
+		shape: 'circle',
+		left: '60',
+		radius: 30,
+		strokeWidth: 0,
+		isShowStart:  true
+	});
+	var circle4_2 = new mojs.Shape({
+		parent:'.circle4',
+		shape: 'circle',
+		left: '160',
+		radius: 30,
+		strokeWidth: 5,
+		stroke: '#bbdefb',
+		fill: '#42a5f5',
+		isShowStart:  true
+	});
+	var circle4_3 = new mojs.Shape({
+		parent:'.circle4',
+		shape: 'circle',
+		left: '300',
+		radius: 30,
+		radiusX: 50,
+		strokeWidth: 7,
+		stroke: '#0d47a1',
+		fill: '#fff',
+		isShowStart:  true
+	});
+	var circle4_4 = new mojs.Shape({
+		parent:'.circle4',
+		shape: 'circle',
+		left: '450',
+		radius: 30,
+		radiusY: 40,
+		strokeWidth: 0,
+		fill: 'deeppink',
+		isShowStart:  true
+	});
+	var circle4_5 = new mojs.Shape({
+		parent:'.circle4',
+		shape: 'rect',
+		left: '600',
+		radius: 30,
+		radiusX: 40,
+		strokeWidth: 0,
+		fill: '#006064',
+		isShowStart:  true
+	});
+	var circle4_6 = new mojs.Shape({
+		parent:'.circle4',
+		shape: 'polygon',
+		left: '750',
+		radius: 30,
+		radiusY: 40,
+		strokeWidth: 0,
+		fill: '#1b5e20',
+		isShowStart:  true
+	});
+
+</script>
+
+
+<script>
+	//sample5
+	var circle5_1 = new mojs.Shape({
+		parent:'.circle5',
+		shape:'zigzag',
+		points:11,
+		radius:35,
+		radiusY:50,
+		left:'60',
+		fill:'none',
+		stroke:'deeppink',
+		isShowStart:  true
+	});
+	var circle5_2 = new mojs.Shape({
+		parent:'.circle5',
+		shape:'curve',
+		points:11,
+		radius:35,
+		radiusY:50,
+		left:'160',
+		fill:'none',
+		stroke:'deeppink',
+		isShowStart:  true
+	});
+	var circle5_3 = new mojs.Shape({
+		parent:'.circle5',
+		shape:'cross',
+		points:11,
+		radius:35,
+		radiusY:30,
+		left:'260',
+		y: '-25',
+		fill:'none',
+		stroke:'deeppink',
+		isShowStart:  true
+	});
+</script>
+
+
+
+<script>
+	//sample6
+	var circle6 = new mojs.Shape({
+		parent:'.circle6',
+		shape: 'circle',
+		radius: 30,
+		strokeWidth: 0,
+		isShowStart:  true,
+		shape: 'circle',
+		x:'rand(-350, 350)'
+	});
+</script>
+
+
+<script>
+	//sample7
+	var circle7_1 = new mojs.Shape({
+		parent:'.circle7',
+		shape: 'circle',
+		fill: { '#1a237e': '#d50000' },
+		radius: 30,
+		strokeWidth: 0,
+		scale: { 0 : 1 },
+		duration: 2000,
+		repeat:999,
+		left: '25%'
+	});
+	const circle7_2 = new mojs.Shape({
+		parent:'.circle7',
+		shape: 'rect',
+		left: '50%',
+		fill: 'none',
+		radius: 20,
+		stroke: { 'rgba(0,255,255, 1)' : '#0d47a1' },
+		strokeWidth: { 10: 0 },
+		strokeDasharray: '100%',
+  		strokeDashoffset: { '-100%' : '100%' },
+  		angle:{ 0: 180 },
+		duration: 2000,
+		repeat:999
+	});
+	var circle7_3 = new mojs.Shape({
+		parent:'.circle7',
+		shape: 'polygon',
+		points: '5',
+		left: '75%',
+  		fill: { 'deeppink' : '#00F87F' },
+  		x: { 'rand(-100%, -200%)' : 0  },
+  		angle: { 0: 'rand(0, 360)' },
+  		radius: 25,
+  		duration: 2000,
+  		repeat: 999,
+	});
+
+
+	$(".btn7-1").click(function(){
+		circle7_1.play();
+		circle7_2.play();
+		circle7_3.play();
+	});
+	$(".btn7-2").click(function(){
+		circle7_1.pause();
+		circle7_2.pause();
+		circle7_3.pause();
+	});
+
+</script>
+
+
+
+
+
+
+
+<script>
+	// const CUSTOM_PROPERTIES = {
+	// 	originY: 350,
+	// 	anotherCustomProp: 0,
+	// 	draw (el, props) {
+	// 		el.style['transformOrigin'] = `50% ${props.originY}%`;
+	// 	}
+	// }
+
+	// const circle3 = new mojs.Html({
+	// 	el: '.circle3',
+	// 	angleZ: { 0: 360 },
+	// 	customProperties: CUSTOM_PROPERTIES,
+	// 	originY: { 0: 100 },
+	// 	duration: 2000,
+	// });
+
+	// $(".btn3").click(function(){
+	// 	circle3.play();
+	// });
+</script>
+
+
+
+
+
+<script>
+	// const circle4 = new mojs.Html({
+	//   	el: '.circle4',
+	// 	x: { 
+	// 		0: 200,
+	// 		duration: 1000,
+	// 		easing: 'cubic.in',
+	// 		onComplete () { alert("x 완성") }
+	// 	},
+	// 	angleZ: { 
+	// 		0: 360,
+	// 		duration: 1000,
+	// 		delay: 1000,
+	// 		onComplete () { alert("angleZ 완성") }
+	// 	},
+	// });
+	// $(".btn4").click(function(){
+	// 	circle4.play();
+	// });
+</script>
+
+
+
+
+</body>
+</html>

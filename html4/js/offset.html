@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+	<html lang="ko">
+	<head>
+		<meta charset="UTF-8">
+		<title>제이쿼리(jQuery) : offset()</title>
+		<style>
+			* { margin:0; padding:0;}
+			body {width:2000px; height:3000px;  }
+			#box {position:absolute; width:100px; height:100px; left:50%; top:50%; background:#f06292; color:white; text-align: center; line-height: 100px; cursor: pointer; margin-left: -50px; margin-top: -50px; border-radius:50%}
+			#info {position: fixed; left: 10px; top: 10px;}
+		</style>
+	</head>
+	<body>
+		<div id="info">
+			<span>offset().left = </span><span class="offset_left">0</span>px<br>
+			<span>offset().top = </span><span class="offset_top">0</span>px<br>
+			<span>position().left = </span><span class="position_left">0</span>px<br>
+			<span>position().top = </span><span class="position_top">0</span>px<br>
+			<span>scrollLeft = </span><span class="scroll_left">0</span>px<br>
+			<span>scrollTop = </span><span class="scroll_top">0</span>px<br>
+		</div>
+			
+		<div id="box">Drag</div>
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+		<script type="text/javascript">
+			$('#box').draggable({
+				drag:function(){
+					$('.offset_left').text($('#box').offset().left);
+					$('.offset_top').text($('#box').offset().top);
+					$('.position_left').text($('#box').position().left);
+					$('.position_top').text($('#box').position().top);
+				}
+			});
+
+			$(window).on("scroll",function(){
+				$(".scroll_left").text($(window).scrollLeft());
+				$(".scroll_top").text($(window).scrollTop());
+			});
+		</script>
+	</body>
+</html>  
+
+
+
+
+

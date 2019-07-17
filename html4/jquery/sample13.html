@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>jQuery</title>
+	<style>
+		div {font-size:0;}
+	</style>
+</head>
+<body>
+	<a href="#" class="btn">Click</a>
+	<div class="box">
+		<!-- <img src="assets/img/img01.jpg" alt="이미지1" width="150">
+		<img src="assets/img/img04.jpg" alt="이미지1" width="150">
+		<img src="assets/img/img03.jpg" alt="이미지1" width="150">
+		<img src="assets/img/img03.jpg" alt="이미지1" width="150">
+		<img src="assets/img/img02.jpg" alt="이미지1" width="150"> -->
+	</div>
+
+	<script src="assets/js/jquery-1.12.4.min.js"></script>
+	<script>
+		$(".btn").click(function(){
+			$(".box").append(img());
+		});
+
+		function img(){
+			var num = Math.ceil(Math.random() * 8);
+			var imgPath = "<img src='assets/img/img0"+num+".jpg' alt='이미지1' width='150'>";
+			return imgPath;
+		}
+	</script>
+</body>
+</html>
+
+

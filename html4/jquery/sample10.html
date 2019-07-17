@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    a {color: #666; text-decoration: none;}
+    a.on {font-size: 90%; color: #c7254e; background-color: #f9f2f4; border-radius: 4px; border: 1px dashed #a51a3d;}
+    a.off {font-size: 90%; color: #3d90b7; background-color: #e7f6fd; border-radius: 4px; border: 1px dashed #3d90b7;}
+  </style>
+</head>
+<body>
+  <h3>탐색(Traversing)</h3>
+  <div class="list">
+    <ul>
+      <li><a href="#">.eq() 메서드는 선택한 요소의 <em>인덱스</em> 번호를 갖는 요소를 반환합니다.</a></li>
+      <li><a href="#">.filter() 메서드는 선택된 요소에서 한 번 더 필터링하여 요소를 선택합니다.</a></li>
+      <li><a href="#">.first() 메서드는 선택한 요소의 <strong>첫 번째</strong> 요소를 반환합니다.</a></li>
+      <li><a href="#">.has() 메서드는 선택된 요소의 자식 요소에서 주어진 선택자를 찾습니다.</a></li>
+      <li><a href="#">.is() 메서드는 선택한 요소의 상태가 지정한 <span>속성</span>과 일치하면 true를 반환합니다.</a></li>
+      <li><a href="#">.last() 메서드는 선택한 요소의 마지막 요소를 반환합니다.</a></li>
+      <li><a href="#">.map() 메서드는 배열의 데이터를 변환시켜 새로운 배열 객체를 만듭니다.</a></li>
+      <li><a href="#">.not() 메서드는 선택한 요소 중 지정한 요소만 <strong>제외</strong>하고 선택합니다.</a></li>
+      <li><a href="#">.slice() 메서드는 선택한 요소에 지정한 인덱스를 선택합니다.</a></li>
+    </ul>
+  </div>
+
+  <div class="list2">
+    <h4>strong 태그가 표함되어 있으면 빨간색으로 표시 없으면 파란색으로 표시</h4>
+    <ul>
+      <li><a href="#">.eq() 메서드는 선택한 요소의 <em>인덱스</em> 번호를 갖는 요소를 반환합니다.</a></li>
+      <li><a href="#">.filter() 메서드는 선택된 요소에서 한 번 더 필터링하여 요소를 선택합니다.</a></li>
+      <li><a href="#">.first() 메서드는 선택한 요소의 <strong>첫 번째</strong> 요소를 반환합니다.</a></li>
+      <li><a href="#">.has() 메서드는 선택된 요소의 자식 요소에서 주어진 선택자를 찾습니다.</a></li>
+      <li><a href="#">.is() 메서드는 선택한 요소의 상태가 지정한 <span>속성</span>과 일치하면 true를 반환합니다.</a></li>
+      <li><a href="#">.last() 메서드는 선택한 요소의 마지막 요소를 반환합니다.</a></li>
+      <li><a href="#">.map() 메서드는 배열의 데이터를 변환시켜 새로운 배열 객체를 만듭니다.</a></li>
+      <li><a href="#">.not() 메서드는 선택한 요소 중 지정한 요소만 <strong>제외</strong>하고 선택합니다.</a></li>
+      <li><a href="#">.slice() 메서드는 선택한 요소에 지정한 인덱스를 선택합니다.</a></li>
+    </ul>
+  </div>
+
+  <div class="list3">
+    <h4>select를 이용한 선택방법입니다.</h4>
+    <ul>
+      <li><a href="#">.eq() 메서드는 선택한 요소의 <em>인덱스</em> 번호를 갖는 요소를 반환합니다.</a></li>
+      <li><a href="#">.filter() 메서드는 선택된 요소에서 한 번 더 필터링하여 요소를 선택합니다.</a></li>
+      <li><a href="#">.first() 메서드는 선택한 요소의 <strong>첫 번째</strong> 요소를 반환합니다.</a></li>
+      <li><a href="#">.has() 메서드는 선택된 요소의 자식 요소에서 주어진 선택자를 찾습니다.</a></li>
+      <li class="is"><a href="#">.is() 메서드는 선택한 요소의 상태가 지정한 <span>속성</span>과 일치하면 true를 반환합니다.</a></li>
+      <li><a href="#">.last() 메서드는 선택한 요소의 마지막 요소를 반환합니다.</a></li>
+      <li><a href="#">.map() 메서드는 배열의 데이터를 변환시켜 새로운 배열 객체를 만듭니다.</a></li>
+      <li><a href="#">.not() 메서드는 선택한 요소 중 지정한 요소만 <strong>제외</strong>하고 선택합니다.</a></li>
+      <li><a href="#">.slice() 메서드는 선택한 요소에 지정한 인덱스를 선택합니다.</a></li>
+    </ul>
+  </div>
+
+  <script src="assets/js/jquery-1.12.4.min.js"></script>
+	<script>
+    $(".list li a").click(function(){
+      var target = $(this);    //클릭한 대상은 변수한테 할당(저장)
+      if(target.is("a")){
+        target.addClass("on");
+      }
+    });
+
+    $(".list2 li a").click(function(){
+      var target = $(this);
+      var two = target.is(function(){
+        return $("strong", this).length === 1;
+      });
+
+      if(two){
+        target.addClass("on");
+      } else {
+        target.addClass("off");
+      }
+    });
+
+    $(".list3 li").click(function(){
+      var target = $(this);
+
+      if(target.is(":first-child")){
+        target.find("a").text("이것은 :first-child를 이용하였습니다.").addClass("on");
+      } else if(target.is(".is")){
+        target.find("a").text("이것은 .is를 이용하였습니다.").addClass("on");
+      } else if(target.is(":nth-child(2)")){
+        target.find("a").text("이것은 :nth-child(2)를 이용하였습니다.").addClass("on");
+      } else if(target.is(":contains('배열')")){
+        target.find("a").text("이것은 :contains('배열')를 이용하였습니다.").addClass("on");
+      } else {
+        target.find("a").text("이것은 아무것도 해당되지 않습니다.").addClass("off");
+      }
+
+    });
+
+  </script>
+</body>
+</html>

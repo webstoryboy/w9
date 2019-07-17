@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{padding: 0; margin: 0;}
+		.box-wrap {overflow: hidden; width: 1260px; margin:100px auto;}
+		.box {position: relative; width: 400px; height: 300px; float: left; margin:10px; box-shadow: 1px 1px 3px rgba(0,0,0,0.3); cursor: pointer;}
+		.box img {width: 100%; display: block;}
+		.box .info {position: absolute; left: 0; top: auto; bottom: 0; right: 0;
+			background: rgba(0,0,0,0.7); color: #fff; padding: 13px;}
+
+		/* box1 */
+		.box1 .img {}
+		.box1 .info {}
+		.box1 .info h3 {}
+		.box1 .info p {}
+		.box1:hover .info {}
+
+	</style>
+</head>
+<body>
+
+	<section class="box-wrap">
+		<article class="box box1">
+			<figure class="img"><img src="assets/img/simg01.png" alt=""></figure>
+			<figcaption class="info">
+				<h3>.click()</h3>
+				<p>클릭해 보세요!</p>
+			</figcaption>
+		</article>
+		<article class="box box2">
+			<figure class="img"><img src="assets/img/simg02.png" alt=""></figure>
+			<figcaption class="info">
+				<h3>.dblclick()</h3>
+				<p>더블 클릭해 보세요!</p>
+			</figcaption>
+		</article>
+		<article class="box box3">
+			<figure class="img"><img src="assets/img/simg03.png" alt=""></figure>
+			<figcaption class="info">
+				<h3>.hover()</h3>
+				<p>마우스 오버를 해보세요!</p>
+			</figcaption>
+		</article>
+		<article class="box box4">
+			<figure class="img"><img src="assets/img/simg04.png" alt=""></figure>
+			<figcaption class="info">
+				<h3>.mousedown()</h3>
+				<p>마우스를 눌러보세요!</p>
+			</figcaption>
+		</article>
+		<article class="box box5">
+			<figure class="img"><img src="assets/img/simg05.png" alt=""></figure>
+			<figcaption class="info">
+				<h3>.mouseout()</h3>
+				<p>마우스를 벗어나보세요!</p>
+			</figcaption>
+		</article>
+		<article class="box box6">
+			<figure class="img"><img src="assets/img/simg06.png" alt=""></figure>
+			<figcaption class="info">
+				<h3>.mouseover()</h3>
+				<p>마우스를 올려보세요!</p>
+			</figcaption>
+		</article>
+		<article class="box box7">
+			<figure class="img"><img src="assets/img/simg07.png" alt=""></figure>
+			<figcaption class="info">
+				<h3>.mouseup</h3>
+				<p>마우스를 눌렀다가 떼어보세요!</p>
+			</figcaption>
+		</article>
+		<article class="box box8">
+			<figure class="img"><img src="assets/img/simg08.png" alt=""></figure>
+			<figcaption class="info">
+				<h3>.mouseenter()</h3>
+				<p>마우스를 여기에 올려보세요!</p>
+			</figcaption>
+		</article>
+		<article class="box box9">
+			<figure class="img"><img src="assets/img/simg09.png" alt=""></figure>
+			<figcaption class="info">
+				<h3>.mouseleave()</h3>
+				<p>마우스를 벗어나보세요!</p>
+			</figcaption>
+		</article>
+		<article class="box box10">
+			<figure class="img"><img src="assets/img/simg10.png" alt=""></figure>
+			<figcaption class="info">
+				<h3>.mousemove()</h3>
+				<p>마우스를 움직여보세요!</p>
+			</figcaption>
+		</article>
+	</section>
+
+	
+	<script src="assets/js/jquery-1.12.4.min.js"></script>
+	<script>
+		$(".box1").click(function(){
+			$(".box1 .info p").text("클릭을 하셨군요!");
+		});
+		$(".box2").dblclick(function(){
+			$(".box2 .info p").text("더블클릭을 하셨군요!");
+		});
+		$(".box3").hover(function(){
+			$(".box3 .info p").text("마우스 오버를 하셨군요!");
+		}, function(){
+			$(".box3 .info p").text("마우스 오버를 해보세요!");
+		});
+		$(".box4").mousedown(function(){
+			$(".box4 .info p").text("마우스를 눌렀군요!");
+		});
+		$(".box5").mouseout(function(){
+			$(".box5 .info p").text("마우스가 벗어났군요!");
+		});
+		$(".box6").mouseover(function(){
+			$(".box6 .info p").text("마우스를 올렸군요!");
+		});
+		$(".box7").mouseup(function(){
+			$(".box7 .info p").text("마우스를 눌렀다가 떼었군요!");
+		});
+		$(".box8").mouseenter(function(){
+			$(".box8 .info p").text("마우스를 올렸군요!");
+		});
+		$(".box9").mouseleave(function(){
+			$(".box9 .info p").text("마우스가 벗어났군요!");
+		});
+		$(".box10").mousemove(function(){
+			$(".box10 .info p").text("마우스를 움직였군요!");
+		});
+
+
+
+
+
+	
+
+
+
+
+		
+	</script>
+
+
+
+
+
+</body>
+</html>
+
+
+
+

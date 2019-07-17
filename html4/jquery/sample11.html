@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>jQuery</title>
+	<style>
+		li.on {font-size: 90%; color: #c7254e; background-color: #f9f2f4; border-radius: 4px; border: 1px dashed #a51a3d;}
+		div.on {font-size: 90%; color: #3d90b7; background-color: #e7f6fd; border-radius: 4px; border: 1px dashed #3d90b7;}
+		span.on {font-size: 90%; color: #3d90b7; background-color: #e7f6fd; border-radius: 4px; border: 1px dashed #3d90b7;}
+		p.on {font-size: 90%; color: #3d90b7; background-color: #e7f6fd; border-radius: 4px; border: 1px dashed #3d90b7;}
+	</style>
+</head>
+<body>
+	<div class="list">
+		<ul>
+			<li class="one1">.clone() 선택한 요소를 복사합니다.</li>
+			<li class="one2">.wrap() 선택한 요소의 부모 요소를 추가합니다.</li>
+			<li class="one3">.wrapAll() 선택한 요소의 부모 요소를 한꺼번에 추가합니다.</li>
+			<li class="text"></li>
+			<li class="one4">.wrapInner() 선택한 요소의 새로운 요소를 각각 추가합니다.</li>
+			<li class="one5">.append() 선택한 요소의 마지막 위치에 새로운 요소를 추가합니다.</li>
+		</ul>
+	</div>
+	<div class="list">
+		<ul>
+			<li class="one1">.appendTo(target) 선택한 요소(타겟)을 마지막 위치에 추가합니다.</li>
+			<li class="one2">.prepend() 선택한 요소의 처음 위치에 새로운 요소를 추가합니다.</li>
+			<li class="one3">.prependTo(target) 선택한 요소(타겟)을 처음 위치에 추가합니다.</li>
+			<li class="text"></li>
+			<li class="one4">.after() 선택한 요소 다음 위치에 새로운 요소를 추가합니다.</li>
+			<li class="one5">.before() 선택한 요소 이전 위치에 새로운 요소를 추가합니다.</li>
+		</ul>
+	</div>
+
+	<div class="btn">
+		<ul>
+			<li><input type="checkbox" name="checkbox" id="ex1" value="1"><label for="ex1">.clone()</label></li>
+			<li><input type="checkbox" name="checkbox" id="ex2" value="2"><label for="ex2">.wrap</label></li>
+			<li><input type="checkbox" name="checkbox" id="ex3" value="3"><label for="ex3">.wrapAll</label></li>
+			<li><input type="checkbox" name="checkbox" id="ex4" value="4"><label for="ex4">.wrapInner</label></li>
+			<li><input type="checkbox" name="checkbox" id="ex5" value="5"><label for="ex5">.append</label></li>
+			<li><input type="checkbox" name="checkbox" id="ex6" value="6"><label for="ex6">.prepend</label></li>
+			<li><input type="checkbox" name="checkbox" id="ex7" value="7"><label for="ex7">.appendTo</label></li>
+			<li><input type="checkbox" name="checkbox" id="ex8" value="8"><label for="ex8">.prependTo</label></li>
+			<li><input type="checkbox" name="checkbox" id="ex9" value="9"><label for="ex9">.text</label></li>
+			<li><input type="checkbox" name="checkbox" id="ex10" value="10"><label for="ex10">.html</label></li>
+			<li><input type="checkbox" name="checkbox" id="ex11" value="11"><label for="ex11">.after</label></li>
+			<li><input type="checkbox" name="checkbox" id="ex12" value="12"><label for="ex12">.before</label></li>
+			<li><input type="checkbox" name="checkbox" id="ex13" value="13"><label for="ex13">.insertAfter</label></li>
+			<li><input type="checkbox" name="checkbox" id="ex14" value="14"><label for="ex14">.insertBefore</label></li>
+		</ul>
+	</div>
+
+	<script src="assets/js/jquery-1.12.4.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			var btn = $(".btn > ul > li > input");
+
+			btn.click(function(){
+				var num = $(this).attr("value");
+				//alert(num);
+
+				if(num == 1){
+					$(".one1").clone().appendTo(".list ul").addClass("on");
+				}
+				if(num == 2){
+					$(".list").wrap("<div class='on'></div>");
+				}
+				if(num == 3){
+					$(".list").wrapAll("<div class='on'></div>");
+				}
+				if(num == 4){
+					$(".list li").wrapInner("<span>!!!</span>");
+				}
+				if(num == 5){
+					$(".list ul").append("<li class='on'>맨 뒤에 새로운 요소를 추가합니다.</li>");
+				}
+				if(num == 6){
+					$(".list ul").prepend("<li class='on'>맨 앞에 새로운 요소를 추가합니다.</li>");
+				}
+				if(num == 7){
+					$(".one1").appendTo($(".list ul"));
+				}
+				if(num == 8){
+					$(".one5").prependTo($(".list ul"));
+				}
+				if(num == 9){
+					$(".text").text("<span class='on'>여기는</span> 텍스트가 변경됩니다.").addClass("on");
+				}
+				if(num == 10){
+					$(".text").html("<span class='on'>여기는</span> 텍스트가 변경됩니다.").addClass("on");
+				}
+				if(num == 11){
+					$(".list").after("<p class='on'>after를 통해서 추가하였습니다.</p>");
+				}
+				if(num == 12){
+					$(".list").before("<p class='on'>before 통해서 추가하였습니다.</p>");
+				}
+				if(num == 13){
+					$("<li class='on'>insertAfter를 추가하였습니다</li>").insertAfter(".one1");
+				}
+				if(num == 14){
+					$("<li class='on'>insertBefore를 추가하였습니다</li>").insertBefore(".one1");
+				}
+			});
+		});
+	</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

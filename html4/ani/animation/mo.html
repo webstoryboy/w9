@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>mo.js</title>
+    
+    
+    
+    
+</head>
+<body>
+   
+   
+   
+   
+    <script src="../assets/js/jquery-1.9.1.min.js"></script>
+    <script src="js/mo.min.js"></script>
+    <script>
+        var shape1 = new mojs.Shape({
+            shape:'circle',
+            isShowStart: true,
+            left: 100,
+            top:'30%'
+        });
+        
+        var shape2 = new mojs.Shape({
+            shape: 'circle',
+            isShowStart: true,
+            fill: '#9c27b0',
+            stroke : '#4a148c',
+            strokeWidth : 10,
+            left: 100,
+        });
+        
+        var shape3 = new mojs.Shape({
+            shape: 'circle',
+            isShowStart: true,
+            fill: '#1e88e5',
+            x:'rand(-500, 500)',
+            y:'rand(-500, 500)'
+        });
+        
+        var shape4 = new mojs.Shape({
+            shape: 'circle',
+            isShowStart: true,
+            fill: 'transparent',
+            stroke : '#01579b',
+            strokeWidth : 5,
+            left: 230
+        });
+        
+        var shape5 = new mojs.Shape({
+            shape: 'circle',
+            isShowStart: true,
+            fill: 'transparent',
+            stroke : '#01579b',
+            strokeWidth : 5,
+            radiusY: 100,
+            left: 230,
+            top: '20%'
+        });
+        
+        var shape6 = new mojs.Shape({
+            shape: 'rect',
+            isShowStart: true,
+            fill: '#43a047',
+            left: 350,
+            top: '20%'
+        });
+        
+        var shape7 = new mojs.Shape({
+            shape: 'polygon',
+            isShowStart: true,
+            fill: '#2e7d32',
+            left: 350,
+            top: '40%',
+            radiusY:'70'
+        });
+        
+        var shape8 = new mojs.Shape({
+            shape: 'polygon',
+            points: 8,
+            isShowStart: true,
+            fill: '#2e7d32',
+            left: 350,
+            top: '60%',
+            radiusX:'70'
+        });
+        
+        var shape8 = new mojs.Shape({
+            shape: 'zigzag',
+            points: 15,
+            isShowStart: true,
+            fill: 'none',
+            left: 550,
+            top: '30%',
+            stroke: '#e65100'
+        });
+        
+        var shape8 = new mojs.Shape({
+            shape: 'curve',
+            points: 11,
+            isShowStart: true,
+            radius:60,
+            radiusY: 30,
+            fill: 'none',
+            left: 550,
+            top: '40%',
+            stroke: '#e65100'
+        });
+        
+        var shape9 = new mojs.Shape({
+            shape: 'cross',
+            points: 11,
+            isShowStart: true,
+            fill: 'none',
+            left: 550,
+            top: '50%',
+            stroke: '#e65100'
+        });
+        
+        var shape10 = new mojs.Shape({
+            shape:'circle',
+            scale:{0 : 1},
+            fill: {'#e65100':'#5d4037'},
+            duration: 1500,
+            easing:'cubic.out',
+            repeat:100
+        }).play();
+        
+        var shape11 = new mojs.Shape({
+            shape:'rect',
+            left: '80%',
+            fill: 'none',
+            stroke :{'#311b92':'#880e4f'},
+            strokeWidth : {10:0},
+            strokeDasharray: '100%',
+            strokeDashoffset: {'-100%':'100%'},
+            angle:{0:180},
+            duration:2000,
+            repeat:100
+        }).play();
+        
+        var shape12 = new mojs.Shape({
+            shape:'circle',
+            left: '70%',
+            fill: 'none',
+            stroke :{'#311b92':'#880e4f'},
+            strokeWidth : {10:0},
+            strokeDasharray: '100%',
+            strokeDashoffset: {'-100%':'100%'},
+            duration:2000,
+            repeat:100
+        }).play();
+        
+        var shape13 = new mojs.Shape({
+            shape:'zigzag',
+            points: 15,
+            left: '60%',
+            fill: 'none',
+            angle:{0:10},
+            stroke :{'#311b92':'#880e4f'},
+            strokeWidth : {5:0},
+            strokeDasharray: '100%',
+            strokeDashoffset: {'-100%':'100%'},
+            duration:4000,
+            repeat:100
+        }).play();
+        
+
+        
+    </script>
+    
+    
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

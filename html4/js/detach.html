@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8">
+		<title>제이쿼리(jQuery)</title>
+		<style>
+			.list li{padding: 4px 4px 2px 10px; font-size: 90%; color: #c7254e; white-space: nowrap; background-color: #f9f2f4; border-radius: 4px; border:1px dashed #a51a3d;}
+		</style>
+	</head>
+	<body>
+		<h3 class="h3">변경(Manipulation)</h3>
+		<div class="list">
+			<ul>
+				<li class="one1">.detach() 메서드는 선택한 요소(데이터 및 이벤트 불포함)를 제거합니다.</li>
+				<li class="one2">.empty() 메서드는 선택한 요소의 하위 요소를 제거합니다.</li>
+				<li class="one3">.remove() 메서드는 선택한 요소(데이터 및 이벤트 포함)를 제거합니다.
+					<ul>
+						<li>.append() 메서드는 선택한 요소 마지막 위치에 새로운 요소를 추가합니다.</li>
+						<li>.appendTo() 메서드는 선택한 타겟 마지막 위치에 새로운 요소를 추가합니다.</li>
+						<li>.html() 메서드는 선택한 요소 내부의 HTML을 읽거나 쓸 수 있습니다.</li>
+					</ul>
+				</li>
+				<li class="one4">.unwrap() 메서드는 선택한 요소의 부모요소를 제거합니다.
+					<ul>
+						<li>.wrap() 메서드는 선택한 요소에 새로운 요소를 추가합니다.</li>
+						<li>.wrapAll() 메서드는 선택한 모든 요소에 새로운 요소를 추가합니다.</li>
+						<li>.wrapInner() 메서드는 선택한 각각의 요소에 새로운 요소를 추가합니다.</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+
+		<div class="btn">
+			<ul>
+				<li><input type="radio" name="radio" id="ex1" value="1"><label for="ex1">$(".one1").detach();</label></li> 
+				<li><input type="radio" name="radio" id="ex2" value="2"><label for="ex2">$(".one2").remove();</label></li>
+				<li><input type="radio" name="radio" id="ex3" value="3"><label for="ex3">$(".one3").remove();</label></li>
+				<li><input type="radio" name="radio" id="ex4" value="4"><label for="ex4">$(".one4").empty();</label></li>
+			</ul>
+		</div>
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+		<script type="text/javascript">
+		$(document).ready(function(){    
+			var btn = $(".btn > ul > li > input");	
+			
+			btn.click(function(){
+				var num = $(this).attr("value");
+				$("*").removeClass("on");
+				
+				if(num == 1){$(".one1").detach();}
+				if(num == 2){$(".one2").remove();}
+				if(num == 3){$(".one3").remove();}
+				if(num == 4){$(".one4").empty();}
+			});
+		}); 
+		</script> 
+	</body>
+</html>       

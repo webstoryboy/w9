@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+	<html lang="ko">
+	<head>
+		<meta charset="UTF-8">
+		<title>CSS</title>
+		<style>
+			.list > div {width: 60px; height: 60px; background-image: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); line-height: 60px; text-align: center; border-radius: 50%;font-size: 12px; color: #fff; margin: 10px; position: relative;}
+			.list div.duration1 {animation: move1 1 ease; animation-duration : 1s;}
+			.list div.duration2 {animation: move1 1 ease; animation-duration : 2s;}
+			.list div.duration3 {animation: move1 1 ease; animation-duration : 3s;}
+			.list div.duration4 {animation: move1 1 ease; animation-duration : 4s;}
+
+			@keyframes move1 {
+				0% {left: 0%;}
+				50% {left: calc(100% - 70px);}
+				100% {left: 0%;}
+			}
+		</style>
+	</head>
+	<body>
+		
+		<h3 class="h3">애니메이션(Animation-duration)</h3>
+		<div class="list">
+			<div>duration</div>
+			<div>duration</div>
+			<div>duration</div>
+			<div>duration</div>
+		</div>
+
+		<div class="btn">
+			<a href="#c" class="line">Click : 클릭하면 이미지가 움직입니다.</a><br><br>
+			<ul>
+				<li>.list div.duration1 {animation: move1 1s 10 ease; animation-duration : 1s;}</li>
+				<li>.list div.duration2 {animation: move1 1s 10 ease; animation-duration : 2s;}</li>
+				<li>.list div.duration3 {animation: move1 1s 10 ease; animation-duration : 3s;}</li>
+				<li>.list div.duration4 {animation: move1 1s 10 ease; animation-duration : 4s;}</li>
+			</ul>
+		</div>
+	
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+		<script type="text/javascript">
+			$(".btn a").click(function(){
+				$(".list > div").eq(0).addClass("duration1");
+				$(".list > div").eq(1).addClass("duration2");
+				$(".list > div").eq(2).addClass("duration3");
+				$(".list > div").eq(3).addClass("duration4");
+			});
+		</script>
+	</body>
+</html>  

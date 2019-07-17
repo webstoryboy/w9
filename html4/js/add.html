@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>제이쿼리(jQuery)</title>
+			<style>
+				li.on{padding: 4px 4px 2px 10px; font-size: 90%; color: #c7254e; white-space: nowrap; background-color: #f9f2f4; border-radius: 4px; border:1px dashed #a51a3d;}
+				p.on{padding: 4px 4px 2px 10px; font-size: 90%; color: #3d90b7; white-space: nowrap; background-color: #e7f6fd; border-radius: 4px; border: 1px dashed #3d90b7;}
+				span.on{padding: 4px 4px 2px 10px; font-size: 90%; color: #3d90b7; white-space: nowrap; background-color: #e7f6fd; border-radius: 4px; border: 1px dashed #3d90b7;}
+				strong.on{padding: 4px 4px 2px 10px; font-size: 90%; color: #3d90b7; white-space: nowrap; background-color: #e7f6fd; border-radius: 4px; border: 1px dashed #3d90b7;}
+				em.on{padding: 4px 4px 2px 10px; font-size: 90%; color: #3d90b7; white-space: nowrap; background-color: #e7f6fd; border-radius: 4px; border: 1px dashed #3d90b7;}
+			</style>
+    </head>
+    <body>
+		<h3>탐색(Traversing)</h3>
+		<div class="list">
+			<ul>
+				<li class="one1"><em>.add()</em> 메서드는 선택한 요소에 새로운 요소를 추가하여 선택합니다.</li>
+				<li class="one2"><em>.addBack()</em> 메서드는 선택한 요소의 상위 요소도 추가하여 선택합니다.</li>
+				<li class="one3"><em>.contents()</em> 메서드는 선택한 요소와 일치하는 <strong>콘텐츠</strong>요소를 선택합니다.</li>
+				<li class="one4"><em>.each()</em> 메서드는 선택한 여러 요소들을 각각 <strong>순차적</strong>으로 실행합니다.</li>
+				<li class="one5"><em>.end()</em> 메서드는 <span>필터링</span>이 일어나기 <span>이전의</span> 요소를 선택합니다.</li>
+			</ul>
+			<p id="add">이것은 p태그 아이디 add입니다.</p>
+			<p class="add">이것은 p태그 클래스 add입니다.</p>
+		</div>
+
+		<div class="btn">
+			<ul>
+				<li><input type="radio" name="radio" id="ex1" value="1"><label for="ex1">$(".list li").add("p").addClass("on"); //add(기본 태그)를 추가로 선택합니다.</label></li> 
+				<li><input type="radio" name="radio" id="ex2" value="2"><label for="ex2">$(".list li").add("#add").addClass("on");  //add(아이디 선택자)를 추가로 선택합니다.</label></li>
+				<li><input type="radio" name="radio" id="ex3" value="3"><label for="ex3">$(".list li").add(".add").addClass("on");  //add(클래스 선택자)를 추가로 선택합니다.</label></li>	
+				<li><input type="radio" name="radio" id="ex4" value="4"><label for="ex4">$(".list li.one5").find("span").addClass("on"); //find를 이용하여 span태그를 선택합니다.</label></li>	
+				<li><input type="radio" name="radio" id="ex5" value="5"><label for="ex5">$(".list li.one5").find("span").addBack().addClass("on"); //addBack을 이용하여 span태그의 상위 박스를 선택합니다.</label></li>
+				<li><input type="radio" name="radio" id="ex6" value="6"><label for="ex6">$(".list").contents().find("em").addClass("on");	//contents를 통해 em태그를 선택합니다.</label></li>	
+				<li><input type="radio" name="radio" id="ex7" value="7"><label for="ex7">$(".list").contents().find("strong").addClass("on"); //contents를 통해 strong태그를 선택합니다.</label></li>	
+				<li><input type="radio" name="radio" id="ex8" value="8"><label for="ex8">$(".list").find(".one1").addClass("on").end().find(".one5").addClass("on"); //one1 태그와 one5동시에 선택하려면 중간에 end()를 써야합니다.</label></li>
+				<li><input type="radio" name="radio" id="ex9" value="9"><label for="ex9">$(".list li").each(function(){$(this).addClass("on");}); //각각의 li태그에 속성을 추가합니다.</label></li>
+			</ul>
+		</div>
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+		<script type="text/javascript">
+		$(document).ready(function(){    
+			var btn = $(".btn > ul > li > input");
+
+			btn.click(function(){
+				var num = $(this).attr("value");
+				$("*").removeClass("on");
+				
+				if(num == 1){$(".list li").add("p").addClass("on");}
+				if(num == 2){$(".list li").add("#add").addClass("on");}
+				if(num == 3){$(".list li").add(".add").addClass("on");}
+				if(num == 4){$(".list li.one5").find("span").addClass("on");}
+				if(num == 5){$(".list li.one5").find("span").addBack().addClass("on");}
+				if(num == 6){$(".list").contents().find("em").addClass("on");}
+				if(num == 7){$(".list").contents().find("strong").addClass("on");}
+				//$(".list").find(".one1").addClass("on").find(".one5").addClass("on");
+				if(num == 8){$(".list").find(".one1").addClass("on").end().find(".one5").addClass("on");}
+				//$( ".list li" ).addClass( "on" );
+				if(num == 9){$(".list li").each(function(){$(this).addClass("on");});}
+			});
+		}); 
+		</script> 
+	</body>
+</html>       

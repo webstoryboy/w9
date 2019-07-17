@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8">
+		<title>제이쿼리(jQuery)</title>
+		<style>
+			.mouse1 {
+				position: absolute; left: 0; top: 0; right: 0; bottom: 0; 
+				margin: auto; border: 1px solid #ccc; background-color: #ccc;
+			}
+			.hand {display: none;}
+		</style>
+	</head>
+	<body>
+
+		<div class="hand"><img src="https://tistory2.daumcdn.net/tistory/2141493/skin/images/cursor1.png" width="800"></div>
+
+
+		<div class="mouse1">Mouse 1</div>
+
+
+
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+		<script>
+
+
+		$(".mouse1")
+		.mouseover(function(e){
+      	$(".hand").show();
+		})
+		.mousemove(function(e){
+		   $('.hand').css('top', e.pageY + 10 );
+		   $('.hand').css('left', e.pageX + 10 );
+		})
+		.mouseout(function(){
+			$(".hand").hide();
+		});
+
+
+
+			
+		</script> 
+	</body>
+</html>       

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Layout14</title>
+	<style>
+		* {margin: 0; padding: 0;}
+		#wrap {}
+		#box1 {height: 200px; background-color: #444; }
+		#box2 {height: 500px; background-color: #555; }
+		#box3 {height: 200px; background-color: #666; }
+
+		.container {width: 960px; height: inherit; background-color: rgba(0,0,0,0.4); margin: 0 auto; overflow: hidden; }
+
+		.box2_left {float: left; width: 30%; height: 500px; background-color: #f06292; }
+		.box2_right {float: left; width: 70%; height: 500px; background-color: #ba68c8; }
+		
+		@media (max-width: 970px){
+			.container {width: 100%;}
+			.box2_left {float: none; width: 100%; height: 200px;}
+			.box2_right {float: none; width: 100%; height: 300px;}
+		}
+		/* 
+		CSS 경로를 구체적으로 적으면 우선순위가 제일 높음 
+		CSS 경로가 같을 경우에는 밑에 있는 속성 우선순위가 높음
+		div#wrap div#box2 div.container div.box2_left {float: left; width: 30%; height: 500px; background-color: #f06292;}
+		#wrap #box2 .container .box2_left {float: left; width: 30%; height: 500px; background-color: #f06292;}
+		#box2 .container .box2_left {float: left; width: 30%; height: 500px; background-color: #f06292;}
+		.container .box2_left {float: left; width: 30%; height: 500px; background-color: #f06292;}
+		.box2_left {float: left; width: 30%; height: 500px; background-color: #f00;}
+		*/
+
+	</style>
+</head>
+<body>
+	<div id="wrap">
+		<div id="box1">
+			<div class="container"></div>
+		</div>
+		<div id="box2">
+			<div class="container">
+				<div class="box2_left">left</div>
+				<div class="box2_right">right</div>
+			</div>
+		</div>
+		<div id="box3">
+			<div class="container"></div>
+		</div>
+	</div>
+</body>
+</html>
+
+
+
+
+
+

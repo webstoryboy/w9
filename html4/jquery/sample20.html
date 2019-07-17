@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		body {height: 10000px; width: 5000px;}
+		.info {position: fixed; left: 10px; top: 10px;}
+		.drag {position: absolute; left: 50%; top: 50%; width: 100px; height: 100px; background: #558b2f; color: white; text-align: center; cursor: pointer; line-height: 100px;  margin-left: -50px;  margin-top: -50px;}
+	</style>
+</head>
+<body>
+	
+
+	<div class="info">
+		scroll_left = <span class="scroll_left">0</span>px<br>
+		scroll_top = <span class="scroll_top">0</span>px<br>
+	</div>
+
+
+	<script src="assets/js/jquery-1.12.4.min.js"></script>
+	<script src="assets/js/jquery-ui-1.12.1.min.js"></script>
+	<script>
+		$(window).scroll(function(){
+			$(".scroll_left").text($(window).scrollLeft());
+			$(".scroll_top").text($(window).scrollTop());
+		});
+	</script>
+</body>
+</html>
+
+
+
+
+

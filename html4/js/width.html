@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+	<html lang="ko">
+	<head>
+		<meta charset="UTF-8">
+		<title>제이쿼리(jQuery) : attr()</title>
+		<style>
+			#box {
+				border: 5px solid #ccc; padding:50px; margin:50px;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<div id="box">
+			box의 크기는?<br>
+			<span>박스의 width = </span><span id="width">0</span>px<br>
+			<span>박스의 height = </span><span id="height">0</span>px<br>
+			<span>박스의 innerWidth = </span><span id="innerWidth">0</span>px<br>
+			<span>박스의 innerHeight = </span><span id="innerHeight">0</span>px<br>
+			<span>박스의 outerWidth = </span><span id="outerWidth">0</span>px<br>
+			<span>박스의 outerHeight = </span><span id="outerHeight">0</span>px<br>
+			<span>이 문서의 크기는 = </span><span id="document">0</span>px<br>
+			<span>이 브라우저의 크기는 = </span><span id="window">0</span>px
+		</div>
+
+		
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+		<script type="text/javascript">
+			$(window).resize(function(){
+				$('#width').text($('#box').width());
+				$('#height').text($('#box').height());
+				$('#innerWidth').text($('#box').innerWidth());
+				$('#innerHeight').text($('#box').innerHeight());
+				$('#outerWidth').text($('#box').outerWidth());
+				$('#outerHeight').text($('#box').outerHeight());
+				$('#document').text($(document).width());
+				$('#window').text($(window).width());
+			});
+			$(window).trigger('resize');
+		</script>
+	</body>
+</html>  

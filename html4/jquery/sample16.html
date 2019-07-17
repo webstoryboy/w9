@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>jQuery</title>
+	<style>
+		.btn {
+  position: relative;
+  width: 200px;
+  margin-bottom: 10px;
+  height: 70px;
+  background: #4285f4;
+  border-radius: 4px;
+  text-align: center;
+  line-height: 70px;
+  color: #fff;
+  font-family: verdana;
+  font-size: 20px;
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.65);
+  cursor: pointer;
+  transition: all .25s
+}
+
+.btn:active {
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+#btn1:hover:after,
+#btn1:hover:before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 50%;
+  left: 0;
+  top: 0;
+  background: repeating-linear-gradient( 45deg, rgba(255, 255, 255, 0.2) 0, rgba(255, 255, 255, 0.2) 20%, rgba(0, 0, 0, 0.2) 20%, rgba(0, 0, 0, 0.2) 40%);
+  background-position: 0;
+  animation: movement 10s linear infinite;
+}
+
+#btn1:hover:after {
+  top: 50%;
+  background: repeating-linear-gradient( -45deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.2) 20%, rgba(0, 0, 0, 0.2) 20%, rgba(0, 0, 0, 0.2) 40%)
+}
+
+
+#btn2::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.5);
+  box-shadow: inset 0 0 20px rgba(66, 133, 244, 0.85);
+  border-radius: 4px;
+  opacity: 0;
+  transition: opacity .5s;
+}
+
+#btn2:hover:before {
+  opacity: 1
+}
+
+#btn2::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -20px 0 0 -20px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border-left: 10px solid #4285f4;
+  border-top: 10px solid #ffffff;
+  border-right: 10px solid #4285f4;
+  border-bottom: 10px solid #ffffff;
+  animation: rotate 2s linear infinite;
+  opacity: 0;
+  transition: opacity .5s;
+}
+
+#btn2:hover:after {
+  opacity: 1;
+  transition-delay: .25s;
+}
+
+@keyframes movement {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes movement {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900");
+
+
+.btn-animate {
+	display: inline-block;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 4px;
+  -webkit-box-shadow: 0px 16px 47px -15px #590b9b;
+          box-shadow: 0px 16px 47px -15px #590b9b;
+  background: none;
+  -webkit-transition: all 0.2s cubic-bezier(0.19, 1, 0.22, 1);
+  transition: all 0.2s cubic-bezier(0.19, 1, 0.22, 1);
+  border-radius: 8px;
+  overflow: hidden;
+  outline: none;
+  -webkit-transform: translateZ(0);
+          transform: translateZ(0);
+}
+.btn-animate span {
+  position: relative;
+  z-index: 2;
+}
+.btn-animate:before, .btn-animate:after {
+  border-radius: 8px;
+  content: '';
+  z-index: -1;
+  background: linear-gradient(100deg, #560a9b, #9e158f);
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.btn-animate:after {
+  background: linear-gradient(100deg, #003f77, #05c4b5);
+  -webkit-transform: scaleY(0);
+          transform: scaleY(0);
+  -webkit-transform-origin: top;
+          transform-origin: top;
+  -webkit-transition: -webkit-transform 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+  transition: -webkit-transform 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+  transition: transform 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+  transition: transform 0.5s cubic-bezier(0.19, 1, 0.22, 1), -webkit-transform 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+  -webkit-transition-delay: .1s;
+          transition-delay: .1s;
+}
+.btn-animate:hover {
+  -webkit-box-shadow: 0px 16px 47px -15px #003f77;
+          box-shadow: 0px 16px 47px -15px #003f77;
+}
+.btn-animate:hover:after {
+  -webkit-transform: scaleY(1);
+          transform: scaleY(1);
+  -webkit-transform-origin: bottom;
+          transform-origin: bottom;
+  -webkit-transition-delay: 0s;
+          transition-delay: 0s;
+}
+.btn-animate:active {
+  -webkit-transform: translateY(4px) translateZ(0);
+          transform: translateY(4px) translateZ(0);
+  -webkit-box-shadow: 0px 8px 10px -6px #003f77;
+          box-shadow: 0px 8px 10px -6px #003f77;
+}
+
+
+
+
+
+	</style>
+</head>
+<body>
+	<div id="btn1" class="btn">Hover me!</div>
+	<div id="btn2" class="btn">Hover me!</div>
+	<div id="btn3" class="btn-animate">EVERYTHING</div>
+	<div id="btn4" class="btn-animate">EVERYTHING</div>
+	
+	<div class="img">
+		<img src="assets/img/img08.jpg" alt="" width="200">
+		<img src="assets/img/img07.jpg" alt="" width="200">
+		<img src="assets/img/img06.jpg" alt="" width="200">
+	</div>
+
+	<script src="assets/js/jquery-1.12.4.min.js"></script>
+	<script>
+		//버튼을 클릭하면 이미지를 300으로 변경해주세요~
+		$("#btn1").click(function(){
+			$("img").attr("width","300");
+		});
+		$("#btn2").click(function(){
+			$("img").attr({"width":"300","height":"300"});
+		});
+
+		$("#btn3").click(function(){
+			$("img").attr('width', function(i){
+				return (i+1)*100;
+			});
+		});
+
+		$("#btn4").click(function(){
+			$("img").attr({
+				'width': function(i){return (i+1)*100;}, 
+				'height': function(j){return (j+1)*100;} 
+			});
+		});
+
+		
+		
+	</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

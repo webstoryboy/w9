@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		* {margin: 0; padding: 0;}
+		#canvas {border: 3px solid #ccc;}
+	</style>
+</head>
+<body>
+	<canvas id="canvas" width="700" height="400"></canvas>
+
+	<script src="assets/js/jquery-1.12.4.min.js"></script>
+	<script>
+		var canvas = document.getElementById("canvas");
+		var context = canvas.getContext("2d");
+
+		$("canvas").on({
+			mousedown:function(event){
+				var position = $(this).offset();
+				var x = event.pageX - position.left;
+				var y = event.pageY - position.top;
+
+				context.beginPath();
+				context.moveTo(x,y);
+			},
+			mouseup:function(event){
+				var position = $(this).offset();
+				var x = event.pageX - position.left;
+				var y = event.pageY - position.top;
+
+				context.lineTo(x,y);
+				context.stroke();
+			} 
+		});
+	</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
