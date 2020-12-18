@@ -1,0 +1,311 @@
+<div class="quiz-wrap">
+    <div class="info">
+      <ul>
+        <li>시험 유형 : <span>주관식 퀴즈(한문제)</span></li>
+        <li>시험 과목 : <span>정보처리기사</span></li>
+        <li>시험 과목 : <span>응용 SW기초 기술 활용</span></li>
+      </ul>
+    </div>
+  
+    <div class="quiz"></div> 
+    <div class="confirm">
+      <p class="confirm-btn">정답 확인하기</p>
+      <div class="confirm-result"></div>
+    </div> 
+  </div>
+  
+  <script>
+    //선택자
+    const quiz = document.querySelector(".quiz");
+    const question = document.querySelector(".question");
+    const questionNum = document.querySelector(".num");
+    const questionBtn = document.querySelector(".confirm-btn");
+    const questionResult = document.querySelector(".confirm-result"); 
+    const questionChoice = document.querySelectorAll(".choice");
+    const questionSelect = document.querySelectorAll(".select"); 
+    const questionBottom = document.querySelectorAll(".confirm-bottom"); 
+  
+    //문제 정보
+    const quizInfo = [
+      {
+        quizNum : "1",
+        quizAsk : "요구사항 분석 시에 필요한 기술로 가장 거리가 먼 것은?",
+        quizChoice : {
+          1: "청취와 인터뷰 질문 기술",
+          2: "분석과 중재기술",
+          3: "설계 및 코딩 기술",
+          4: "관찰 및 모델 작성 기술"
+        },
+        quizAnswer : "3",
+        quizEx : "요구사항 분석 시 설계 및 코딩 기술은 필요하지 않음",
+      },{
+        quizNum : "2",
+        quizAsk : "다음 내용이 설명하는 디자인 패턴은 무엇인가?<br>- 객체를 생성하기 위한 인터페이스를 정의 하여 어떤 클래스가 인스턴스화 될 것인지는 서브클래스가 결정하도록 하는 것<br>- - Virtual-Constructor 패턴이라고도 함",
+        quizChoice : {
+          1: "Visitor 패턴",
+          2: "Observer 패턴",
+          3: "Factory Method 패턴",
+          4: "Bridge 패턴"
+        },
+        quizAnswer : "3",
+        quizEx : "Factory Method 패턴을 설명함",
+      },{
+        quizNum : "3",
+        quizAsk : "럼바우 객체 지향 분석과 거리가 먼 것은 무엇인가?",
+        quizChoice : {
+          1: "기능 모델링",
+          2: "동적 모델링",
+          3: "객체 모델링",
+          4: "정적 모델링"
+        },
+        quizAnswer : "4",
+        quizEx : "정적 모델링은 객체 지향 분석과 관계가 없음",
+      },{
+        quizNum : "4",
+        quizAsk : "애자일 기법에 대한 설명으로 맞지 않은 것은 무엇인가?",
+        quizChoice : {
+          1: "절차와 도구보다 개인과 소통을 중요하게 생각한다",
+          2: "계획에 중점을 두어 변경 대응이 난해하다.",
+          3: "소프트웨어가 잘 실행되는데 가치를 둔다",
+          4: "고객과의 피드백을 중요하게 생각한다"
+        },
+        quizAnswer : "2",
+        quizEx : "계획에 중점을 두어 변경 대응이 난해하다.",
+      },{
+        quizNum : "5",
+        quizAsk : "미들웨어 솔루션의 유형에 포함되지 않는 것은 무엇인가?",
+        quizChoice : {
+          1: "WAS",
+          2: "WEB SERVER",
+          3: "RPC",
+          4: "ORB"
+        },
+        quizAnswer : "2",
+        quizEx : "WEB SERVER",
+      },{
+        quizNum : "6",
+        quizAsk : "UML에서 시퀀스 다이어그램의 구성 항목에 해당하지 않는 것은 무엇인가?",
+        quizChoice : {
+          1: "생명선",
+          2: "실행",
+          3: "확장",
+          4: "메시지"
+        },
+        quizAnswer : "3",
+        quizEx : "확장",
+      },{
+        quizNum : "7",
+        quizAsk : "객체지향에서 정보 은닉과 가장 밀접한 관계가 있는 것은 무엇인가?",
+        quizChoice : {
+          1: "Encapsulation",
+          2: "Class ",
+          3: "Method",
+          4: "Instance"
+        },
+        quizAnswer : "1",
+        quizEx : "Encapsulation",
+      },{
+        quizNum : "8",
+        quizAsk : "디자인 패턴 중에서 행위적 패턴에 속하지 않는 것은 무엇인가?",
+        quizChoice : {
+          1: "커맨드(Command) 패턴",
+          2: "옵저버(Observer) 패턴 ",
+          3: "프로토타입(Prototype) 패턴",
+          4: "상태(State) 패턴"
+        },
+        quizAnswer : "3",
+        quizEx : "프로토타입(Prototype) 패턴",
+      },{
+        quizNum : "9",
+        quizAsk : "UI 설계 원칙 중 누구나 쉽게 이해하고 사용할 수 있어야 한다는 원칙을 무엇이라고 하는가?",
+        quizChoice : {
+          1: "희소성",
+          2: "유연성",
+          3: "직관성",
+          4: "멀티운용성"
+        },
+        quizAnswer : "3",
+        quizEx : "직관성",
+      },{
+        quizNum : "10",
+        quizAsk : "코드의 기본 기능으로 거리가 먼 것은 무엇인가?",
+        quizChoice : {
+          1: "복잡성",
+          2: "표준화",
+          3: "분류",
+          4: "식별"
+        },
+        quizAnswer : "1",
+        quizEx : "복잡하면 당연히 안되지!",
+      },{
+        quizNum : "11",
+        quizAsk : "다음 ()안에 들어갈 내용으로 옳은 것은 무엇인가?<br> 컴포넌트 설계 시 ()에 의한 설계를 따를 경우, 해당 명세에서는 컴포넌트의 오퍼레이션 사용 전에 참이 되어야 할 선행조건 사용 후 만족되어야 할 결과조건 오퍼레이션이 실행되는 동안 항상 만족 되어야 할 불변조건 등이 포함되어야 한다",
+        quizChoice : {
+          1: "협약(Contract)",
+          2: "프로토콜(Protocol)",
+          3: "패턴(Pattern)",
+          4: "관계(Relation)"
+        },
+        quizAnswer : "1",
+        quizEx : "협약(Contract)",
+      },{
+        quizNum : "12",
+        quizAsk : "UML에서 활용되는 다이어그램 중, 시스템의 동작을 표현하는 행위(Behavioral) 다이어그램에 해당하지 않는 것은 무엇인가?",
+        quizChoice : {
+          1: "유스케이스 다이어그램(Use Case Diagram)",
+          2: "시퀀스 다이어그램(Sequence Diagram)",
+          3: "활동 다이어그램(Activity Diagram)",
+          4: "배치 다이어그램(Deployment Diagram)"
+        },
+        quizAnswer : "4",
+        quizEx : "배치 다이어그램(Deployment Diagram)",
+      },{
+        quizNum : "13",
+        quizAsk : "객체 지향 소프트웨어 공학에서 하나 이상의 유사한 객체들을 묶어서 하나의 공통된 특성을 표현한 것은 무엇인가?",
+        quizChoice : {
+          1: "트랜잭션",
+          2: "클래스",
+          3: "시퀀스",
+          4: "서브루틴"
+        },
+        quizAnswer : "2",
+        quizEx : "클래스",
+      },{
+        quizNum : "14",
+        quizAsk : "아래의 UML 모델에서 '차'클래스와 각 클래스의 관계로 옳은 것은 무엇인가?",
+        quizChoice : {
+          1: "추상화 관계",
+          2: "의존 관계",
+          3: "일반화 관계",
+          4: "그룸 관계"
+        },
+        quizAnswer : "3",
+        quizEx : "일반화 관계",
+      },{
+        quizNum : "15",
+        quizAsk : "객체지향 소프트웨어 설계 시 디자인 패턴을 구성하는 요소로서 가장 거리가 먼 것은 무엇인가?",
+        quizChoice : {
+          1: "개발자 이름",
+          2: "문제 및 배경",
+          3: "사례",
+          4: "샘플코드"
+        },
+        quizAnswer : "1",
+        quizEx : "개발자 이름이 뭣이 중한데~",
+      },{
+        quizNum : "16",
+        quizAsk : "자료 사전에서 자료의 반복을 의미하는 것은 무엇인가?",
+        quizChoice : {
+          1: "=",
+          2: "()",
+          3: "{}",
+          4: "[]"
+        },
+        quizAnswer : "3",
+        quizEx : "{}",
+      },{
+        quizNum : "17",
+        quizAsk : "객체지향 설계 원칙 중 서브타입(상속받은 하위 클래스)은 어디에서나 자신의 기반타입(상위 클래스)으로 교체할 수 있어야 함을 의미하는 원칙은 무엇인가?",
+        quizChoice : {
+          1: "ISP(Interface Segregation Principle)",
+          2: "DIP(Dependency Inversion Principle)",
+          3: "LSP(Liskov Substitution Principle)",
+          4: "SRP(Single Responsibility Principle)"
+        },
+        quizAnswer : "3",
+        quizEx : "{}",
+      },{
+        quizNum : "18",
+        quizAsk : "자료흐름도(Data Flow Diagram)의 구성요소로 옳은 것은 무엇인가?",
+        quizChoice : {
+          1: "process, data flow, data store, comment",
+          2: "process, data flow, data store, terminator",
+          3: "data flow, data store, terminator, data dictionary",
+          4: "process, data store, terminator, mini-spec"
+        },
+        quizAnswer : "2",
+        quizEx : "process, data flow, data store, terminator",
+      },{
+        quizNum : "19",
+        quizAsk : "CASE(Computer-Aided Software Engineering) 도구에 대한 설명으로 거리가 먼 것은 무엇인가?",
+        quizChoice : {
+          1: "소프트웨어 개발 과정의 일부 또는 전체를 자동화하기 위한 도구이다.",
+          2: "표준화된 개발 환경 구축 및 문서 자동화 기능을 제공한다",
+          3: "작업 과정 및 데이터 공유를 통해 작업자 간 커뮤니케이션을 증대한다",
+          4: "2000년대 이후 소개되었으며, 객체지향 시스템에 한해 효과적으로 활용된다."
+        },
+        quizAnswer : "4",
+        quizEx : "2000년대 이후 소개되었으며, 객체지향 시스템에 한해 효과적으로 활용된다.",
+      },{
+        quizNum : "20",
+        quizAsk : "인터페이스 요구 사항 검토 방법에 대한 설명이 옳은 것은 무엇인가요?",
+        quizChoice : {
+          1: "리팩토링 : 작성자 이외의 전문 검토 그룹이 요구사항 명세서를 상세히 조사하여 결함, 표준 위배, 문제점 등을 파악",
+          2: "동료검토 : 요구 사항 명세서 작성자가 요구 사항 명세서를 설명하고 이해관계자들이 설명을 들으면서 결함을 발견",
+          3: "인스펙션 : 자동화된 요구 사항 관리 도구를 이용하여 요구 사항 추적성과 일관성을 검토",
+          4: "CASE 도구 : 검토 자료를 회의 전에 배포해서 사전 검토한 후 짧은 시간 동안 검토 회의를 진행하면서 결함을 발견"
+        },
+        quizAnswer : "2",
+        quizEx : "동료검토 : 요구 사항 명세서 작성자가 요구 사항 명세서를 설명하고 이해관계자들이 설명을 들으면서 결함을 발견",
+      }
+
+    ];
+  
+    //문제 만들기
+    function updateQuiz(){
+      const output = [];
+      quizInfo.forEach((currentQuestion, questionNumber) => {
+        const selects = [];
+  
+        for (letter in currentQuestion.quizChoice) {
+          selects.push(
+            `<label>
+  <input type="radio" name="question${questionNumber}" value="${letter}">
+  <span class="select">${currentQuestion.quizChoice[letter]}</span>
+    </label> `
+          );
+        }
+  
+        output.push(`
+  <h2>&lt; 문제<span class='num'>${questionNumber+1}</span> &gt;</h2>
+  <p class="question">${currentQuestion.quizAsk}</p>
+  <div class="selects">${selects.join(' ')}</div>
+  <div class="confirm-bottom">
+  <div class="confirm-answer">${currentQuestion.quizAnswer}</div>
+  <div class="confirm-ex">${currentQuestion.quizEx}</div>
+    </div>
+  `
+                   );
+      });
+      quiz.innerHTML = output.join(' ');
+    }
+    updateQuiz();
+  
+    //결과 확인하기
+    function showResults(){
+      const selectContainers = quiz.querySelectorAll('.selects');
+      const selectExplanation = quiz.querySelectorAll('.confirm-ex');
+      const selectAnswer = quiz.querySelectorAll('.confirm-answer');
+      let numCorrect = 0;
+  
+      quizInfo.forEach((currentQuestion, questionNumber) => {
+        const selectContainer = selectContainers[questionNumber];
+        const resultSelector = `input[name=question${questionNumber}]:checked`;
+        const resultAnswer = (selectContainer.querySelector(resultSelector) || {}).value;
+  
+        if (resultAnswer === currentQuestion.quizAnswer) {
+          numCorrect++;
+          selectContainers[questionNumber].style.color = 'blue';
+        } else {
+          selectContainers[questionNumber].style.color = 'red';
+          selectExplanation[questionNumber].style.display = 'block';
+          selectAnswer[questionNumber].style.display = 'block';
+        }
+      });
+      questionResult.innerHTML = `${quizInfo.length} 문제 중에 ${numCorrect}를 맞추었습니다.`;
+    }
+    questionBtn.addEventListener('click', showResults);
+  
+  
+  
+  </script>
