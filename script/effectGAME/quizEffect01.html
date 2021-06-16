@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <style>
+        @font-face { 
+            font-family: 'NEXON Lv1 Gothic OTF'; 
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv1 Gothic OTF.woff') format('woff');
+            font-weight: normal; 
+            font-style: normal; 
+        }
+        *, *::before, *::after {
+            box-sizing: border-box; 
+            margin: 0;
+            padding: 0;
+        }
+        a {text-decoration: none; color: #fff; transition: all 0.2s;}
+        a:hover {border-bottom: 1px dashed #fff;}
+        img {width: 100%; vertical-align: top;}
+        li {list-style: none;}
+        body {
+            width: 100%;
+            overflow: hidden;
+        }
+        .quiz-wrap {
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+            background: 
+                url(quizImg/stars.png) no-repeat center,
+                url(quizImg/bg.jpg) no-repeat center;
+            background-size: cover
+        }
+        .bearQuiz {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        .bear {
+            width: 25vw;
+            height: 30vw;
+            background: url(quizImg/bear.png) no-repeat center center;
+            background-size: contain;
+        }
+        .leaves1 {
+            position: absolute;
+            left: -5%; top: -5vh;
+            width: 110%;
+            height: 110vh;
+            pointer-events: none;
+            background: url(quizImg/leaves1.png) no-repeat center center;
+            background-size: cover;
+        }
+        .leaves2 {
+            position: absolute;
+            left: -5%; top: -5vh;
+            width: 110%;
+            height: 110vh;
+            pointer-events: none;
+            background: url(quizImg/leaves2.png) no-repeat center center;
+            background-size: cover
+        }
+        /* quiz */
+        .quiz {
+            width: 40vw;
+            height: 30vw;
+            background: #1b1f21;
+            border-radius: 10px;
+            box-shadow: 0 16px 40px -5px rgb(0 0 0 / 50%);
+            padding: 40px;
+            color: #fff;
+            font-family: 'NEXON Lv1 Gothic OTF'; 
+            position: relative;
+            z-index: 1000;
+        }
+        .quiz h2 {
+            font-size: 50px;
+            margin-bottom: 20px;
+        }
+        .quiz em {
+            font-style: normal;
+        }
+        .quiz .info {
+            position: absolute;
+            right: -60px; top: -60px;
+            width: 150px; height: 150px;
+            color: #fff;
+            text-align: center;
+            color: #1b1f21;
+            background: #fff;
+            border-radius: 50%;
+            box-shadow: 0 16px 40px -5px rgb(255 255 255 / 50%);
+            padding-top: 42px;
+        }
+        .quiz .info span {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+        .quiz .start {
+            margin: 40px 0;
+            position: relative;
+        }
+        .quiz .start .input {
+            padding: 15px 20px;
+            font-size: 28px;
+            width: 100%;
+            font-family: 'NEXON Lv1 Gothic OTF'; 
+            border-radius: 10px;
+            border: 0;
+            outline: 0;
+        }
+        .quiz .start button {
+            position: absolute;
+            left: 0; top: 0;
+            width: 100%; height: 100%;
+            font-family: 'NEXON Lv1 Gothic OTF'; 
+            font-size: 28px;
+            background: red;
+            border-radius: 10px;
+            border: 0;
+            outline: 0;
+            color: #fff;
+            cursor: pointer;
+        }
+        .quiz .start button:active {
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    
+    <main>
+        <div class="quiz-wrap">
+            <div class="bearQuiz">
+                <div class="bear"></div>
+                <!-- quiz -->
+                <div class="quiz">
+                    <h2><em>CSS</em> 속성 맞추기</h2>
+                    <p>알고 있는 <em>CSS</em> 속성을 1분안에 적어주세요!</p>
+                    <div class="start">
+                        <input type="text" class="input">
+                        <button>게임 시작하기</button>
+                    </div>
+                    <div class="info">
+                        남은 시간 <span class="time-remaining">1:00</span><br>
+                        현재 점수 <span class="score">0</span><br>
+                        전체 점수 <span class="total">0</span>
+                    </div>
+                    <div class="answers">
+                        
+                    </div>
+                </div>
+                <!-- //quiz -->
+            </div>
+            <div class="leaves1"></div>
+            <div class="leaves2"></div>
+        </div>
+    </main>
+
+
+    <!-- script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
+    <script>
+
+
+
+
+
+
+
+
+        //마우스 효과
+        const leaves = document.querySelector(".leaves1")
+
+        const mouseMove = e => {
+            const { x, y }  = e;
+            const rect = leaves.getBoundingClientRect();
+            const mouseX = (x - rect.left - rect.width/2) / rect.width * 20
+            const mouseY = (y - rect.top - rect.height/2) / rect.height * 20
+
+            gsap.to(".leaves1", {duration: 0.3, x : mouseX, y: mouseY})
+            gsap.to(".leaves2", {duration: 0.3, x : mouseX * 2, y: mouseY * 2})
+            gsap.to(".bear", {duration: 0.3, x : mouseX, y: mouseY})
+        }
+
+        window.addEventListener("mousemove", mouseMove);
+    </script>
+</body>
+</html>
